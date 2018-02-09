@@ -595,8 +595,9 @@ we actually no longer need to specify <code>EC = err</code>, we can just leave i
 from any type with the trait <code>std::is_error_code_enum&lt;&gt;</code> defined to be true, it uses
 the ADL discovered free function <code>make_error_code()</code> during that implicit construction.</p>
 
-<p>The big advantage of always using <code>EC = std::error_code</code> is that <code>OUTCOME_TRY</code> only works when the <code>EC</code> type is the
-same in the try expression as the calling function, so by leaving it at the default of <code>std::error_code</code>, we can use <code>OUTCOME_TRY</code>
+<p>The big advantage of always using <code>EC = std::error_code</code> is that <code>OUTCOME_TRY</code> only
+works when the <code>EC</code> type is the same (or convertible to) in the try expression as the
+calling function, so by leaving it at the default of <code>std::error_code</code>, we can use <code>OUTCOME_TRY</code>
 and save having to type boilerplate:</p>
 
 <p><div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
