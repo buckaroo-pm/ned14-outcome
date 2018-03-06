@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
 
-    <title>The Filesystem TS :: Outcome documentation</title>
+    <title>Changelog :: Outcome documentation</title>
     <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
     <link href="/outcome/css/nucleus.css" rel="stylesheet">
     <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
     <link href="/outcome/css/local.css" rel="stylesheet">
 
   </head>
-  <body class="" data-url="/outcome/tutorial/payload/copy_file/">
+  <body class="" data-url="/outcome/changelog/">
     <nav id="sidebar" class=""><div class="highlightable">
   <div id="header-wrapper">
     <div id="header"> 
@@ -73,10 +73,9 @@
         <span>Decision matrix</span>
       </a>
     </li>
-    <li data-nav-id="/outcome/tutorial/" class="dd-item parent">
+    <li data-nav-id="/outcome/tutorial/" class="dd-item">
       <a href="/outcome/tutorial/">
-        <span>Tutorial</span>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+        <span>Tutorial</span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
     <li data-nav-id="/outcome/tutorial/result/" class="dd-item">
@@ -108,13 +107,12 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/outcome/tutorial/payload/" class="dd-item parent">
+    <li data-nav-id="/outcome/tutorial/payload/" class="dd-item">
       <a href="/outcome/tutorial/payload/">
-        <span>Custom payloads</span>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+        <span>Custom payloads</span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
-      <li data-nav-id="/outcome/tutorial/payload/copy_file/" class="dd-item active">
+      <li data-nav-id="/outcome/tutorial/payload/copy_file/" class="dd-item">
         <a href="/outcome/tutorial/payload/copy_file/">
           <span>The Filesystem TS</span>
         </a>
@@ -479,7 +477,7 @@
         <span>Videos</span>
       </a>
     </li>
-    <li data-nav-id="/outcome/changelog/" class="dd-item">
+    <li data-nav-id="/outcome/changelog/" class="dd-item parent active">
       <a href="/outcome/changelog/">
         <span>Changelog</span>
       </a>
@@ -525,7 +523,7 @@
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/ned14/outcome/edit/develop/doc/src/content/tutorial/payload/copy_file.md" target="blank">
+              <a class="github-link" href="https://github.com/ned14/outcome/edit/develop/doc/src/content/changelog/_index.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 Edit page
               </a>
@@ -542,17 +540,7 @@
 
 
 
-
-
-
-
-
-
- <a href='/outcome/'>Home</a> > <a href='/outcome/tutorial/'>Tutorial</a> > <a href='/outcome/tutorial/payload/'>Custom payloads</a> > The Filesystem TS
-
- 
-
- 
+ <a href='/outcome/'>Home</a> > Changelog
 
  
 
@@ -561,69 +549,49 @@
             </div>
             <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li><a href="#v2-1-in-progress-project-https-github-com-ned14-outcome-projects-1">v2.1 in progress <a href="https://github.com/ned14/outcome/projects/1">project</a></a></li>
+<li><a href="#v2-0-18th-jan-2018-boost-peer-review-edition-release-https-github-com-ned14-outcome-releases-tag-v2-0-boost-peer-review">v2.0 18th Jan 2018 (Boost peer review edition) <a href="https://github.com/ned14/outcome/releases/tag/v2.0-boost-peer-review">release</a></a></li>
+</ul>
+</nav>
     </div>
 </div>
 
           </div>
         
         
-          <div id="tags">
-            
-              <a class="label label-default" href="https://ned14.github.io/outcome//tags/dual-api">dual-api</a>
-            
-          </div>
-        
         <div id="body-inner">
           
-            <h1>The Filesystem TS</h1>
+            <h1>Changelog</h1>
           
 
 
 
 
-<p>Something which has long annoyed the purists in the C++ leadership is the problem of dual
-overloads in <code>error_code</code> capable standard library APIs.</p>
-
-<p>Consider the
-<a href="http://en.cppreference.com/w/cpp/filesystem/copy_file"><code>copy_file()</code></a>
-API from the Filesystem TS:</p>
-
-<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
-<span class="k">namespace</span> <span class="n">filesystem</span>
-<span class="p">{</span>
-  <span class="cm">/*! Copies the file at path `from` to path `to`.
-</span><span class="cm">  \returns True if file was successfully copied.
-</span><span class="cm">  \throws On failure throws `filesystem_error(ec.message(), from, to, ec)` with
-</span><span class="cm">  `ec` being the error code reported by the operating system.
-</span><span class="cm">  */</span>
-  <span class="kt">bool</span> <span class="n">copy_file</span><span class="p">(</span><span class="k">const</span> <span class="n">path</span> <span class="o">&amp;</span><span class="n">from</span><span class="p">,</span> <span class="k">const</span> <span class="n">path</span> <span class="o">&amp;</span><span class="n">to</span><span class="p">);</span>
-
-  <span class="cm">/*! Copies the file at path `from` to path `to`.
-</span><span class="cm">  \returns True if file was successfully copied. If false, `ec` is written with
-</span><span class="cm">  the error code reported by the operating system.
-</span><span class="cm">  \throws Never throws.
-</span><span class="cm">  */</span>
-  <span class="kt">bool</span> <span class="nf">copy_file</span><span class="p">(</span><span class="k">const</span> <span class="n">path</span> <span class="o">&amp;</span><span class="n">from</span><span class="p">,</span> <span class="k">const</span> <span class="n">path</span> <span class="o">&amp;</span><span class="n">to</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">error_code</span> <span class="o">&amp;</span><span class="n">ec</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/outcome_payload.cpp#L19" class="code-snippet-url" target="_blank">View this code on Github</a></div>
 
 
-<p>Before Outcome, the common design pattern was to provide throwing and non-throwing overloads
-of every API. As you can see above, the throwing API throws a <a href="http://en.cppreference.com/w/cpp/filesystem/filesystem_error"><code>filesystem::filesystem_error</code></a>
-exception type which carries additional information, specifically two paths. These paths may
-refer to the files which were the source of any failure. However the non-throwing overload
-does <strong>not</strong> provide this additional information, which can make it more annoying to use the
-non-throwing overload sometimes.</p>
+<h1 id="v2-1-in-progress-project-https-github-com-ned14-outcome-projects-1">v2.1 in progress <a href="https://github.com/ned14/outcome/projects/1">project</a></h1>
 
-<p>What if we could replace these two overloads of every API in the Filesystem TS with a single API,
-and additionally have the non-throwing edition return the exact same additional information
-as the throwing edition?</p>
+<ul>
+<li><a href="https://github.com/ned14/outcome/issues/110">#110</a>
+
+<ul>
+<li>Separated <code>result</code> from its hard coded dependency on the <code>&lt;system_error&gt;</code> header.</li>
+<li>Renamed <code>result</code> and <code>outcome</code> to <code>basic_result</code> and <code>basic_outcome</code>.</li>
+<li>Renamed <code>result.hpp</code> into <code>basic_result.hpp</code>.</li>
+<li>Moved <code>&lt;system_error&gt;</code> dependent code into a new <code>system_error_support.hpp</code> header file.</li>
+</ul></li>
+</ul>
+
+<h1 id="v2-0-18th-jan-2018-boost-peer-review-edition-release-https-github-com-ned14-outcome-releases-tag-v2-0-boost-peer-review">v2.0 18th Jan 2018 (Boost peer review edition) <a href="https://github.com/ned14/outcome/releases/tag/v2.0-boost-peer-review">release</a></h1>
 
 
 <footer class=" footline" >
 	
 </footer>
+
+
 
 
 
@@ -638,8 +606,8 @@ as the throwing edition?</p>
     
 
     <div id="navigation">
-        <a class="nav nav-prev" href="/outcome/tutorial/payload/" title="Custom payloads"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="/outcome/tutorial/payload/copy_file2/" title="Upgrading the Filesystem TS" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/outcome/videos/" title="Videos"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/outcome/history/" title="History" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>
@@ -664,4 +632,3 @@ as the throwing edition?</p>
 
   </body>
 </html>
-
