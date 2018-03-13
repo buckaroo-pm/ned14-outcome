@@ -585,7 +585,10 @@
 <li>Separated <code>result</code> from its hard coded dependency on the <code>&lt;system_error&gt;</code> header.</li>
 <li>Renamed <code>result</code> and <code>outcome</code> to <code>basic_result</code> and <code>basic_outcome</code>.</li>
 <li>Renamed <code>result.hpp</code> into <code>basic_result.hpp</code>.</li>
-<li>Moved <code>&lt;system_error&gt;</code> dependent code into a new <code>system_error_support.hpp</code> header file.</li>
+<li>Moved <code>&lt;system_error&gt;</code> and <code>&lt;exception&gt;</code> dependent code into new
+<code>std_result.hpp</code> and <code>std_outcome.hpp</code> header files.</li>
+<li>Added <code>boost_result.hpp</code> and <code>boost_outcome.hpp</code> which use Boost.System
+and Boost.Exception (these are <code>result.hpp</code> and <code>outcome.hpp</code> in the Boost edition).</li>
 </ul></li>
 </ul>
 
