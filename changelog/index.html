@@ -579,7 +579,21 @@
 <h2 id="v2-1-in-progress-project-https-github-com-ned14-outcome-projects-1">v2.1 in progress <a href="https://github.com/ned14/outcome/projects/1">[project]</a></h2>
 
 <ul>
-<li><a href="https://github.com/ned14/outcome/issues/110">#110</a>
+<li><p>Added reference dump of v2.1 ABI so we can check if ABI breakage detection works in the next set of changes.</p></li>
+
+<li><p><a href="https://github.com/ned14/outcome/issues/124">#124</a></p>
+
+<ul>
+<li><code>OUTCOME_TRY</code> is now overloaded and selects <code>void</code> or <code>auto</code> edition according to input parameter count.</li>
+</ul></li>
+
+<li><p><a href="https://github.com/ned14/outcome/issues/120">#120</a></p>
+
+<ul>
+<li>Fix generation of double underscored temporary variables in OUTCOME_UNIQUE_NAME, which is UB.</li>
+</ul></li>
+
+<li><p><a href="https://github.com/ned14/outcome/issues/110">#110</a></p>
 
 <ul>
 <li>Separated <code>result</code> from its hard coded dependency on the <code>&lt;system_error&gt;</code> header.</li>
