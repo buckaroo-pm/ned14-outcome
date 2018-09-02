@@ -576,7 +576,7 @@ to not use exceptions to propagate failure reports across thread, tasks, fibers;
 </span><span class="c1"></span></code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/intro_example.cpp#L26" class="code-snippet-url" target="_blank">View this code on Github</a></div>
 
 
-<p>Or, if this function is called in anoter function that also returns <code>result&lt;T&gt;</code> you can use a dedicated control statement:</p>
+<p>Or, if this function is called in another function that also returns <code>result&lt;T&gt;</code> you can use a dedicated control statement:</p>
 
 <div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
 <span class="k">auto</span> <span class="nf">process</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">content</span><span class="p">)</span> <span class="k">noexcept</span>
