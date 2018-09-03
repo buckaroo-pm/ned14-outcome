@@ -627,7 +627,8 @@ If both <code>T</code> and <code>EC</code> are trivially copyable, <code>result&
 <div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
 <span class="k">enum</span> <span class="k">class</span> <span class="nc">ConversionErrc</span>
 <span class="p">{</span>
-  <span class="n">EmptyString</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">// 0 is never an error
+  <span class="n">Success</span>     <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">// 0 should not represent an error
+</span><span class="c1"></span>  <span class="n">EmptyString</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">// (for rationale, see tutorial on error codes)
 </span><span class="c1"></span>  <span class="n">IllegalChar</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
   <span class="n">TooLong</span>     <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
 <span class="p">};</span>
@@ -647,16 +648,16 @@ Now we can implement function <code>convert</code> as follows:</p>
 <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">str</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
     <span class="k">return</span> <span class="n">ConversionErrc</span><span class="o">::</span><span class="n">EmptyString</span><span class="p">;</span>
-    
+
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">std</span><span class="o">::</span><span class="n">all_of</span><span class="p">(</span><span class="n">str</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">str</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="o">::</span><span class="n">isdigit</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">ConversionErrc</span><span class="o">::</span><span class="n">IllegalChar</span><span class="p">;</span>
-    
+
   <span class="k">if</span> <span class="p">(</span><span class="n">str</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">9</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">ConversionErrc</span><span class="o">::</span><span class="n">TooLong</span><span class="p">;</span>
-  
+
   <span class="k">return</span> <span class="nf">atoi</span><span class="p">(</span><span class="n">str</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
 <span class="p">}</span>
-</code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/using_result.cpp#L34" class="code-snippet-url" target="_blank">View this code on Github</a></div>
+</code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/using_result.cpp#L35" class="code-snippet-url" target="_blank">View this code on Github</a></div>
 
 
 <p><code>result&lt;T, EC&gt;</code> is convertible from any <code>T2</code> convertible to <code>T</code> as well as any <code>EC2</code> convertible to <code>EC</code>,
@@ -666,15 +667,15 @@ all implicit conversion is disabled, and you will need to use one of the tagged 
 <p><div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
 <span class="n">outcome</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">r</span> <span class="p">{</span><span class="n">outcome</span><span class="o">::</span><span class="n">in_place_type</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">error_code</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">ConversionErrc</span><span class="o">::</span><span class="n">EmptyString</span><span class="p">};</span>
 <span class="n">outcome</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span> <span class="p">{</span><span class="n">outcome</span><span class="o">::</span><span class="n">in_place_type</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="mi">1</span><span class="p">};</span>
-</code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/using_result.cpp#L82" class="code-snippet-url" target="_blank">View this code on Github</a></div>
+</code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/using_result.cpp#L85" class="code-snippet-url" target="_blank">View this code on Github</a></div>
 </p>
 
 <p>Or use helper factory functions:</p>
 
 <div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
-<span class="n">outcome</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">r</span> <span class="o">=</span> <span class="n">outcome</span><span class="o">::</span><span class="n">failure</span><span class="p">(</span><span class="n">ConversionErrc</span><span class="o">::</span><span class="n">EmptyString</span><span class="p">);</span> 
+<span class="n">outcome</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">r</span> <span class="o">=</span> <span class="n">outcome</span><span class="o">::</span><span class="n">failure</span><span class="p">(</span><span class="n">ConversionErrc</span><span class="o">::</span><span class="n">EmptyString</span><span class="p">);</span>
 <span class="n">outcome</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">outcome</span><span class="o">::</span><span class="n">success</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-</code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/using_result.cpp#L90" class="code-snippet-url" target="_blank">View this code on Github</a></div>
+</code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/using_result.cpp#L93" class="code-snippet-url" target="_blank">View this code on Github</a></div>
 
 
 

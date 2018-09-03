@@ -591,10 +591,10 @@
   <span class="p">};</span>
   <span class="k">enum</span> <span class="k">class</span> <span class="nc">err</span>
   <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span>   <span class="c1">// REMEMBER it is best practice to always put &#34;success&#34;
-</span><span class="c1"></span>    <span class="n">failure1</span><span class="p">,</span>  <span class="c1">// with value 0 as your first item in any error code
-</span><span class="c1"></span>    <span class="n">failure2</span>   <span class="c1">// enum, even if you never use it.
-</span><span class="c1"></span>  <span class="p">};</span>
+    <span class="n">success</span><span class="p">,</span>   <span class="c1">// 0 should not represent an error
+</span><span class="c1"></span>    <span class="n">failure1</span><span class="p">,</span>  <span class="c1">// (for rationale, see tutorial on error codes)
+</span><span class="c1"></span>    <span class="n">failure2</span>
+  <span class="p">};</span>
   <span class="n">result</span><span class="o">&lt;</span><span class="n">udt</span><span class="p">,</span> <span class="n">err</span><span class="o">&gt;</span> <span class="n">res</span><span class="p">(</span><span class="n">err</span><span class="o">::</span><span class="n">failure1</span><span class="p">);</span>
 
   <span class="c1">// What happens here? What exception type is thrown?

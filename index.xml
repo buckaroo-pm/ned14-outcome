@@ -185,7 +185,7 @@ Hence a very common thing you&amp;rsquo;ll need to do is static cast to a more d
       
       <guid>https://ned14.github.io/outcome/tutorial/default-actions/enums/</guid>
       <description>Let&amp;rsquo;s replace err with something likely in many people&amp;rsquo;s code, a strongly typed enum:
-struct udt { int a{0}; explicit udt(int _a) : a(_a) { } udt() = default; int operator*() const { return a; } }; enum class err { success, // REMEMBER it is best practice to always put &amp;#34;success&amp;#34;  failure1, // with value 0 as your first item in any error code  failure2 // enum, even if you never use it.</description>
+struct udt { int a{0}; explicit udt(int _a) : a(_a) { } udt() = default; int operator*() const { return a; } }; enum class err { success, // 0 should not represent an error  failure1, // (for rationale, see tutorial on error codes)  failure2 }; result&amp;lt;udt, err&amp;gt; res(err::failure1); // What happens here? What exception type is thrown?</description>
     </item>
     
     <item>

@@ -593,8 +593,9 @@ The list is:</p>
 <span class="c1">// This is the custom error code enum
 </span><span class="c1"></span><span class="k">enum</span> <span class="k">class</span> <span class="nc">ConversionErrc</span>
 <span class="p">{</span>
-  <span class="n">EmptyString</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">// 0 is never an error
-</span><span class="c1"></span>  <span class="n">IllegalChar</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="n">Success</span>     <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">// 0 should not represent an error
+</span><span class="c1"></span>  <span class="n">EmptyString</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="n">IllegalChar</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
   <span class="n">TooLong</span>     <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
 <span class="p">};</span>
 
@@ -620,6 +621,8 @@ The list is:</p>
     <span class="p">{</span>
       <span class="k">switch</span> <span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">ConversionErrc</span><span class="o">&gt;</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
       <span class="p">{</span>
+      <span class="k">case</span> <span class="n">ConversionErrc</span><span class="o">::</span><span class="nl">Success</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa"></span><span class="s">&#34;conversion successful&#34;</span><span class="p">;</span>
       <span class="k">case</span> <span class="n">ConversionErrc</span><span class="o">::</span><span class="nl">EmptyString</span><span class="p">:</span>
         <span class="k">return</span> <span class="sa"></span><span class="s">&#34;converting empty string&#34;</span><span class="p">;</span>
       <span class="k">case</span> <span class="n">ConversionErrc</span><span class="o">::</span><span class="nl">IllegalChar</span><span class="p">:</span>
@@ -706,6 +709,18 @@ exclusively written to understand <code>std::errc</code> alone to examine your c
 code domain for equivalence to the standard error conditions, AND without being
 recompiled.</li>
 </ol>
+
+<p><div class="notices note" ><p>This documentation recommends that when you define your custom <code>enum</code> for representing
+<code>error_code</code>s, you should always make sure that value 0 never represents an actual error:
+it should either represent a success or should not be provided at all. If you only
+intend to use your <code>enum</code> inside <code>result&lt;&gt;</code> or <code>outcome&lt;&gt;</code> you can just start your
+enumerations from 1. If you intend to also return <code>std::error_code</code> directly from
+functions, you should probably define value 0 as success, so that you are able to
+inform about function&rsquo;s success by returning <code>MyEnum::Success</code>. This is because <code>error_code</code>&rsquo;s
+contextual conversion to <code>bool</code> (which some people use to check if there was an error or not)
+only checks for the numeric value of the error code (without looking at error domain (category)).</p>
+</div>
+</p>
 
 <p>[1]: The only documentation I&rsquo;m aware of is the quite old guide by Chris Kohlhoff, founder of
 ASIO and the Networking TS:</p>
