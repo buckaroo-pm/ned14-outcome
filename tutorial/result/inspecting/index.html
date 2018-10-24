@@ -73,6 +73,18 @@
         <span>Decision matrix</span>
       </a>
     </li>
+    <li data-nav-id="/outcome/motivation/" class="dd-item">
+      <a href="/outcome/motivation/">
+        <span>Motivation</span><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </a>
+        <ul>
+      <li data-nav-id="/outcome/motivation/exceptions/" class="dd-item">
+        <a href="/outcome/motivation/exceptions/">
+          <span>Exceptions</span>
+        </a>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/outcome/tutorial/" class="dd-item parent">
       <a href="/outcome/tutorial/">
         <span>Tutorial</span>
@@ -610,7 +622,7 @@
   <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">error</span><span class="p">()</span> <span class="o">==</span> <span class="n">ConversionErrc</span><span class="o">::</span><span class="n">TooLong</span><span class="p">)</span>     <span class="c1">// #3
 </span><span class="c1"></span>    <span class="p">{</span>
-      <span class="n">OUTCOME_TRY</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">BigInt</span><span class="o">::</span><span class="n">fromString</span><span class="p">(</span><span class="n">text</span><span class="p">)));</span><span class="c1">// #4
+      <span class="n">OUTCOME_TRY</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">BigInt</span><span class="o">::</span><span class="n">fromString</span><span class="p">(</span><span class="n">text</span><span class="p">));</span>  <span class="c1">// #4
 </span><span class="c1"></span>      <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span><span class="p">.</span><span class="n">half</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">else</span>

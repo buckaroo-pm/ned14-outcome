@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.32.4" />
-    <meta name="description" content="Gentle introduction to writing code with simple success-or-failure return types.">
+    <meta name="description" content="Exceptions with their good and bad sides.">
 
 
-    <title>result&lt;T, EC&gt; :: Outcome documentation</title>
+    <title>Exceptions :: Outcome documentation</title>
     <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
     <link href="/outcome/css/nucleus.css" rel="stylesheet">
     <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
     <link href="/outcome/css/local.css" rel="stylesheet">
 
   </head>
-  <body class="" data-url="/outcome/tutorial/result/">
+  <body class="" data-url="/outcome/motivation/exceptions/">
     <nav id="sidebar" class=""><div class="highlightable">
   <div id="header-wrapper">
     <div id="header"> 
@@ -73,28 +73,27 @@
         <span>Decision matrix</span>
       </a>
     </li>
-    <li data-nav-id="/outcome/motivation/" class="dd-item">
+    <li data-nav-id="/outcome/motivation/" class="dd-item parent">
       <a href="/outcome/motivation/">
-        <span>Motivation</span><i class="fa fa-angle-right fa-lg category-icon"></i>
+        <span>Motivation</span>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </a>
         <ul>
-      <li data-nav-id="/outcome/motivation/exceptions/" class="dd-item">
+      <li data-nav-id="/outcome/motivation/exceptions/" class="dd-item active">
         <a href="/outcome/motivation/exceptions/">
           <span>Exceptions</span>
         </a>
     </li>
         </ul>
     </li>
-    <li data-nav-id="/outcome/tutorial/" class="dd-item parent">
+    <li data-nav-id="/outcome/tutorial/" class="dd-item">
       <a href="/outcome/tutorial/">
-        <span>Tutorial</span>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+        <span>Tutorial</span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
-    <li data-nav-id="/outcome/tutorial/result/" class="dd-item parent active">
+    <li data-nav-id="/outcome/tutorial/result/" class="dd-item">
       <a href="/outcome/tutorial/result/">
-        <span>result&lt;T, EC&gt;</span>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+        <span>result&lt;T, EC&gt;</span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
       <li data-nav-id="/outcome/tutorial/result/inspecting/" class="dd-item">
@@ -537,7 +536,7 @@
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/ned14/outcome/edit/develop/doc/src/content/tutorial/result/_index.md" target="blank">
+              <a class="github-link" href="https://github.com/ned14/outcome/edit/develop/doc/src/content/motivation/exceptions.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 Edit page
               </a>
@@ -557,7 +556,7 @@
 
 
 
- <a href='/outcome/'>Home</a> > <a href='/outcome/tutorial/'>Tutorial</a> > result<T, EC>
+ <a href='/outcome/'>Home</a> > <a href='/outcome/motivation/'>Motivation</a> > Exceptions
 
  
 
@@ -572,8 +571,7 @@
 <ul>
 <li>
 <ul>
-<li><a href="#outcome-2-0-namespace">Outcome 2.0 namespace</a></li>
-<li><a href="#creating-result">Creating <code>result&lt;&gt;</code></a></li>
+<li><a href="#exceptions">Exceptions</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -583,19 +581,9 @@
           </div>
         
         
-          <div id="tags">
-            
-              <a class="label label-default" href="https://ned14.github.io/outcome//tags/result">result</a>
-            
-              <a class="label label-default" href="https://ned14.github.io/outcome//tags/try">try</a>
-            
-              <a class="label label-default" href="https://ned14.github.io/outcome//tags/namespace">namespace</a>
-            
-          </div>
-        
         <div id="body-inner">
           
-            <h1>result&lt;T, EC&gt;</h1>
+            <h1>Exceptions</h1>
           
 
 
@@ -603,99 +591,32 @@
 
 
 
-<h2 id="outcome-2-0-namespace">Outcome 2.0 namespace</h2>
+<h2 id="exceptions">Exceptions</h2>
 
-<p>It is recommended that you refer to entities from this Outcome 2.0 via the following namespace alias:</p>
-
-<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
-<span class="k">namespace</span> <span class="n">outcome</span> <span class="o">=</span> <span class="n">OUTCOME_V2_NAMESPACE</span><span class="p">;</span>
-</code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/using_result.cpp#L8" class="code-snippet-url" target="_blank">View this code on Github</a></div>
-
-
-<p>As patches and modifications are applied to this library, namespaces get permuted in order
-not to break any backward compatibility. At some point namespace <code>outcome::v2</code> will be defined,
-and this will be the prefered namespace. Until then <code>OUTCOME_V2_NAMESPACE</code> denotes the most recently
-updated version, getting closer to <code>outcome::v2</code>.</p>
-
-<h2 id="creating-result">Creating <code>result&lt;&gt;</code></h2>
-
-<p>We will define a function that converts an <code>std::string</code> to an <code>int</code>. This function can fail for a number of reasons;
-if it does we want to communicate the failure reason.</p>
-
-<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
-<span class="n">outcome</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">convert</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
-</code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/using_result.cpp#L12" class="code-snippet-url" target="_blank">View this code on Github</a></div>
-
-
-<p>Class template <a href="https://ned14.github.io/outcome/reference/result/#standardese-outcome_v2_xxx__result-R-S-NoValuePolicy-" class="api-reference"><i class="fa fa-book" aria-hidden="true"></i> result&lt;T, EC&gt;</a>
- has two template parameters. The first (<code>T</code>) represents the type of the object
-returned from the function upon success; the second (<code>EC</code>) is the type of object containing information about the reason
-for failure when the function fails. A <code>result&lt;T, EC&gt;</code> object either stores a <code>T</code> or an <code>EC</code> at any given moment,
-and is therefore conceptually similar to <code>variant&lt;T, EC&gt;</code>. <code>EC</code> is defaulted to <code>std::error_code</code>.
-If both <code>T</code> and <code>EC</code> are trivially copyable, <code>result&lt;T, EC&gt;</code> is also trivially copyable.</p>
-
-<p>Now, we will define an enumeration describing different failure situations during conversion.</p>
-
-<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
-<span class="k">enum</span> <span class="k">class</span> <span class="nc">ConversionErrc</span>
+<p>Exceptions are the default mechanism in C++ for reporting, propagating and
+processing the information about function failures. Their main advantage is
+the ability to describe the &ldquo;success dependency&rdquo; between functions: if you want to
+say that calling function <code>g()</code> depends on the successful execution of function <code>f()</code>,
+you just put <code>g()</code> below <code>f()</code> and that&rsquo;s it:</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">a</span><span class="p">()</span>
 <span class="p">{</span>
-  <span class="n">Success</span>     <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">// 0 should not represent an error
-</span><span class="c1"></span>  <span class="n">EmptyString</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">// (for rationale, see tutorial on error codes)
-</span><span class="c1"></span>  <span class="n">IllegalChar</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
-  <span class="n">TooLong</span>     <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
-<span class="p">};</span>
+  <span class="n">f</span><span class="p">();</span>
+  <span class="n">g</span><span class="p">();</span>        <span class="c1">// don&#39;t call g() and further if f() fails
+</span><span class="c1"></span>  <span class="k">return</span> <span class="n">h</span><span class="p">();</span> <span class="c1">// don&#39;t call h() if g() fails
+</span><span class="c1"></span><span class="p">}</span></code></pre></div>
+<p>In the Standard C++ terms this means that <code>f()</code> is <em>sequenced before</em> <code>g()</code>.
+This makes failure handling extremely easy: in a lot of cases you do not have
+to do anything.</p>
 
-<span class="c1">// all boilerplate necessary to plug ConversionErrc
-</span><span class="c1">// into std::error_code framework
-</span><span class="c1"></span></code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/using_result.cpp#L16" class="code-snippet-url" target="_blank">View this code on Github</a></div>
+<p>But there is also cost to be paid when using exceptions.</p>
 
-
-<p>Assume we have plugged it into <code>std::error_code</code> framework, as described in <a href="../error_code">this section</a>.</p>
-
-<p>One notable effect of such plugging is that <code>ConversionErrc</code> is now convertible to <code>std::error_code</code>.
-Now we can implement function <code>convert</code> as follows:</p>
-
-<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
-<span class="n">outcome</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">convert</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">)</span> <span class="k">noexcept</span>
-<span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">str</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
-    <span class="k">return</span> <span class="n">ConversionErrc</span><span class="o">::</span><span class="n">EmptyString</span><span class="p">;</span>
-
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">std</span><span class="o">::</span><span class="n">all_of</span><span class="p">(</span><span class="n">str</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">str</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="o">::</span><span class="n">isdigit</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">ConversionErrc</span><span class="o">::</span><span class="n">IllegalChar</span><span class="p">;</span>
-
-  <span class="k">if</span> <span class="p">(</span><span class="n">str</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">9</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">ConversionErrc</span><span class="o">::</span><span class="n">TooLong</span><span class="p">;</span>
-
-  <span class="k">return</span> <span class="nf">atoi</span><span class="p">(</span><span class="n">str</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
-<span class="p">}</span>
-</code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/using_result.cpp#L35" class="code-snippet-url" target="_blank">View this code on Github</a></div>
-
-
-<p><code>result&lt;T, EC&gt;</code> is convertible from any <code>T2</code> convertible to <code>T</code> as well as any <code>EC2</code> convertible to <code>EC</code>,
-provided that there is no constructability possible in either direction between <code>T</code> and <code>EC</code>. If there is,
-all implicit conversion is disabled, and you will need to use one of the tagged constructors:</p>
-
-<p><div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
-<span class="n">outcome</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">r</span> <span class="p">{</span><span class="n">outcome</span><span class="o">::</span><span class="n">in_place_type</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">error_code</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">ConversionErrc</span><span class="o">::</span><span class="n">EmptyString</span><span class="p">};</span>
-<span class="n">outcome</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span> <span class="p">{</span><span class="n">outcome</span><span class="o">::</span><span class="n">in_place_type</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="mi">1</span><span class="p">};</span>
-</code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/using_result.cpp#L85" class="code-snippet-url" target="_blank">View this code on Github</a></div>
-</p>
-
-<p>Or use helper factory functions:</p>
-
-<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
-<span class="n">outcome</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">r</span> <span class="o">=</span> <span class="n">outcome</span><span class="o">::</span><span class="n">failure</span><span class="p">(</span><span class="n">ConversionErrc</span><span class="o">::</span><span class="n">EmptyString</span><span class="p">);</span>
-<span class="n">outcome</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">outcome</span><span class="o">::</span><span class="n">success</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-</code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/using_result.cpp#L93" class="code-snippet-url" target="_blank">View this code on Github</a></div>
-
+<p>This tutorial is in the process of being written. Once done we will explain in detail
+why it is sometimes beneficial not to use exceptions to signal failures.</p>
 
 
 <footer class=" footline" >
 	
 </footer>
-
-
 
 
 
@@ -710,8 +631,8 @@ all implicit conversion is disabled, and you will need to use one of the tagged 
     
 
     <div id="navigation">
-        <a class="nav nav-prev" href="/outcome/tutorial/" title="Tutorial"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="/outcome/tutorial/result/inspecting/" title="Inspecting result&lt;T, EC&gt;" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/outcome/motivation/" title="Motivation"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/outcome/tutorial/" title="Tutorial" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>
@@ -736,3 +657,4 @@ all implicit conversion is disabled, and you will need to use one of the tagged 
 
   </body>
 </html>
+

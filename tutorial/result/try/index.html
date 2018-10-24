@@ -73,6 +73,18 @@
         <span>Decision matrix</span>
       </a>
     </li>
+    <li data-nav-id="/outcome/motivation/" class="dd-item">
+      <a href="/outcome/motivation/">
+        <span>Motivation</span><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </a>
+        <ul>
+      <li data-nav-id="/outcome/motivation/exceptions/" class="dd-item">
+        <a href="/outcome/motivation/exceptions/">
+          <span>Exceptions</span>
+        </a>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/outcome/tutorial/" class="dd-item parent">
       <a href="/outcome/tutorial/">
         <span>Tutorial</span>
@@ -584,7 +596,7 @@
 
 <p>In the implementation of function <code>print_half</code> we have seen the usage of the macro <a href="https://ned14.github.io/outcome/reference/try" class="api-reference"><i class="fa fa-book" aria-hidden="true"></i> OUTCOME_TRY</a>
 :</p>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">OUTCOME_TRY</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">BigInt</span><span class="o">::</span><span class="n">fromString</span><span class="p">(</span><span class="n">text</span><span class="p">)));</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">OUTCOME_TRY</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">BigInt</span><span class="o">::</span><span class="n">fromString</span><span class="p">(</span><span class="n">text</span><span class="p">));</span></code></pre></div>
 <p>The <code>OUTCOME_TRY</code> macro uses C macro overloading to select between two implementations based on the number of
 input parameters. If there is exactly one input parameter i.e. without the <code>i,</code>, the control statement is
 roughly equivalent to:</p>

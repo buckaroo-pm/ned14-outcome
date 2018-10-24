@@ -77,6 +77,16 @@ struct blank_policy { //! Performs a narrow check of state, used in the assume_v
     </item>
     
     <item>
+      <title>Exceptions</title>
+      <link>https://ned14.github.io/outcome/motivation/exceptions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/motivation/exceptions/</guid>
+      <description>Exceptions Exceptions are the default mechanism in C++ for reporting, propagating and processing the information about function failures. Their main advantage is the ability to describe the &amp;ldquo;success dependency&amp;rdquo; between functions: if you want to say that calling function g() depends on the successful execution of function f(), you just put g() below f() and that&amp;rsquo;s it:
+int a() { f(); g(); // don&amp;#39;t call g() and further if f() fails  return h(); // don&amp;#39;t call h() if g() fails } In the Standard C++ terms this means that f() is sequenced before g().</description>
+    </item>
+    
+    <item>
       <title>Keeping state</title>
       <link>https://ned14.github.io/outcome/tutorial/hooks/keeping_state/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -362,7 +372,7 @@ namespace app { // Specialise an exception type for httplib errors  struct httpl
       
       <guid>https://ned14.github.io/outcome/tutorial/result/try/</guid>
       <description>In the implementation of function print_half we have seen the usage of the macro  OUTCOME_TRY :
-OUTCOME_TRY (i, (BigInt::fromString(text))); The OUTCOME_TRY macro uses C macro overloading to select between two implementations based on the number of input parameters. If there is exactly one input parameter i.e. without the i,, the control statement is roughly equivalent to:
+OUTCOME_TRY (i, BigInt::fromString(text)); The OUTCOME_TRY macro uses C macro overloading to select between two implementations based on the number of input parameters. If there is exactly one input parameter i.e. without the i,, the control statement is roughly equivalent to:
 auto&amp;amp;&amp;amp; __result = BigInt::fromString(text); if (!__result) return __result.as_failure(); Where __result is a compile time generated unique name.</description>
     </item>
     
@@ -719,7 +729,7 @@ Macro CXX_DECLARE_RESULT_EC
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/credits/</guid>
-      <description>github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @ned14 907 commits   @akrzemi1 20 commits   @menuet 2 commits   @norbertwenzel 1 commits   @vinipsmaker 1 commits   @andoks 1 commits   @catskul 1 commits   @johnthagen 1 commits   @jenkins-nedprod 1 commits   This pretty, modern C++ documentation  Hugo - static website generator of this documentation.</description>
+      <description>github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }  This pretty, modern C++ documentation  Hugo - static website generator of this documentation. hugo-theme-docdock - the Hugo theme used by this documentation. Standardese - the API reference generator  Special thanks for Outcome v2 For a second time, Charley Bay stepped up as review manager.</description>
     </item>
     
   </channel>
