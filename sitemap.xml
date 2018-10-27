@@ -119,6 +119,10 @@
   </url>
   
   <url>
+    <loc>https://ned14.github.io/outcome/motivation/errno/</loc>
+  </url>
+  
+  <url>
     <loc>https://ned14.github.io/outcome/reference/policies/outcome_error_code_throw_as_system_error/</loc>
   </url>
   
@@ -156,6 +160,10 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/payload/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ned14.github.io/outcome/motivation/error_codes/</loc>
   </url>
   
   <url>
@@ -228,6 +236,10 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/policies/outcome_exception_ptr_rethrow/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ned14.github.io/outcome/motivation/std_error_code/</loc>
   </url>
   
   <url>
@@ -327,7 +339,7 @@
   </url>
   
   <url>
-    <loc>https://ned14.github.io/outcome/tutorial/error_code/</loc>
+    <loc>https://ned14.github.io/outcome/motivation/plug_error_code/</loc>
   </url>
   
   <url>

@@ -7,7 +7,7 @@
     <meta name="description" content="Gentle introduction to writing code with simple success-or-failure return types.">
 
 
-    <title>result&lt;T, EC&gt; :: Outcome documentation</title>
+    <title>result&lt;&gt; :: Outcome documentation</title>
     <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
     <link href="/outcome/css/nucleus.css" rel="stylesheet">
     <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -83,6 +83,26 @@
           <span>Exceptions</span>
         </a>
     </li>
+      <li data-nav-id="/outcome/motivation/errno/" class="dd-item">
+        <a href="/outcome/motivation/errno/">
+          <span>errno</span>
+        </a>
+    </li>
+      <li data-nav-id="/outcome/motivation/error_codes/" class="dd-item">
+        <a href="/outcome/motivation/error_codes/">
+          <span>Error codes</span>
+        </a>
+    </li>
+      <li data-nav-id="/outcome/motivation/std_error_code/" class="dd-item">
+        <a href="/outcome/motivation/std_error_code/">
+          <span>std::error_code</span>
+        </a>
+    </li>
+      <li data-nav-id="/outcome/motivation/plug_error_code/" class="dd-item">
+        <a href="/outcome/motivation/plug_error_code/">
+          <span>Plugging a library into std::error_code</span>
+        </a>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/outcome/tutorial/" class="dd-item parent">
@@ -93,7 +113,7 @@
         <ul>
     <li data-nav-id="/outcome/tutorial/result/" class="dd-item parent active">
       <a href="/outcome/tutorial/result/">
-        <span>result&lt;T, EC&gt;</span>
+        <span>result&lt;&gt;</span>
             <i class="fa fa-angle-down fa-lg category-icon"></i>
       </a>
         <ul>
@@ -111,7 +131,7 @@
     </li>
     <li data-nav-id="/outcome/tutorial/outcome/" class="dd-item">
       <a href="/outcome/tutorial/outcome/">
-        <span>outcome&lt;T, EC, EP&gt;</span><i class="fa fa-angle-right fa-lg category-icon"></i>
+        <span>outcome&lt;&gt;</span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
       <li data-nav-id="/outcome/tutorial/outcome/inspecting/" class="dd-item">
@@ -380,11 +400,6 @@
     </li>
         </ul>
     </li>
-      <li data-nav-id="/outcome/tutorial/error_code/" class="dd-item">
-        <a href="/outcome/tutorial/error_code/">
-          <span>Custom error codes</span>
-        </a>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/outcome/reference/" class="dd-item">
@@ -557,7 +572,7 @@
 
 
 
- <a href='/outcome/'>Home</a> > <a href='/outcome/tutorial/'>Tutorial</a> > result<T, EC>
+ <a href='/outcome/'>Home</a> > <a href='/outcome/tutorial/'>Tutorial</a> > result<>
 
  
 
@@ -595,7 +610,7 @@
         
         <div id="body-inner">
           
-            <h1>result&lt;T, EC&gt;</h1>
+            <h1>result&lt;&gt;</h1>
           
 
 
@@ -627,12 +642,16 @@ if it does we want to communicate the failure reason.</p>
 </code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/using_result.cpp#L12" class="code-snippet-url" target="_blank">View this code on Github</a></div>
 
 
-<p>Class template <a href="https://ned14.github.io/outcome/reference/result/#standardese-outcome_v2_xxx__result-R-S-NoValuePolicy-" class="api-reference"><i class="fa fa-book" aria-hidden="true"></i> result&lt;T, EC&gt;</a>
- has two template parameters. The first (<code>T</code>) represents the type of the object
-returned from the function upon success; the second (<code>EC</code>) is the type of object containing information about the reason
-for failure when the function fails. A <code>result&lt;T, EC&gt;</code> object either stores a <code>T</code> or an <code>EC</code> at any given moment,
-and is therefore conceptually similar to <code>variant&lt;T, EC&gt;</code>. <code>EC</code> is defaulted to <code>std::error_code</code>.
-If both <code>T</code> and <code>EC</code> are trivially copyable, <code>result&lt;T, EC&gt;</code> is also trivially copyable.</p>
+<p>Class template <a href="https://ned14.github.io/outcome/reference/result/#standardese-outcome_v2_xxx__result-R-S-NoValuePolicy-" class="api-reference"><i class="fa fa-book" aria-hidden="true"></i> result&lt;T, EC, NVP&gt;</a>
+
+has three template parameters, but the last two have default values. The first
+(<code>T</code>) represents the type of the object returned from the function upon success.
+The second (<code>EC</code>) is the type of object containing information about the reason
+for failure when the function fails. A result object stores either a <code>T</code> or an
+<code>EC</code> at any given moment, and is therefore conceptually similar to <code>variant&lt;T, EC&gt;</code>. <code>EC</code> is defaulted to <code>std::error_code</code>. The third parameter (<code>NVP</code>) is called a
+no-value policy. We will cover it later.</p>
+
+<p>If both <code>T</code> and <code>EC</code> are trivially copyable, <code>result&lt;T, EC, NVP&gt;</code> is also trivially copyable.</p>
 
 <p>Now, we will define an enumeration describing different failure situations during conversion.</p>
 
@@ -650,7 +669,7 @@ If both <code>T</code> and <code>EC</code> are trivially copyable, <code>result&
 </span><span class="c1"></span></code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/using_result.cpp#L16" class="code-snippet-url" target="_blank">View this code on Github</a></div>
 
 
-<p>Assume we have plugged it into <code>std::error_code</code> framework, as described in <a href="../error_code">this section</a>.</p>
+<p>Assume we have plugged it into <code>std::error_code</code> framework, as described in <a href="../../motivation/plug_error_code">this section</a>.</p>
 
 <p>One notable effect of such plugging is that <code>ConversionErrc</code> is now convertible to <code>std::error_code</code>.
 Now we can implement function <code>convert</code> as follows:</p>

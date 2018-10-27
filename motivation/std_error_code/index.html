@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.32.4" />
-    <meta name="description" content="">
+    <meta name="description" content="Overview of std::error_code">
 
 
-    <title>Incommensurate E types :: Outcome documentation</title>
+    <title>std::error_code :: Outcome documentation</title>
     <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
     <link href="/outcome/css/nucleus.css" rel="stylesheet">
     <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
     <link href="/outcome/css/local.css" rel="stylesheet">
 
   </head>
-  <body class="" data-url="/outcome/tutorial/interop/problem/">
+  <body class="" data-url="/outcome/motivation/std_error_code/">
     <nav id="sidebar" class=""><div class="highlightable">
   <div id="header-wrapper">
     <div id="header"> 
@@ -73,9 +73,10 @@
         <span>Decision matrix</span>
       </a>
     </li>
-    <li data-nav-id="/outcome/motivation/" class="dd-item">
+    <li data-nav-id="/outcome/motivation/" class="dd-item parent">
       <a href="/outcome/motivation/">
-        <span>Motivation</span><i class="fa fa-angle-right fa-lg category-icon"></i>
+        <span>Motivation</span>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </a>
         <ul>
       <li data-nav-id="/outcome/motivation/exceptions/" class="dd-item">
@@ -93,7 +94,7 @@
           <span>Error codes</span>
         </a>
     </li>
-      <li data-nav-id="/outcome/motivation/std_error_code/" class="dd-item">
+      <li data-nav-id="/outcome/motivation/std_error_code/" class="dd-item active">
         <a href="/outcome/motivation/std_error_code/">
           <span>std::error_code</span>
         </a>
@@ -105,10 +106,9 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/outcome/tutorial/" class="dd-item parent">
+    <li data-nav-id="/outcome/tutorial/" class="dd-item">
       <a href="/outcome/tutorial/">
-        <span>Tutorial</span>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+        <span>Tutorial</span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
     <li data-nav-id="/outcome/tutorial/result/" class="dd-item">
@@ -332,13 +332,12 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/outcome/tutorial/interop/" class="dd-item parent">
+    <li data-nav-id="/outcome/tutorial/interop/" class="dd-item">
       <a href="/outcome/tutorial/interop/">
-        <span>Interoperation</span>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+        <span>Interoperation</span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
-      <li data-nav-id="/outcome/tutorial/interop/problem/" class="dd-item active">
+      <li data-nav-id="/outcome/tutorial/interop/problem/" class="dd-item">
         <a href="/outcome/tutorial/interop/problem/">
           <span>Incommensurate E types</span>
         </a>
@@ -552,7 +551,7 @@
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/ned14/outcome/edit/develop/doc/src/content/tutorial/interop/problem.md" target="blank">
+              <a class="github-link" href="https://github.com/ned14/outcome/edit/develop/doc/src/content/motivation/std_error_code.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 Edit page
               </a>
@@ -572,12 +571,7 @@
 
 
 
-
-
-
- <a href='/outcome/'>Home</a> > <a href='/outcome/tutorial/'>Tutorial</a> > <a href='/outcome/tutorial/interop/'>Interoperation</a> > Incommensurate E types
-
- 
+ <a href='/outcome/'>Home</a> > <a href='/outcome/motivation/'>Motivation</a> > std::error_code
 
  
 
@@ -588,7 +582,14 @@
             </div>
             <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#std-error-code"><code>std::error_code</code></a></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -597,72 +598,61 @@
         
         <div id="body-inner">
           
-            <h1>Incommensurate E types</h1>
+            <h1>std::error_code</h1>
           
 
 
 
 
-<p>Back in the tutorial section on Default Actions, we studied a likely very common
-initial choice of <code>E</code> type: <a href="../../default-actions/enums">a strongly typed enum</a>.
-We saw how by marking up strongly typed enums to tell the C++ standard library
-what they are, they gain implicit convertibility into <code>std::error_code</code>, and we
-then pointed out that you might as well now set <code>E = std::error_code</code> as that
-comes with the enormous advantage that you can use the boilerplate saving
-<code>OUTCOME_TRY</code> macro when the <code>E</code> type is always the same.</p>
 
-<p>We thus strongly recommend to users that for any given piece of code, always
-using the same <code>E</code> type across the codebase is very wise, except where you explicitly want
-to prevent implicit propagation of failure up a call stack e.g. local failures in
-some domain specific piece of code.</p>
 
-<p>However it is unreasonable to expect that any non-trivial codebase can make do
-with <code>E = std::error_code</code>. This is why Outcome allows you to use <a href="../../payload">custom <code>E</code>
-types which carry payload</a> in addition to an error code, yet
-still have the Default Actions of <code>std::error_code</code>, including <a href="../../payload/copy_file3">lazy custom exception
-throw synthesis</a>.</p>
+<h2 id="std-error-code"><code>std::error_code</code></h2>
 
-<p>All this is good, but if library A uses <code>result&lt;T, libraryA::failure_info&gt;</code>,
-and library B uses <code>result&lt;T, libraryB::error_info&gt;</code> and so on, there becomes
-a problem for the application writer who is bringing in these third party
-dependencies and tying them together into an application. As a general rule,
-each third party library author will not have built in explicit interoperation
-support for unknown other third party libraries. The problem therefore lands
-with the application writer.</p>
+<p>Type <code>std::error_code</code> has been designed to be sufficiently small and trivial
+to be cheaply passed around, and at the same time be able to store sufficient
+information to represent any error situation from any library/sub-system in the
+world without a clash. Its representation is basically:</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">error_code</span>
+<span class="p">{</span>
+  <span class="n">error_category</span><span class="o">*</span> <span class="n">domain</span><span class="p">;</span> <span class="c1">// domain from which the error originates
+</span><span class="c1"></span>  <span class="kt">int</span>             <span class="n">value</span><span class="p">;</span>  <span class="c1">// numeric value of error within the domain
+</span><span class="c1"></span><span class="p">};</span></code></pre></div>
+<p>Here, <code>domain</code> indicates the library from which the error originates. It is a
+pointer to a global object representing a given library/domain. Different
+libraries will be represented by different pointers to different globals.
+Each domain is expected to be represented by a global object derived from
+<code>std::error_category</code>. The uniqueness of the domain pointer value is guaranteed
+by the uniqueness of addresses of different global objects.</p>
 
-<p>The application writer has one of three choices:</p>
+<p>Now, <code>value</code> represents a numeric value of a particular error situation within
+the domain. Thus, different domains can use the same numeric value <code>1</code> to
+indicate different error situations, but two <code>std::error_code</code> objects will be
+different because the pointers representing domains will be different.</p>
 
-<ol>
-<li><p>In the application, the form of result used is <code>result&lt;T, std::variant&lt;E1, E2, ...&gt;&gt;</code>
-where <code>E1</code>, <code>E2</code> &hellip; are the failure types for every third party library
-in use in the application. This has the advantage of preserving the original
-information exactly, but comes with a certain amount of use inconvenience
-and maybe excessive coupling between high level layers and implementation detail.</p></li>
+<p><code>std::error_code</code> comes with additional tools: a facility for defining custom
+domains with their set of error codes, and a facility for building predicates
+that allow classifying errors.</p>
 
-<li><p>One can translate/map the third party&rsquo;s failure type into the application&rsquo;s
-failure type at the point of the failure
-exiting the third party library and entering the application. One might do
-this, say, with a C preprocessor macro wrapping every invocation of the third
-party API from the application. This approach may lose the original failure detail,
-or mis-map under certain circumstances if the mapping between the two systems
-is not one-one.</p></li>
+<p>Once created and passed around (either inside a thrown exception or returned from functions by value) there is never a need to change the value of <code>error_code</code>
+object at any level. But at different levels one can use different predicates
+for classifying error situations appropriately to the program layer.</p>
 
-<li><p>One can type erase the third party&rsquo;s failure type into some application
-failure type, which can later be reconstituted if necessary. This is the cleanest
-solution with the least coupling issues and no problems with mis-mapping, but
-it almost certainly requires the use of <code>malloc</code> which the previous two did not.</p></li>
-</ol>
-
-<p>Things get even more complication in the presence of callbacks. If in the
-callback you supply to library A, you call library B, you may need to insert
-switch statement maps or other mechanisms to convert library B&rsquo;s failures into
-something library A can understand, and then somehow extract that out &ndash; preferably
-without loss of original information &ndash; into the application&rsquo;s failure handling
-mechanism if library A subsequently returns failure as well. This implies
-transmitting state by which to track these interrelated pieces of failure data.</p>
-
-<p>Let us see what Outcome can do to help the application writer address some of these
-issues, next.</p>
+<p>When a new library needs to represent its own set of error situations in an
+<code>error_code</code> it first has to declare the list of numeric value as an enumeration:</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">enum</span> <span class="k">class</span> <span class="nc">ConvertErrc</span>
+<span class="p">{</span>
+  <span class="n">StringTooLong</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">// 0 should not represent an error
+</span><span class="c1"></span>  <span class="n">EmptyString</span>   <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="n">IllegalChar</span>   <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+<span class="p">};</span></code></pre></div>
+<p>Then it has to put some boiler-plate code to plug the new enumeration into the
+<code>std::error_code</code> system. Then, it can use the enum as an <code>error_code</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">std</span><span class="o">::</span><span class="n">error_code</span> <span class="n">ec</span> <span class="o">=</span> <span class="n">ConvertErrc</span><span class="o">::</span><span class="n">EmptyString</span><span class="p">;</span>
+<span class="n">assert</span><span class="p">(</span><span class="n">ec</span> <span class="o">==</span> <span class="n">ConvertErrc</span><span class="o">::</span><span class="n">EmptyString</span><span class="p">);</span></code></pre></div>
+<p>Member <code>value</code> is mapped directly from the numeric value in the enumeration, and
+member <code>domain</code> is mapped from the type of the enumeration. Thus, this is a form
+of type erasure, but one that does allow type <code>std::error_code</code> to be trivial
+and standard-layout.</p>
 
 
 <footer class=" footline" >
@@ -682,8 +672,8 @@ issues, next.</p>
     
 
     <div id="navigation">
-        <a class="nav nav-prev" href="/outcome/tutorial/interop/" title="Interoperation"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="/outcome/tutorial/interop/value-or-error/" title="ValueOrError Concept" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/outcome/motivation/error_codes/" title="Error codes"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/outcome/motivation/plug_error_code/" title="Plugging a library into std::error_code" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>

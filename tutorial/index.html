@@ -83,6 +83,26 @@
           <span>Exceptions</span>
         </a>
     </li>
+      <li data-nav-id="/outcome/motivation/errno/" class="dd-item">
+        <a href="/outcome/motivation/errno/">
+          <span>errno</span>
+        </a>
+    </li>
+      <li data-nav-id="/outcome/motivation/error_codes/" class="dd-item">
+        <a href="/outcome/motivation/error_codes/">
+          <span>Error codes</span>
+        </a>
+    </li>
+      <li data-nav-id="/outcome/motivation/std_error_code/" class="dd-item">
+        <a href="/outcome/motivation/std_error_code/">
+          <span>std::error_code</span>
+        </a>
+    </li>
+      <li data-nav-id="/outcome/motivation/plug_error_code/" class="dd-item">
+        <a href="/outcome/motivation/plug_error_code/">
+          <span>Plugging a library into std::error_code</span>
+        </a>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/outcome/tutorial/" class="dd-item parent active">
@@ -93,7 +113,7 @@
         <ul>
     <li data-nav-id="/outcome/tutorial/result/" class="dd-item">
       <a href="/outcome/tutorial/result/">
-        <span>result&lt;T, EC&gt;</span><i class="fa fa-angle-right fa-lg category-icon"></i>
+        <span>result&lt;&gt;</span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
       <li data-nav-id="/outcome/tutorial/result/inspecting/" class="dd-item">
@@ -110,7 +130,7 @@
     </li>
     <li data-nav-id="/outcome/tutorial/outcome/" class="dd-item">
       <a href="/outcome/tutorial/outcome/">
-        <span>outcome&lt;T, EC, EP&gt;</span><i class="fa fa-angle-right fa-lg category-icon"></i>
+        <span>outcome&lt;&gt;</span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
       <li data-nav-id="/outcome/tutorial/outcome/inspecting/" class="dd-item">
@@ -379,11 +399,6 @@
     </li>
         </ul>
     </li>
-      <li data-nav-id="/outcome/tutorial/error_code/" class="dd-item">
-        <a href="/outcome/tutorial/error_code/">
-          <span>Custom error codes</span>
-        </a>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/outcome/reference/" class="dd-item">
@@ -580,13 +595,13 @@
 
 
 <ol class="children children-li"><li>
-	<a href="/outcome/tutorial/result/" >result&lt;T, EC&gt;</a></li>
+	<a href="/outcome/tutorial/result/" >result&lt;&gt;</a></li>
 <p>Gentle introduction to writing code with simple success-or-failure return types.</p>
 <ol><li>
 	<a href="/outcome/tutorial/result/inspecting/" >Inspecting result&lt;T, EC&gt;</a></li><li>
 	<a href="/outcome/tutorial/result/try/" >TRY operations</a></li>
 </ol><li>
-	<a href="/outcome/tutorial/outcome/" >outcome&lt;T, EC, EP&gt;</a></li>
+	<a href="/outcome/tutorial/outcome/" >outcome&lt;&gt;</a></li>
 <p>Success-or-failure return types where failure can take two forms, expected/handled failure and unexpected/abort failure.</p>
 <ol><li>
 	<a href="/outcome/tutorial/outcome/inspecting/" >Inspecting outcome&lt;T, EC, EP&gt;</a></li>
@@ -660,10 +675,6 @@
 	<a href="/outcome/tutorial/interop/app-map-tidylib/" >Mapping the HTMLTidy library into the Application</a></li><li>
 	<a href="/outcome/tutorial/interop/app-go/" >In use</a></li><li>
 	<a href="/outcome/tutorial/interop/conclusion/" >Conclusion</a></li>
-</ol><li>
-	<a href="/outcome/tutorial/error_code/" >Custom error codes</a></li>
-<p>Illustrates how you can hook into the std::error_code system from the Standard Library in order to work with your own set of error codes.</p>
-<ol>
 </ol>
 </ol>
 
@@ -692,8 +703,8 @@
     
 
     <div id="navigation">
-        <a class="nav nav-prev" href="/outcome/motivation/exceptions/" title="Exceptions"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="/outcome/tutorial/result/" title="result&lt;T, EC&gt;" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/outcome/motivation/plug_error_code/" title="Plugging a library into std::error_code"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/outcome/tutorial/result/" title="result&lt;&gt;" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>
