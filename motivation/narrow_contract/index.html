@@ -589,28 +589,22 @@ optionally terminated.</p>
 
 <p>More, compilers can perform optimizations based on undefined behavior caused by
 dereferencing a null pointer. In the following code:</p>
-
-<pre><code>pair&lt;int, int&gt; g(int * pi) // expects: pi != nullptr
-{
-  int i = *pi + 1;
-  int j = pi == nullptr ? 1 : 0;
-  return {i, j};
-}
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span> <span class="n">pi</span><span class="p">)</span> <span class="c1">// expects: pi != nullptr
+</span><span class="c1"></span><span class="p">{</span>
+  <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="o">*</span><span class="n">pi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">pi</span> <span class="o">==</span> <span class="k">nullptr</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">return</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">};</span>
+<span class="p">}</span></code></pre></div>
 <p>The compiler can see that if <code>pi</code> is null, the program would have undefined
 behavior. Since undefined behavior cannot ever be the programmer&rsquo;s intention, the compiler
 assumes that apparently this function is never called with <code>pi == nullptr</code>. If so,
 <code>j</code> is always <code>0</code> and the code can be transformed to a faster one:</p>
-
-<pre><code>pair&lt;int, int&gt; g(int * pi) // expects: pi != nullptr
-{
-  int i = *pi + 1;
-  int j = 0;
-  return {i, j};
-}
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span> <span class="n">pi</span><span class="p">)</span> <span class="c1">// expects: pi != nullptr
+</span><span class="c1"></span><span class="p">{</span>
+  <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="o">*</span><span class="n">pi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">return</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">};</span>
+<span class="p">}</span></code></pre></div>
 <p>Functions like the one above that declare that certain values of input parameters
 must not be passed to them are said to have a <em>narrow contract</em>.</p>
 
@@ -619,15 +613,12 @@ that they can detect it and make use of it the same way as they are detecting
 invalid null pointers. For instance, if a function in your library takes an <code>int</code>
 and declares that the value of this <code>int</code> must never be negative. You can use
 <code>__builtin_trap()</code> available in GCC and clang:</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">void</span> <span class="nf">h</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="c1">// expects: i &gt;= 0
+</span><span class="c1"></span><span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">__builtin_trap</span><span class="p">();</span>
 
-<pre><code>void h(int i) // expects: i &gt;= 0
-{
-  if (i &lt; 0) __builtin_trap();
-
-  // normal program logic follows ...
-}
-</code></pre>
-
+  <span class="c1">// normal program logic follows ...
+</span><span class="c1"></span><span class="p">}</span></code></pre></div>
 <p>This instruction when hit, causes the program to exit abnormally, which means:
 * a debugger can be launched,
 * static analyzer can warn you if it can detect a program flow that reaches this
@@ -636,15 +627,12 @@ and declares that the value of this <code>int</code> must never be negative. You
 
 <p>Another tool you could use is <code>__builtin_unreachable()</code>, also available in GCC
 and clang:</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">void</span> <span class="nf">h</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="c1">// expects: i &gt;= 0
+</span><span class="c1"></span><span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">__builtin_unreachable</span><span class="p">();</span>
 
-<pre><code>void h(int i) // expects: i &gt;= 0
-{
-  if (i &lt; 0) __builtin_unreachable();
-
-  // normal program logic follows ...
-}
-</code></pre>
-
+  <span class="c1">// normal program logic follows ...
+</span><span class="c1"></span><span class="p">}</span></code></pre></div>
 <p>This gives a hint to the tools: the programmer guarantees that the program flow
 will never reach to the point of executing it. In other words, it is undefined
 behavior if control reaches this point. Compiler and other tools can take this

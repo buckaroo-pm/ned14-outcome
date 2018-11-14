@@ -163,7 +163,9 @@ namespace error_code_extended { // Use the error_code type as the ADL bridge for
       
       <guid>https://ned14.github.io/outcome/tutorial/no-value/builtin/</guid>
       <description>These are the predefined policies built into Outcome:
-  all_narrow  If there is an observation of a value/error/exception which is not present, the behavior is undefined. However this is a tool-friendly UB using intrinsics such as __builtin_unreachable() that allows tool to make use of it, e.g., better bug detection or optimizations.  terminate  Observation of a missing value/error/exception causes the call to std::terminate().  error_code_throw_as_system_error&amp;lt;T, EC, EP&amp;gt;  This policy assumes that EC has the interface of std::error_code, and EP has the interface of std::exception_ptr.</description>
+ all_narrow If there is an observation of a value/error/exception which is not present, the behavior is undefined. However this is a tool-friendly UB using intrinsics such as __builtin_unreachable() that allows tool to make use of it, e.g., better bug detection or optimizations.
+ terminate Observation of a missing value/error/exception causes the call to std::terminate().
+ error_code_throw_as_system_error&amp;lt;T, EC, EP&amp;gt; This policy assumes that EC has the interface of std::error_code, and EP has the interface of std::exception_ptr.</description>
     </item>
     
     <item>
