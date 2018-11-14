@@ -19,10 +19,6 @@
   </url>
   
   <url>
-    <loc>https://ned14.github.io/outcome/tutorial/default-actions/udt-err/</loc>
-  </url>
-  
-  <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/value-or-error/</loc>
   </url>
   
@@ -31,15 +27,11 @@
   </url>
   
   <url>
-    <loc>https://ned14.github.io/outcome/tutorial/default-actions/happens1/</loc>
+    <loc>https://ned14.github.io/outcome/tutorial/no-value/custom/</loc>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/policies/all_narrow/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ned14.github.io/outcome/tutorial/policies/anatomy/</loc>
   </url>
   
   <url>
@@ -95,11 +87,7 @@
   </url>
   
   <url>
-    <loc>https://ned14.github.io/outcome/tutorial/policies/cast/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ned14.github.io/outcome/tutorial/default-actions/enums/</loc>
+    <loc>https://ned14.github.io/outcome/tutorial/no-value/builtin/</loc>
   </url>
   
   <url>
@@ -135,7 +123,7 @@
   </url>
   
   <url>
-    <loc>https://ned14.github.io/outcome/tutorial/default-actions/happens2/</loc>
+    <loc>https://ned14.github.io/outcome/tutorial/no-value/</loc>
   </url>
   
   <url>
@@ -143,15 +131,7 @@
   </url>
   
   <url>
-    <loc>https://ned14.github.io/outcome/tutorial/default-actions/happens3/</loc>
-  </url>
-  
-  <url>
     <loc>https://ned14.github.io/outcome/tutorial/payload/copy_file3/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ned14.github.io/outcome/tutorial/policies/builtin/</loc>
   </url>
   
   <url>
@@ -195,10 +175,6 @@
   </url>
   
   <url>
-    <loc>https://ned14.github.io/outcome/tutorial/default-actions/error-codes/</loc>
-  </url>
-  
-  <url>
     <loc>https://ned14.github.io/outcome/reference/policies/result_error_code_throw_as_system_error/</loc>
   </url>
   
@@ -231,19 +207,11 @@
   </url>
   
   <url>
-    <loc>https://ned14.github.io/outcome/tutorial/default-actions/exception-ptr/</loc>
-  </url>
-  
-  <url>
     <loc>https://ned14.github.io/outcome/reference/policies/outcome_exception_ptr_rethrow/</loc>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/motivation/std_error_code/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ned14.github.io/outcome/tutorial/default-actions/</loc>
   </url>
   
   <url>
@@ -267,6 +235,10 @@
   </url>
   
   <url>
+    <loc>https://ned14.github.io/outcome/motivation/plug_error_code/</loc>
+  </url>
+  
+  <url>
     <loc>https://ned14.github.io/outcome/reference/utils/</loc>
   </url>
   
@@ -276,10 +248,6 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/policies/result_exception_ptr_rethrow/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ned14.github.io/outcome/tutorial/default-actions/void/</loc>
   </url>
   
   <url>
@@ -295,15 +263,11 @@
   </url>
   
   <url>
-    <loc>https://ned14.github.io/outcome/tutorial/policies/</loc>
+    <loc>https://ned14.github.io/outcome/motivation/narrow_contract/</loc>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/policies/terminate/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ned14.github.io/outcome/tutorial/default-actions/unchecked/</loc>
   </url>
   
   <url>
@@ -339,10 +303,6 @@
   </url>
   
   <url>
-    <loc>https://ned14.github.io/outcome/motivation/plug_error_code/</loc>
-  </url>
-  
-  <url>
     <loc>https://ned14.github.io/outcome/reference/policies/</loc>
   </url>
   
@@ -360,32 +320,12 @@
   </url>
   
   <url>
-    <loc>https://ned14.github.io/outcome/tags/assume_error/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ned14.github.io/outcome/tags/assume_value/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://ned14.github.io/outcome/tags/backtrace/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ned14.github.io/outcome/tags/bad_result_access/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://ned14.github.io/outcome/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ned14.github.io/outcome/tags/checked/</loc>
     <priority>0</priority>
   </url>
   
@@ -411,11 +351,6 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/exception/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ned14.github.io/outcome/tags/expected/</loc>
     <priority>0</priority>
   </url>
   
@@ -474,22 +409,7 @@
   </url>
   
   <url>
-    <loc>https://ned14.github.io/outcome/tags/terminate/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://ned14.github.io/outcome/tags/try/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ned14.github.io/outcome/tags/unchecked/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ned14.github.io/outcome/tags/undefined-behaviour/</loc>
     <priority>0</priority>
   </url>
   

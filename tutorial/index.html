@@ -103,6 +103,11 @@
           <span>Plugging a library into std::error_code</span>
         </a>
     </li>
+      <li data-nav-id="/outcome/motivation/narrow_contract/" class="dd-item">
+        <a href="/outcome/motivation/narrow_contract/">
+          <span>Narrow contracts</span>
+        </a>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/outcome/tutorial/" class="dd-item parent active">
@@ -140,6 +145,23 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/outcome/tutorial/no-value/" class="dd-item">
+      <a href="/outcome/tutorial/no-value/">
+        <span>No-value policies</span><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </a>
+        <ul>
+      <li data-nav-id="/outcome/tutorial/no-value/custom/" class="dd-item">
+        <a href="/outcome/tutorial/no-value/custom/">
+          <span>A custom no-value policy</span>
+        </a>
+    </li>
+      <li data-nav-id="/outcome/tutorial/no-value/builtin/" class="dd-item">
+        <a href="/outcome/tutorial/no-value/builtin/">
+          <span>Built-in policies</span>
+        </a>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/outcome/tutorial/payload/" class="dd-item">
       <a href="/outcome/tutorial/payload/">
         <span>Custom payloads</span><i class="fa fa-angle-right fa-lg category-icon"></i>
@@ -158,58 +180,6 @@
       <li data-nav-id="/outcome/tutorial/payload/copy_file3/" class="dd-item">
         <a href="/outcome/tutorial/payload/copy_file3/">
           <span>Auto-throwing filesystem_error</span>
-        </a>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/outcome/tutorial/default-actions/" class="dd-item">
-      <a href="/outcome/tutorial/default-actions/">
-        <span>Default actions</span><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </a>
-        <ul>
-      <li data-nav-id="/outcome/tutorial/default-actions/udt-err/" class="dd-item">
-        <a href="/outcome/tutorial/default-actions/udt-err/">
-          <span>User defined error types</span>
-        </a>
-    </li>
-      <li data-nav-id="/outcome/tutorial/default-actions/happens1/" class="dd-item">
-        <a href="/outcome/tutorial/default-actions/happens1/">
-          <span>-- What happens?</span>
-        </a>
-    </li>
-      <li data-nav-id="/outcome/tutorial/default-actions/enums/" class="dd-item">
-        <a href="/outcome/tutorial/default-actions/enums/">
-          <span>Error code enums</span>
-        </a>
-    </li>
-      <li data-nav-id="/outcome/tutorial/default-actions/happens2/" class="dd-item">
-        <a href="/outcome/tutorial/default-actions/happens2/">
-          <span>-- What happens?</span>
-        </a>
-    </li>
-      <li data-nav-id="/outcome/tutorial/default-actions/happens3/" class="dd-item">
-        <a href="/outcome/tutorial/default-actions/happens3/">
-          <span>-- Now what happens?</span>
-        </a>
-    </li>
-      <li data-nav-id="/outcome/tutorial/default-actions/error-codes/" class="dd-item">
-        <a href="/outcome/tutorial/default-actions/error-codes/">
-          <span>error_code</span>
-        </a>
-    </li>
-      <li data-nav-id="/outcome/tutorial/default-actions/exception-ptr/" class="dd-item">
-        <a href="/outcome/tutorial/default-actions/exception-ptr/">
-          <span>exception_ptr</span>
-        </a>
-    </li>
-      <li data-nav-id="/outcome/tutorial/default-actions/void/" class="dd-item">
-        <a href="/outcome/tutorial/default-actions/void/">
-          <span>void</span>
-        </a>
-    </li>
-      <li data-nav-id="/outcome/tutorial/default-actions/unchecked/" class="dd-item">
-        <a href="/outcome/tutorial/default-actions/unchecked/">
-          <span>unchecked&lt;T, E&gt; and checked&lt;T, E&gt;</span>
         </a>
     </li>
         </ul>
@@ -279,28 +249,6 @@
       <li data-nav-id="/outcome/tutorial/hooks/hook_outcome/" class="dd-item">
         <a href="/outcome/tutorial/hooks/hook_outcome/">
           <span>Hook outcome</span>
-        </a>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/outcome/tutorial/policies/" class="dd-item">
-      <a href="/outcome/tutorial/policies/">
-        <span>Policies</span><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </a>
-        <ul>
-      <li data-nav-id="/outcome/tutorial/policies/anatomy/" class="dd-item">
-        <a href="/outcome/tutorial/policies/anatomy/">
-          <span>Anatomy of a policy</span>
-        </a>
-    </li>
-      <li data-nav-id="/outcome/tutorial/policies/cast/" class="dd-item">
-        <a href="/outcome/tutorial/policies/cast/">
-          <span>Casting workaround</span>
-        </a>
-    </li>
-      <li data-nav-id="/outcome/tutorial/policies/builtin/" class="dd-item">
-        <a href="/outcome/tutorial/policies/builtin/">
-          <span>Built-in policies</span>
         </a>
     </li>
         </ul>
@@ -606,25 +554,18 @@
 <ol><li>
 	<a href="/outcome/tutorial/outcome/inspecting/" >Inspecting outcome&lt;T, EC, EP&gt;</a></li>
 </ol><li>
+	<a href="/outcome/tutorial/no-value/" >No-value policies</a></li>
+<p>Describes the concept of NoValuePolicy and how to use no-value policies.</p>
+<ol><li>
+	<a href="/outcome/tutorial/no-value/custom/" >A custom no-value policy</a></li><li>
+	<a href="/outcome/tutorial/no-value/builtin/" >Built-in policies</a></li>
+</ol><li>
 	<a href="/outcome/tutorial/payload/" >Custom payloads</a></li>
 <p>Success-or-failure return types where extra information in addition to the error code accompanies failure.</p>
 <ol><li>
 	<a href="/outcome/tutorial/payload/copy_file/" >The Filesystem TS</a></li><li>
 	<a href="/outcome/tutorial/payload/copy_file2/" >Upgrading the Filesystem TS</a></li><li>
 	<a href="/outcome/tutorial/payload/copy_file3/" >Auto-throwing filesystem_error</a></li>
-</ol><li>
-	<a href="/outcome/tutorial/default-actions/" >Default actions</a></li>
-<p>The default rules for handling different categories of failure type</p>
-<ol><li>
-	<a href="/outcome/tutorial/default-actions/udt-err/" >User defined error types</a></li><li>
-	<a href="/outcome/tutorial/default-actions/happens1/" >-- What happens?</a></li><li>
-	<a href="/outcome/tutorial/default-actions/enums/" >Error code enums</a></li><li>
-	<a href="/outcome/tutorial/default-actions/happens2/" >-- What happens?</a></li><li>
-	<a href="/outcome/tutorial/default-actions/happens3/" >-- Now what happens?</a></li><li>
-	<a href="/outcome/tutorial/default-actions/error-codes/" >error_code</a></li><li>
-	<a href="/outcome/tutorial/default-actions/exception-ptr/" >exception_ptr</a></li><li>
-	<a href="/outcome/tutorial/default-actions/void/" >void</a></li><li>
-	<a href="/outcome/tutorial/default-actions/unchecked/" >unchecked&lt;T, E&gt; and checked&lt;T, E&gt;</a></li>
 </ol><li>
 	<a href="/outcome/tutorial/constructors/" >Result returning constructors</a></li>
 <p>How to metaprogram construction of objects which use result&lt;T, EC&gt; to return failure instead of throwing a C&#43;&#43; exception.</p>
@@ -644,13 +585,6 @@
 	<a href="/outcome/tutorial/hooks/hook_result/" >Hook result</a></li><li>
 	<a href="/outcome/tutorial/hooks/poke_exception/" >Custom exception ptr</a></li><li>
 	<a href="/outcome/tutorial/hooks/hook_outcome/" >Hook outcome</a></li>
-</ol><li>
-	<a href="/outcome/tutorial/policies/" >Policies</a></li>
-<p>Defining your own NoValuePolicy policies, plus an overview of the precanned policies which come in the Outcome source code.</p>
-<ol><li>
-	<a href="/outcome/tutorial/policies/anatomy/" >Anatomy of a policy</a></li><li>
-	<a href="/outcome/tutorial/policies/cast/" >Casting workaround</a></li><li>
-	<a href="/outcome/tutorial/policies/builtin/" >Built-in policies</a></li>
 </ol><li>
 	<a href="/outcome/tutorial/c-api/" >Using result&lt;T&gt; from C code</a></li>
 <p>Interacting with result&lt;T, EC&gt; returning C&#43;&#43; functions from C code.</p>
@@ -703,7 +637,7 @@
     
 
     <div id="navigation">
-        <a class="nav nav-prev" href="/outcome/motivation/plug_error_code/" title="Plugging a library into std::error_code"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-prev" href="/outcome/motivation/narrow_contract/" title="Narrow contracts"> <i class="fa fa-chevron-left"></i></a>
         <a class="nav nav-next" href="/outcome/tutorial/result/" title="result&lt;&gt;" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
