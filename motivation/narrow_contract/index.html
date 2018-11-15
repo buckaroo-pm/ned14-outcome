@@ -573,13 +573,10 @@ outside world.</p>
 analysis or at run-time when observing certain values of objects that are declared
 never to be valid at certain points. One classical example is passing a null pointer
 to functions that expect a pointer to a valid object:</p>
-
-<pre><code>int f(int * pi) // expects: pi != nullptr
-{
-  return *pi + 1;
-}
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span> <span class="n">pi</span><span class="p">)</span> <span class="c1">// expects: pi != nullptr
+</span><span class="c1"></span><span class="p">{</span>
+  <span class="k">return</span> <span class="o">*</span><span class="n">pi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
 <p>Passing a null pointer where it is not expected is so common a bug that tools
 are very good at finding them. For instance, static analyzers will usually detect
 it without even executing your code. Similarly, tools like undefined behavior
