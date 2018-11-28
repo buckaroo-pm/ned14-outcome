@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-11-28T22:15:35 GMT">
+<meta name="revised" content="2018-11-28T22:22:40 UTC">
 <title>In use :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -710,7 +710,7 @@
 </span><span class="c1"></span>    <span class="c1">// that into a httplib_error exception type which is stored as an exception ptr. The
 </span><span class="c1"></span>    <span class="c1">// TRY operation below will return that exception ptr to be rethrown in the caller.
 </span><span class="c1"></span>    <span class="c1">// Otherwise the fetched data is returned in a std::string data.
-</span><span class="c1"></span>    <span class="n">OUTCOME_TRY</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="n">outcome</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="n">httplib</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="s">&#34;http://www.nedproductions.biz/&#34;</span><span class="p">))));</span>
+</span><span class="c1"></span>    <span class="n">OUTCOME_TRY</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="n">outcome</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="n">httplib</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;http://www.nedproductions.biz/&#34;</span><span class="p">))));</span>
     <span class="n">string_view</span> <span class="nf">data_view</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
 
     <span class="c1">// HTML tidy the fetched data. If the C library fails due to an error corresponding to

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-11-28T22:15:35 GMT">
+<meta name="revised" content="2018-11-28T22:22:40 UTC">
 <title>Mapping the HTMLTidy library into the Application :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -717,7 +717,7 @@ for the C <code>tidy_html()</code> function which is more C++ friendly.</p>
 </span><span class="c1"></span>  <span class="c1">// returing a unique_ptr to release storage on scope exit.
 </span><span class="c1"></span>  <span class="k">struct</span> <span class="n">call_free</span>
   <span class="p">{</span>
-    <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span><span class="err"> </span><span class="nc">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="k">operator</span><span class="p">()(</span><span class="n">T</span> <span class="o">*</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span> <span class="o">::</span><span class="n">free</span><span class="p">(</span><span class="n">p</span><span class="p">);</span> <span class="p">}</span>
+    <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="k">operator</span><span class="p">()(</span><span class="n">T</span> <span class="o">*</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span> <span class="o">::</span><span class="n">free</span><span class="p">(</span><span class="n">p</span><span class="p">);</span> <span class="p">}</span>
   <span class="p">};</span>
   <span class="kr">inline</span> <span class="n">outcome</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">char</span><span class="p">,</span> <span class="n">call_free</span><span class="o">&gt;&gt;</span> <span class="n">tidy_html</span><span class="p">(</span><span class="n">string_view</span> <span class="o">&amp;</span><span class="n">data</span><span class="p">)</span>
   <span class="p">{</span>

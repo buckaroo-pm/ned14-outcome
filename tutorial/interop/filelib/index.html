@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-11-28T22:15:35 GMT">
+<meta name="revised" content="2018-11-28T22:22:40 UTC">
 <title>The File I/O library :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -721,7 +721,7 @@ in this tutorial</a>:</p>
   <span class="p">}</span>
 
   <span class="c1">// Localise a result implementation specific to this namespace.
-</span><span class="c1"></span>  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span><span class="err"> </span><span class="nc">T</span><span class="o">&gt;</span> <span class="k">using</span> <span class="n">result</span> <span class="o">=</span> <span class="n">OUTCOME_V2_NAMESPACE</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">failure_info</span><span class="o">&gt;</span><span class="p">;</span>
+</span><span class="c1"></span>  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">using</span> <span class="n">result</span> <span class="o">=</span> <span class="n">OUTCOME_V2_NAMESPACE</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">failure_info</span><span class="o">&gt;</span><span class="p">;</span>
 
   <span class="c1">// Writes a chunk of data to some file. Returns bytes written, or failure_info. Never throws exceptions.
 </span><span class="c1"></span>  <span class="n">result</span><span class="o">&lt;</span><span class="n">size_t</span><span class="o">&gt;</span> <span class="n">write_file</span><span class="p">(</span><span class="n">string_view</span> <span class="n">chunk</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>

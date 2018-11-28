@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-11-28T22:15:35 GMT">
+<meta name="revised" content="2018-11-28T22:22:40 UTC">
 <title>Hook result :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -697,7 +697,7 @@ slot in TLS storage and writes the current stack backtrace into it.</p>
   <span class="c1">// Specialise the result construction hook for our localised result
 </span><span class="c1"></span>  <span class="c1">// We hook any non-copy, non-move, non-inplace construction, capturing a stack backtrace
 </span><span class="c1"></span>  <span class="c1">// if the result is errored.
-</span><span class="c1"></span>  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span><span class="err"> </span><span class="nc">T</span><span class="p">,</span> <span class="k">class</span><span class="err"> </span><span class="nc">U</span><span class="o">&gt;</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="n">hook_result_construction</span><span class="p">(</span><span class="n">result</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">*</span><span class="n">res</span><span class="p">,</span> <span class="n">U</span> <span class="o">&amp;&amp;</span> <span class="cm">/*unused*/</span><span class="p">)</span> <span class="k">noexcept</span>
+</span><span class="c1"></span>  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="p">,</span> <span class="k">class</span> <span class="nc">U</span><span class="o">&gt;</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="n">hook_result_construction</span><span class="p">(</span><span class="n">result</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">*</span><span class="n">res</span><span class="p">,</span> <span class="n">U</span> <span class="o">&amp;&amp;</span> <span class="cm">/*unused*/</span><span class="p">)</span> <span class="k">noexcept</span>
   <span class="p">{</span>
     <span class="k">if</span><span class="p">(</span><span class="n">res</span><span class="o">-&gt;</span><span class="n">has_error</span><span class="p">())</span>
     <span class="p">{</span>

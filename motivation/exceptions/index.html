@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-11-28T22:15:34 GMT">
+<meta name="revised" content="2018-11-28T22:22:40 UTC">
 <title>Exceptions :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -676,8 +676,7 @@ you just put <code>g()</code> below <code>f()</code> and that&rsquo;s it:</p>
   <span class="n">f</span><span class="p">();</span>
   <span class="n">g</span><span class="p">();</span>        <span class="c1">// don&#39;t call g() and further if f() fails
 </span><span class="c1"></span>  <span class="k">return</span> <span class="n">h</span><span class="p">();</span> <span class="c1">// don&#39;t call h() if g() fails
-</span><span class="c1"></span><span class="p">}</span>
-</code></pre></div>
+</span><span class="c1"></span><span class="p">}</span></code></pre></div>
 <p>In the C++ Standard terms this means that <code>f()</code> is <em>sequenced before</em> <code>g()</code>.
 This makes failure handling extremely easy: in a lot of cases you do not have
 to do anything.</p>

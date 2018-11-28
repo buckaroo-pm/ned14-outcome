@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-11-28T22:15:36 GMT">
+<meta name="revised" content="2018-11-28T22:22:41 UTC">
 <title>Payload :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -667,32 +667,7 @@
 </div>
 
 
-   <article class="post tutorial">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/outcome/tutorial/payload/">Custom payloads</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>So far in this tutorial, type EC in result&lt;T, EC&gt; has always been a std::error_code (though it can be of any type you wish instead). EC needs in fact to merely satisfy  trait::has_error_code_v&lt;EC&gt;for EC to be treated as if an std::error_code.
-In turn, trait::has_error_code_v&lt;EC&gt; is true if there exists some ADL discovered free function:
- make_error_code(EC) returning a std::error_code. make_error_code(get&lt;0&gt;(EC)) returning a std::error_code (i.e. EC might be pair&lt;std::error_code, U&gt; or tuple&lt;std::error_code, . <a class="read-more" href="/outcome/tutorial/payload/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-          
-            
-                <a class="label label-default" href="https://ned14.github.io/outcome/tags/payload/">payload</a>
-            
-                <a class="label label-default" href="https://ned14.github.io/outcome/tags/has_error_code/">has_error_code</a>
-            
-                <a class="label label-default" href="https://ned14.github.io/outcome/tags/make_error_code/">make_error_code</a>
-            
-        
-
-    </footer>
-</article>
+   
 
    <article class="post tutorial">
     <header class="post-header">
@@ -700,7 +675,7 @@ In turn, trait::has_error_code_v&lt;EC&gt; is true if there exists some ADL disc
     </header>
     <section class="post-excerpt">
         <p>An Outcome based solution to the dual overload problem is straightforward:
-namespace filesystem2{// Error code + paths related to a failure. Also causes ADL discovery to check this namespace. struct failure_info{std::error_code ec;path path1, path2;};// Tell Outcome that failure_info is to be treated as a std::error_code inline const std::error_code &amp;make_error_code(const failure_info &amp;fi) { return fi.ec; }// Localise an outcome implementation specific to this namespace. <a class="read-more" href="/outcome/tutorial/payload/copy_file2/">&raquo;</a></p>
+namespace filesystem2 { // Error code + paths related to a failure. Also causes ADL discovery to check this namespace.  struct failure_info { std::error_code ec; path path1, path2; }; // Tell Outcome that failure_info is to be treated as a std::error_code  inline const std::error_code &amp;make_error_code(const failure_info &amp;fi) { return fi.ec; } // Localise an outcome implementation specific to this namespace. <a class="read-more" href="/outcome/tutorial/payload/copy_file2/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          

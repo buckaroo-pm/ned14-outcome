@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-11-28T22:15:35 GMT">
+<meta name="revised" content="2018-11-28T22:22:40 UTC">
 <title>Narrow contracts :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -693,8 +693,7 @@ to functions that expect a pointer to a valid object:</p>
 <div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span> <span class="n">pi</span><span class="p">)</span> <span class="c1">// expects: pi != nullptr
 </span><span class="c1"></span><span class="p">{</span>
   <span class="k">return</span> <span class="o">*</span><span class="n">pi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 <p>Passing a null pointer where it is not expected is so common a bug that tools
 are very good at finding them. For instance, static analyzers will usually detect
 it without even executing your code. Similarly, tools like undefined behavior
@@ -709,8 +708,7 @@ dereferencing a null pointer. In the following code:</p>
   <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="o">*</span><span class="n">pi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
   <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="n">pi</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
   <span class="k">return</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">};</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 <p>The compiler can see that if <code>pi</code> is null, the program would have undefined
 behavior. Since undefined behavior is required by the C++ standard to never
 be the programmer&rsquo;s intention, the compiler
@@ -721,8 +719,7 @@ assumes that apparently this function is never called with <code>pi == nullptr</
   <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="o">*</span><span class="n">pi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
   <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
   <span class="k">return</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">};</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 <p>Functions like the one above that declare that certain values of input parameters
 must not be passed to them are said to have a <em>narrow contract</em>.</p>
 
@@ -736,8 +733,7 @@ and declares that the value of this <code>int</code> must never be negative. You
   <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">__builtin_trap</span><span class="p">();</span>
 
   <span class="c1">// normal program logic follows ...
-</span><span class="c1"></span><span class="p">}</span>
-</code></pre></div>
+</span><span class="c1"></span><span class="p">}</span></code></pre></div>
 <p>This instruction when hit, causes the program to exit abnormally, which means:
 * a debugger can be launched,
 * static analyzer can warn you if it can detect a program flow that reaches this
@@ -751,8 +747,7 @@ and clang:</p>
   <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">__builtin_unreachable</span><span class="p">();</span>
 
   <span class="c1">// normal program logic follows ...
-</span><span class="c1"></span><span class="p">}</span>
-</code></pre></div>
+</span><span class="c1"></span><span class="p">}</span></code></pre></div>
 <p>This gives a hint to the tools: the programmer guarantees that the program flow
 will never reach to the point of executing it. In other words, it is undefined
 behavior if control reaches this point. Compiler and other tools can take this

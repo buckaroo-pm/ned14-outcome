@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-11-28T22:15:35 GMT">
+<meta name="revised" content="2018-11-28T22:22:40 UTC">
 <title>Phase 2 construction :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -739,9 +739,9 @@ which puts the object into a legally destructible state. We then
 proceed to implement phase 2 of construction, filling in the various
 parts as we go, reporting via <code>result</code> any failures.</p>
 
-<div class="notices note" ><p>Remember that <code>operator new</code> has a non-throwing form, <code>new(std::nothrow)</code>.</p>
+<p><div class="notices note" ><p>Remember that <code>operator new</code> has a non-throwing form, <code>new(std::nothrow)</code>.</p>
 </div>
-
+</p>
 
 <p>For the final return, in theory we could just <code>return ret</code> and
 depending on the C++ version currently in force, it might work

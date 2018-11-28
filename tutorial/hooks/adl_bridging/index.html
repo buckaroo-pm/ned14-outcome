@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-11-28T22:15:35 GMT">
+<meta name="revised" content="2018-11-28T22:22:40 UTC">
 <title>ADL bridging :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -715,8 +715,8 @@ compiler when discovering the event hooks.</p>
   <span class="p">};</span>
 
   <span class="c1">// Localise result and outcome to using the local error_code so this namespace gets looked up for the hooks
-</span><span class="c1"></span>  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span><span class="err"> </span><span class="nc">R</span><span class="o">&gt;</span> <span class="k">using</span> <span class="n">result</span> <span class="o">=</span> <span class="n">OUTCOME_V2_NAMESPACE</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="n">R</span><span class="p">,</span> <span class="n">error_code</span><span class="o">&gt;</span><span class="p">;</span>
-  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span><span class="err"> </span><span class="nc">R</span><span class="o">&gt;</span> <span class="k">using</span> <span class="n">outcome</span> <span class="o">=</span> <span class="n">OUTCOME_V2_NAMESPACE</span><span class="o">::</span><span class="n">outcome</span><span class="o">&lt;</span><span class="n">R</span><span class="p">,</span> <span class="n">error_code</span> <span class="cm">/*, std::exception_ptr */</span><span class="o">&gt;</span><span class="p">;</span>
+</span><span class="c1"></span>  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">R</span><span class="o">&gt;</span> <span class="k">using</span> <span class="n">result</span> <span class="o">=</span> <span class="n">OUTCOME_V2_NAMESPACE</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="n">R</span><span class="p">,</span> <span class="n">error_code</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">R</span><span class="o">&gt;</span> <span class="k">using</span> <span class="n">outcome</span> <span class="o">=</span> <span class="n">OUTCOME_V2_NAMESPACE</span><span class="o">::</span><span class="n">outcome</span><span class="o">&lt;</span><span class="n">R</span><span class="p">,</span> <span class="n">error_code</span> <span class="cm">/*, std::exception_ptr */</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/error_code_extended.cpp#L89" class="code-snippet-url" target="_blank">View this code on Github</a></div>
 

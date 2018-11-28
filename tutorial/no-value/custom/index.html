@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-11-28T22:15:34 GMT">
+<meta name="revised" content="2018-11-28T22:22:40 UTC">
 <title>A custom no-value policy :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -690,19 +690,19 @@
 <div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
 <span class="k">struct</span> <span class="nl">abort_policy</span> <span class="p">:</span> <span class="n">outcome</span><span class="o">::</span><span class="n">policy</span><span class="o">::</span><span class="n">base</span>
 <span class="p">{</span>
-  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span><span class="err"> </span><span class="nc">Impl</span><span class="o">&gt;</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="kt">void</span> <span class="n">wide_value_check</span><span class="p">(</span><span class="k">const</span> <span class="n">Impl</span><span class="o">&amp;</span> <span class="n">self</span><span class="p">)</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">Impl</span><span class="o">&gt;</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="kt">void</span> <span class="n">wide_value_check</span><span class="p">(</span><span class="k">const</span> <span class="n">Impl</span><span class="o">&amp;</span> <span class="n">self</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">base</span><span class="o">::</span><span class="n">_has_value</span><span class="p">(</span><span class="n">self</span><span class="p">))</span>
       <span class="n">std</span><span class="o">::</span><span class="n">abort</span><span class="p">();</span>
   <span class="p">}</span>
 
-  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span><span class="err"> </span><span class="nc">Impl</span><span class="o">&gt;</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="kt">void</span> <span class="n">wide_error_check</span><span class="p">(</span><span class="k">const</span> <span class="n">Impl</span><span class="o">&amp;</span> <span class="n">self</span><span class="p">)</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">Impl</span><span class="o">&gt;</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="kt">void</span> <span class="n">wide_error_check</span><span class="p">(</span><span class="k">const</span> <span class="n">Impl</span><span class="o">&amp;</span> <span class="n">self</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">base</span><span class="o">::</span><span class="n">_has_error</span><span class="p">(</span><span class="n">self</span><span class="p">))</span>
       <span class="n">std</span><span class="o">::</span><span class="n">abort</span><span class="p">();</span>
   <span class="p">}</span>
 
-  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span><span class="err"> </span><span class="nc">Impl</span><span class="o">&gt;</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="kt">void</span> <span class="n">wide_exception_check</span><span class="p">(</span><span class="k">const</span> <span class="n">Impl</span><span class="o">&amp;</span> <span class="n">self</span><span class="p">)</span>
+  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">Impl</span><span class="o">&gt;</span> <span class="k">static</span> <span class="k">constexpr</span> <span class="kt">void</span> <span class="n">wide_exception_check</span><span class="p">(</span><span class="k">const</span> <span class="n">Impl</span><span class="o">&amp;</span> <span class="n">self</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">base</span><span class="o">::</span><span class="n">_has_exception</span><span class="p">(</span><span class="n">self</span><span class="p">))</span>
       <span class="n">std</span><span class="o">::</span><span class="n">abort</span><span class="p">();</span>
@@ -714,12 +714,12 @@
 <p>Once the policy is defined, you have to use it when providing your own
 <code>basic_outcome</code> specialization:</p>
 
-<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
+<p><div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
 <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
 <span class="k">using</span> <span class="n">strictOutcome</span>
   <span class="o">=</span> <span class="n">outcome</span><span class="o">::</span><span class="n">basic_outcome</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">error_code</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">exception_ptr</span><span class="p">,</span> <span class="n">abort_policy</span><span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/policies.cpp#L65" class="code-snippet-url" target="_blank">View this code on Github</a></div>
-
+</p>
 
 
     

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-11-28T22:15:35 GMT">
+<meta name="revised" content="2018-11-28T22:22:40 UTC">
 <title>Calling it from C :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -689,10 +689,10 @@
     <p>Now let us call our <code>result</code> returning C++ function from C:</p>
 
 <div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
-<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;  // for strerror</span><span class="cp">
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;  // for strerror</span><span class="cp">
 </span><span class="cp"></span><span class="c1">// This header in Outcome is pure C, it provides a suite of C helper macros
-</span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&#34;../../../include/outcome/result.h&#34;</span><span class="cp">
+</span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&#34;../../../include/outcome/result.h&#34;</span><span class="cp">
 </span><span class="cp"></span>
 <span class="c1">// Declare our C++ function&#39;s returning result type. Only needs to be done once.
 </span><span class="c1"></span><span class="n">CXX_DECLARE_RESULT_EC</span><span class="p">(</span><span class="n">size_t</span><span class="p">,</span> <span class="n">size_t</span><span class="p">);</span>
@@ -708,7 +708,7 @@
   <span class="n">res</span> <span class="o">=</span> <span class="n">to_string</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">buffer</span><span class="p">),</span> <span class="n">v</span><span class="p">);</span>
   <span class="k">if</span><span class="p">(</span><span class="n">CXX_RESULT_HAS_VALUE</span><span class="p">(</span><span class="n">res</span><span class="p">))</span>
   <span class="p">{</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;to_string(%d) fills buffer with &#39;%s&#39; of %zu characters</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">res</span><span class="p">.</span><span class="n">value</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;to_string(%d) fills buffer with &#39;%s&#39; of %zu characters</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">res</span><span class="p">.</span><span class="n">value</span><span class="p">);</span>
     <span class="k">return</span><span class="p">;</span>
   <span class="p">}</span>
   <span class="c1">// Is the error returned in the std::generic_category domain and thus an errno?
@@ -717,10 +717,10 @@
     <span class="c1">// If you get a weird compile error here, note that CXX_RESULT_ERROR()
 </span><span class="c1"></span>    <span class="c1">// uses C11 generics, you need a C11 compiler for it to work. If you don&#39;t
 </span><span class="c1"></span>    <span class="c1">// have a C11 compiler, res.error or res.error.code can be used directly.
-</span><span class="c1"></span>    <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;to_string(%d) failed with error code %d (%s)</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">CXX_RESULT_ERROR</span><span class="p">(</span><span class="n">res</span><span class="p">),</span> <span class="n">strerror</span><span class="p">(</span><span class="n">CXX_RESULT_ERROR</span><span class="p">(</span><span class="n">res</span><span class="p">)));</span>
+</span><span class="c1"></span>    <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="sa"></span><span class="s">&#34;to_string(%d) failed with error code %d (%s)</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">CXX_RESULT_ERROR</span><span class="p">(</span><span class="n">res</span><span class="p">),</span> <span class="n">strerror</span><span class="p">(</span><span class="n">CXX_RESULT_ERROR</span><span class="p">(</span><span class="n">res</span><span class="p">)));</span>
     <span class="k">return</span><span class="p">;</span>
   <span class="p">}</span>
-  <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;to_string(%d) failed with unknown error code %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">CXX_RESULT_ERROR</span><span class="p">(</span><span class="n">res</span><span class="p">));</span>
+  <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="sa"></span><span class="s">&#34;to_string(%d) failed with unknown error code %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">CXX_RESULT_ERROR</span><span class="p">(</span><span class="n">res</span><span class="p">));</span>
 <span class="p">}</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>

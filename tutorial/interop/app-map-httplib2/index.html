@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-11-28T22:15:35 GMT">
+<meta name="revised" content="2018-11-28T22:22:40 UTC">
 <title>Mapping the HTTP library into the Application 2/2 :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -704,14 +704,14 @@ in Outcome:</p>
 <span class="k">namespace</span> <span class="n">convert</span>
 <span class="p">{</span>
   <span class="c1">// Provide custom ValueOrError conversion from httplib::result&lt;U&gt; into any app::outcome&lt;T&gt;
-</span><span class="c1"></span>  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span><span class="err"> </span><span class="nc">T</span><span class="p">,</span> <span class="k">class</span><span class="err"> </span><span class="nc">U</span><span class="o">&gt;</span> <span class="k">struct</span> <span class="n">value_or_error</span><span class="o">&lt;</span><span class="n">app</span><span class="o">::</span><span class="n">outcome</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">httplib</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="n">U</span><span class="o">&gt;&gt;</span>
+</span><span class="c1"></span>  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="p">,</span> <span class="k">class</span> <span class="nc">U</span><span class="o">&gt;</span> <span class="k">struct</span> <span class="n">value_or_error</span><span class="o">&lt;</span><span class="n">app</span><span class="o">::</span><span class="n">outcome</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">httplib</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="n">U</span><span class="o">&gt;&gt;</span>
   <span class="p">{</span>
     <span class="c1">// False to indicate that this converter wants `result`/`outcome` to NOT reject all other `result`
 </span><span class="c1"></span>    <span class="k">static</span> <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">enable_result_inputs</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
     <span class="c1">// False to indicate that this converter wants `outcome` to NOT reject all other `outcome`
 </span><span class="c1"></span>    <span class="k">static</span> <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">enable_outcome_inputs</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 
-    <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span><span class="err"> </span><span class="nc">X</span><span class="p">,</span>                                                                              <span class="c1">//
+    <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">X</span><span class="p">,</span>                                                                              <span class="c1">//
 </span><span class="c1"></span>              <span class="k">typename</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">enable_if_t</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">is_same</span><span class="o">&lt;</span><span class="n">httplib</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="n">U</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">decay_t</span><span class="o">&lt;</span><span class="n">X</span><span class="o">&gt;&gt;::</span><span class="n">value</span>  <span class="c1">//
 </span><span class="c1"></span>                                          <span class="o">&amp;&amp;</span> <span class="n">std</span><span class="o">::</span><span class="n">is_constructible</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">U</span><span class="o">&gt;::</span><span class="n">value</span><span class="o">&gt;&gt;</span>                   <span class="c1">//
 </span><span class="c1"></span>    <span class="k">constexpr</span> <span class="n">app</span><span class="o">::</span><span class="n">outcome</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span>

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-11-28T22:15:35 GMT">
+<meta name="revised" content="2018-11-28T22:22:40 UTC">
 <title>Custom exception ptr :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -701,7 +701,7 @@ the exception ptr:</p>
 <span class="k">namespace</span> <span class="n">error_code_extended</span>
 <span class="p">{</span>
   <span class="c1">// Synthesise a custom exception_ptr from the TLS slot and write it into the outcome
-</span><span class="c1"></span>  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span><span class="err"> </span><span class="nc">R</span><span class="o">&gt;</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="n">poke_exception</span><span class="p">(</span><span class="n">outcome</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span> <span class="o">*</span><span class="n">o</span><span class="p">)</span>
+</span><span class="c1"></span>  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">R</span><span class="o">&gt;</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="n">poke_exception</span><span class="p">(</span><span class="n">outcome</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span> <span class="o">*</span><span class="n">o</span><span class="p">)</span>
   <span class="p">{</span>
     <span class="k">if</span><span class="p">(</span><span class="n">o</span><span class="o">-&gt;</span><span class="n">has_error</span><span class="p">())</span>
     <span class="p">{</span>
@@ -710,7 +710,7 @@ the exception ptr:</p>
       <span class="p">{</span>
         <span class="c1">// Make a custom string for the exception
 </span><span class="c1"></span>        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span><span class="p">(</span><span class="n">o</span><span class="o">-&gt;</span><span class="n">error</span><span class="p">().</span><span class="n">message</span><span class="p">());</span>
-        <span class="n">str</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#34; [&#34;</span><span class="p">);</span>
+        <span class="n">str</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="sa"></span><span class="s">&#34; [&#34;</span><span class="p">);</span>
         <span class="kt">char</span> <span class="o">**</span><span class="n">symbols</span> <span class="o">=</span> <span class="o">::</span><span class="n">backtrace_symbols</span><span class="p">(</span><span class="n">eei</span><span class="o">-&gt;</span><span class="n">backtrace</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="n">eei</span><span class="o">-&gt;</span><span class="n">items</span><span class="p">);</span>
         <span class="k">if</span><span class="p">(</span><span class="n">symbols</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
         <span class="p">{</span>
@@ -718,13 +718,13 @@ the exception ptr:</p>
           <span class="p">{</span>
             <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
             <span class="p">{</span>
-              <span class="n">str</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#34;; &#34;</span><span class="p">);</span>
+              <span class="n">str</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;; &#34;</span><span class="p">);</span>
             <span class="p">}</span>
             <span class="n">str</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">symbols</span><span class="p">[</span><span class="n">n</span><span class="p">]);</span>
           <span class="p">}</span>
           <span class="o">::</span><span class="n">free</span><span class="p">(</span><span class="n">symbols</span><span class="p">);</span>  <span class="c1">// not exception safe, could leak symbols if appending str fails
 </span><span class="c1"></span>        <span class="p">}</span>
-        <span class="n">str</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#34;]&#34;</span><span class="p">);</span>
+        <span class="n">str</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;]&#34;</span><span class="p">);</span>
 
         <span class="c1">// Override the payload/exception member in the outcome with our synthesised exception ptr
 </span><span class="c1"></span>        <span class="n">OUTCOME_V2_NAMESPACE</span><span class="o">::</span><span class="n">hooks</span><span class="o">::</span><span class="n">override_outcome_exception</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">make_exception_ptr</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">str</span><span class="p">)));</span>

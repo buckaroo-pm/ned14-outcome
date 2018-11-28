@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-11-28T22:15:36 GMT">
+<meta name="revised" content="2018-11-28T22:22:40 UTC">
 <title>Using result&lt;T&gt; from C code :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -695,7 +695,7 @@ of things of the form:</p>
 </span><span class="c1"></span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="nf">get_value</span><span class="p">(</span><span class="kt">double</span> <span class="n">v</span><span class="p">);</span>
 
 <span class="c1">// The C shim function for the C++ get_value() function.
-</span><span class="c1"></span><span class="k">extern</span> <span class="s">&#34;C&#34;</span> <span class="kt">int</span> <span class="n">c_get_value</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">ret</span><span class="p">,</span> <span class="kt">double</span> <span class="n">v</span><span class="p">)</span>
+</span><span class="c1"></span><span class="k">extern</span> <span class="sa"></span><span class="s">&#34;C&#34;</span> <span class="kt">int</span> <span class="n">c_get_value</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">ret</span><span class="p">,</span> <span class="kt">double</span> <span class="n">v</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">try</span>
   <span class="p">{</span>
@@ -711,8 +711,7 @@ of things of the form:</p>
   <span class="p">{</span>
     <span class="k">return</span> <span class="n">EAGAIN</span><span class="p">;</span>
   <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 <p>This is sufficiently painful that most reach for a bindings generator tool like
 <a href="http://www.swig.org/">SWIG</a> to automate this sort of tedious boilerplate generation.
 And this is fine for larger projects, but for smaller projects the cost of

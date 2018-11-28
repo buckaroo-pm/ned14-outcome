@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-11-28T22:15:35 GMT">
+<meta name="revised" content="2018-11-28T22:22:40 UTC">
 <title>std::error_code :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -670,12 +670,11 @@
 to be cheaply passed around, and at the same time be able to store sufficient
 information to represent any error situation from any library/sub-system in the
 world without a clash. Its representation is basically:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span><span class="err"> </span><span class="nc">error_code</span>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">error_code</span>
 <span class="p">{</span>
   <span class="n">error_category</span><span class="o">*</span> <span class="n">domain</span><span class="p">;</span> <span class="c1">// domain from which the error originates
 </span><span class="c1"></span>  <span class="kt">int</span>             <span class="n">value</span><span class="p">;</span>  <span class="c1">// numeric value of error within the domain
-</span><span class="c1"></span><span class="p">};</span>
-</code></pre></div>
+</span><span class="c1"></span><span class="p">};</span></code></pre></div>
 <p>Here, <code>domain</code> indicates the library from which the error originates. It is a
 pointer to a global object representing a given library/domain. Different
 libraries will be represented by different pointers to different globals.
@@ -698,18 +697,16 @@ for classifying error situations appropriately to the program layer.</p>
 
 <p>When a new library needs to represent its own set of error situations in an
 <code>error_code</code> it first has to declare the list of numeric value as an enumeration:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">enum</span> <span class="k">class</span><span class="err"> </span><span class="nc">ConvertErrc</span>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">enum</span> <span class="k">class</span> <span class="nc">ConvertErrc</span>
 <span class="p">{</span>
   <span class="n">StringTooLong</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">// 0 should not represent an error
 </span><span class="c1"></span>  <span class="n">EmptyString</span>   <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
   <span class="n">IllegalChar</span>   <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
-<span class="p">};</span>
-</code></pre></div>
+<span class="p">};</span></code></pre></div>
 <p>Then it has to put some boiler-plate code to plug the new enumeration into the
 <code>std::error_code</code> system. Then, it can use the enum as an <code>error_code</code>:</p>
 <div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">std</span><span class="o">::</span><span class="n">error_code</span> <span class="n">ec</span> <span class="o">=</span> <span class="n">ConvertErrc</span><span class="o">::</span><span class="n">EmptyString</span><span class="p">;</span>
-<span class="n">assert</span><span class="p">(</span><span class="n">ec</span> <span class="o">==</span> <span class="n">ConvertErrc</span><span class="o">::</span><span class="n">EmptyString</span><span class="p">);</span>
-</code></pre></div>
+<span class="n">assert</span><span class="p">(</span><span class="n">ec</span> <span class="o">==</span> <span class="n">ConvertErrc</span><span class="o">::</span><span class="n">EmptyString</span><span class="p">);</span></code></pre></div>
 <p>Member <code>value</code> is mapped directly from the numeric value in the enumeration, and
 member <code>domain</code> is mapped from the type of the enumeration. Thus, this is a form
 of type erasure, but one that does allow type <code>std::error_code</code> to be trivial

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.48" />
+	<meta name="generator" content="Hugo 0.32.4" />
     <title>Outcome documentation</title>
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-11-28T22:15:36 GMT">
+<meta name="revised" content="2018-11-28T22:22:41 UTC">
 <title>Home :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -700,10 +700,10 @@ to not use exceptions to propagate failure reports across thread, tasks, fibers;
 <p>It is possible to inspect the state manually:</p>
 
 <div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
-<span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">rslt</span> <span class="o">=</span> <span class="n">read_data_from_file</span><span class="p">(</span><span class="s">&#34;config.cfg&#34;</span><span class="p">))</span>
+<span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">rslt</span> <span class="o">=</span> <span class="n">read_data_from_file</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;config.cfg&#34;</span><span class="p">))</span>
   <span class="n">use_string</span><span class="p">(</span><span class="n">rslt</span><span class="p">.</span><span class="n">value</span><span class="p">());</span>                   <span class="c1">// returns string
 </span><span class="c1"></span><span class="k">else</span>
-  <span class="k">throw</span> <span class="n">LibError</span><span class="p">{</span><span class="n">rslt</span><span class="p">.</span><span class="n">error</span><span class="p">(),</span> <span class="s">&#34;config.cfg&#34;</span><span class="p">};</span> <span class="c1">// returns error_code
+  <span class="k">throw</span> <span class="n">LibError</span><span class="p">{</span><span class="n">rslt</span><span class="p">.</span><span class="n">error</span><span class="p">(),</span> <span class="sa"></span><span class="s">&#34;config.cfg&#34;</span><span class="p">};</span> <span class="c1">// returns error_code
 </span><span class="c1"></span></code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/intro_example.cpp#L26" class="code-snippet-url" target="_blank">View this code on Github</a></div>
 
 
