@@ -1,563 +1,688 @@
 <!DOCTYPE html>
-<html lang="en" class="js csstransforms3d">
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.32.4" />
-    <meta name="description" content="Success-or-failure return types where failure can take two forms, expected/handled failure and unexpected/abort failure.">
-
-
-    <title>outcome&lt;&gt; :: Outcome documentation</title>
-    <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
-    <link href="/outcome/css/nucleus.css" rel="stylesheet">
-    <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/outcome/css/hybrid.css" rel="stylesheet">
-    <link href="/outcome/css/featherlight.min.css" rel="stylesheet">
-    <link href="/outcome/css/horsey.css" rel="stylesheet">
+    <title>Outcome documentation</title>
     
-    <link href="/outcome/css/theme.css" rel="stylesheet">
-    
-    
-    <link rel="stylesheet" href="/outcome/css/bootstrap.min.css">
-    <script src="/outcome/js/jquery-2.x.min.js"></script>
-    <style type="text/css">
-      :root #header + #content > #left > #rlblock_left {
-        display:none !important;
-      }
-    </style>
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2018-11-28T22:15:35 GMT">
+<title>outcome&lt;&gt; :: Outcome documentation</title>
+<link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
+<link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
+<link href="/outcome/css/nucleus.css" rel="stylesheet">
+<link href="/outcome/theme-flex/style.css" rel="stylesheet">
 
-    
-
-    <link href="/outcome/css/local.css" rel="stylesheet">
-
-  </head>
-  <body class="" data-url="/outcome/tutorial/outcome/">
-    <nav id="sidebar" class=""><div class="highlightable">
-  <div id="header-wrapper">
-    <div id="header"> 
-	<p>Outcome 2.0 library documentation</p>
- 
-
-
-    </div><div class="searchbox">
-    <label for="search-by"><i class="fa fa-search"></i></label>
-    <input data-search-input id="search-by" type="text" placeholder="Search...">
-    <span data-search-clear=""><i class="fa fa-close"></i></span>
-</div>
-<script type="text/javascript" src="/outcome/js/lunr.min.js"></script>
-<script type="text/javascript" src="/outcome/js/horsey.js"></script>
+<link rel="stylesheet" href="/outcome/css/bootstrap.min.css">
+<script src="/outcome/js/jquery-2.x.min.js"></script>
 <script type="text/javascript">
-    var baseurl = "https:\/\/ned14.github.io\/outcome\/";
+      var baseurl = "https:\/\/ned14.github.io\/outcome\/";
 </script>
-<script type="text/javascript" src="/outcome/js/search.js"></script>
+<link href="/outcome/css/local.css" rel="stylesheet">
+
+
+    
+  </head>
+  <body data-url="/outcome/tutorial/outcome/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <p>Outcome 2.0 library documentation</p>
+
+  
+
 
   </div>
-
-
-    <ul class="topics">
-            <li data-nav-id="/outcome/" class="dd-item">
-            <a href="/outcome/"><i class="fa fa-fw fa-home"></i></a>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+    <nav class="shortcuts">
+            <li class="" role="">
+                <a href="https://github.com/ned14/outcome"  rel="noopener">
+                  <i class='fa fa-github'></i> Outcome 2.0 github repo
+                </a>
             </li>
-    <li data-nav-id="/outcome/requirements/" class="dd-item">
-      <a href="/outcome/requirements/">
-        <span>Prerequisites</span>
-      </a>
+            <li class="" role="">
+                <a href="/outcome/credits"  rel="noopener">
+                  <i class='fa fa-bullhorn'></i> Acknowledgements
+                </a>
+            </li>
+    </nav>
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/outcome/" class="dd-item">
+          <a href="/outcome/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/outcome/requirements/" class="dd-item
+        ">
+      <div>
+      <a href="/outcome/requirements/">Prerequisites</a>
+      </div>
     </li>
-    <li data-nav-id="/outcome/build/" class="dd-item">
-      <a href="/outcome/build/">
-        <span>Build and install</span>
-      </a>
+    <li data-nav-id="/outcome/build/" class="dd-item
+        ">
+      <div>
+      <a href="/outcome/build/">Build and install</a>
+      </div>
     </li>
-    <li data-nav-id="/outcome/use-matrix/" class="dd-item">
-      <a href="/outcome/use-matrix/">
-        <span>Decision matrix</span>
-      </a>
+    <li data-nav-id="/outcome/use-matrix/" class="dd-item
+        ">
+      <div>
+      <a href="/outcome/use-matrix/">Decision matrix</a>
+      </div>
     </li>
-    <li data-nav-id="/outcome/motivation/" class="dd-item">
-      <a href="/outcome/motivation/">
-        <span>Motivation</span><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </a>
+    <li data-nav-id="/outcome/motivation/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/motivation/">Motivation</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
         <ul>
       <li data-nav-id="/outcome/motivation/exceptions/" class="dd-item">
-        <a href="/outcome/motivation/exceptions/">
-          <span>Exceptions</span>
-        </a>
+        <div>
+          <a href="/outcome/motivation/exceptions/">
+            Exceptions
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/motivation/errno/" class="dd-item">
-        <a href="/outcome/motivation/errno/">
-          <span>errno</span>
-        </a>
+        <div>
+          <a href="/outcome/motivation/errno/">
+            errno
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/motivation/error_codes/" class="dd-item">
-        <a href="/outcome/motivation/error_codes/">
-          <span>Error codes</span>
-        </a>
+        <div>
+          <a href="/outcome/motivation/error_codes/">
+            Error codes
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/motivation/std_error_code/" class="dd-item">
-        <a href="/outcome/motivation/std_error_code/">
-          <span>std::error_code</span>
-        </a>
+        <div>
+          <a href="/outcome/motivation/std_error_code/">
+            std::error_code
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/motivation/plug_error_code/" class="dd-item">
-        <a href="/outcome/motivation/plug_error_code/">
-          <span>Plugging a library into std::error_code</span>
-        </a>
+        <div>
+          <a href="/outcome/motivation/plug_error_code/">
+            Plugging a library into std::error_code
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/motivation/narrow_contract/" class="dd-item">
-        <a href="/outcome/motivation/narrow_contract/">
-          <span>Narrow contracts</span>
-        </a>
+        <div>
+          <a href="/outcome/motivation/narrow_contract/">
+            Narrow contracts
+          </a>
+        </div>
     </li>
         </ul>
     </li>
-    <li data-nav-id="/outcome/tutorial/" class="dd-item parent">
-      <a href="/outcome/tutorial/">
-        <span>Tutorial</span>
+    <li data-nav-id="/outcome/tutorial/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/outcome/tutorial/">Tutorial</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i>
-      </a>
+      </div>
         <ul>
-    <li data-nav-id="/outcome/tutorial/result/" class="dd-item">
-      <a href="/outcome/tutorial/result/">
-        <span>result&lt;&gt;</span><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </a>
+    <li data-nav-id="/outcome/tutorial/result/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/tutorial/result/">result&lt;&gt;</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
         <ul>
       <li data-nav-id="/outcome/tutorial/result/inspecting/" class="dd-item">
-        <a href="/outcome/tutorial/result/inspecting/">
-          <span>Inspecting result&lt;T, EC&gt;</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/result/inspecting/">
+            Inspecting result&lt;T, EC&gt;
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/result/try/" class="dd-item">
-        <a href="/outcome/tutorial/result/try/">
-          <span>TRY operations</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/result/try/">
+            TRY operations
+          </a>
+        </div>
     </li>
         </ul>
     </li>
-    <li data-nav-id="/outcome/tutorial/outcome/" class="dd-item parent active">
-      <a href="/outcome/tutorial/outcome/">
-        <span>outcome&lt;&gt;</span>
+    <li data-nav-id="/outcome/tutorial/outcome/" class="dd-item parent active haschildren
+        ">
+      <div>
+      <a href="/outcome/tutorial/outcome/">outcome&lt;&gt;</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i>
-      </a>
+      </div>
         <ul>
       <li data-nav-id="/outcome/tutorial/outcome/inspecting/" class="dd-item">
-        <a href="/outcome/tutorial/outcome/inspecting/">
-          <span>Inspecting outcome&lt;T, EC, EP&gt;</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/outcome/inspecting/">
+            Inspecting outcome&lt;T, EC, EP&gt;
+          </a>
+        </div>
     </li>
         </ul>
     </li>
-    <li data-nav-id="/outcome/tutorial/no-value/" class="dd-item">
-      <a href="/outcome/tutorial/no-value/">
-        <span>No-value policies</span><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </a>
+    <li data-nav-id="/outcome/tutorial/no-value/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/tutorial/no-value/">No-value policies</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
         <ul>
       <li data-nav-id="/outcome/tutorial/no-value/custom/" class="dd-item">
-        <a href="/outcome/tutorial/no-value/custom/">
-          <span>A custom no-value policy</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/no-value/custom/">
+            A custom no-value policy
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/no-value/builtin/" class="dd-item">
-        <a href="/outcome/tutorial/no-value/builtin/">
-          <span>Built-in policies</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/no-value/builtin/">
+            Built-in policies
+          </a>
+        </div>
     </li>
         </ul>
     </li>
-    <li data-nav-id="/outcome/tutorial/payload/" class="dd-item">
-      <a href="/outcome/tutorial/payload/">
-        <span>Custom payloads</span><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </a>
+    <li data-nav-id="/outcome/tutorial/payload/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/tutorial/payload/">Custom payloads</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
         <ul>
       <li data-nav-id="/outcome/tutorial/payload/copy_file/" class="dd-item">
-        <a href="/outcome/tutorial/payload/copy_file/">
-          <span>The Filesystem TS</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/payload/copy_file/">
+            The Filesystem TS
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/payload/copy_file2/" class="dd-item">
-        <a href="/outcome/tutorial/payload/copy_file2/">
-          <span>Upgrading the Filesystem TS</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/payload/copy_file2/">
+            Upgrading the Filesystem TS
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/payload/copy_file3/" class="dd-item">
-        <a href="/outcome/tutorial/payload/copy_file3/">
-          <span>Auto-throwing filesystem_error</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/payload/copy_file3/">
+            Auto-throwing filesystem_error
+          </a>
+        </div>
     </li>
         </ul>
     </li>
-    <li data-nav-id="/outcome/tutorial/constructors/" class="dd-item">
-      <a href="/outcome/tutorial/constructors/">
-        <span>Result returning constructors</span><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </a>
+    <li data-nav-id="/outcome/tutorial/constructors/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/tutorial/constructors/">Result returning constructors</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
         <ul>
       <li data-nav-id="/outcome/tutorial/constructors/two-phase-init/" class="dd-item">
-        <a href="/outcome/tutorial/constructors/two-phase-init/">
-          <span>Two phase construction</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/constructors/two-phase-init/">
+            Two phase construction
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/constructors/file_handle/" class="dd-item">
-        <a href="/outcome/tutorial/constructors/file_handle/">
-          <span>A file handle</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/constructors/file_handle/">
+            A file handle
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/constructors/static-constructor/" class="dd-item">
-        <a href="/outcome/tutorial/constructors/static-constructor/">
-          <span>Phase 2 construction</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/constructors/static-constructor/">
+            Phase 2 construction
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/constructors/metaprogrammg1/" class="dd-item">
-        <a href="/outcome/tutorial/constructors/metaprogrammg1/">
-          <span>Phase 3</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/constructors/metaprogrammg1/">
+            Phase 3
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/constructors/metaprogrammg2/" class="dd-item">
-        <a href="/outcome/tutorial/constructors/metaprogrammg2/">
-          <span>construct&lt;T&gt;</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/constructors/metaprogrammg2/">
+            construct&lt;T&gt;
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/constructors/metaprogrammg3/" class="dd-item">
-        <a href="/outcome/tutorial/constructors/metaprogrammg3/">
-          <span>Alternatives</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/constructors/metaprogrammg3/">
+            Alternatives
+          </a>
+        </div>
     </li>
         </ul>
     </li>
-    <li data-nav-id="/outcome/tutorial/hooks/" class="dd-item">
-      <a href="/outcome/tutorial/hooks/">
-        <span>Hooking events</span><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </a>
+    <li data-nav-id="/outcome/tutorial/hooks/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/tutorial/hooks/">Hooking events</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
         <ul>
       <li data-nav-id="/outcome/tutorial/hooks/keeping_state/" class="dd-item">
-        <a href="/outcome/tutorial/hooks/keeping_state/">
-          <span>Keeping state</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/hooks/keeping_state/">
+            Keeping state
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/hooks/adl_bridging/" class="dd-item">
-        <a href="/outcome/tutorial/hooks/adl_bridging/">
-          <span>ADL bridging</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/hooks/adl_bridging/">
+            ADL bridging
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/hooks/hook_result/" class="dd-item">
-        <a href="/outcome/tutorial/hooks/hook_result/">
-          <span>Hook result</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/hooks/hook_result/">
+            Hook result
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/hooks/poke_exception/" class="dd-item">
-        <a href="/outcome/tutorial/hooks/poke_exception/">
-          <span>Custom exception ptr</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/hooks/poke_exception/">
+            Custom exception ptr
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/hooks/hook_outcome/" class="dd-item">
-        <a href="/outcome/tutorial/hooks/hook_outcome/">
-          <span>Hook outcome</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/hooks/hook_outcome/">
+            Hook outcome
+          </a>
+        </div>
     </li>
         </ul>
     </li>
-    <li data-nav-id="/outcome/tutorial/c-api/" class="dd-item">
-      <a href="/outcome/tutorial/c-api/">
-        <span>Using result&lt;T&gt; from C code</span><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </a>
+    <li data-nav-id="/outcome/tutorial/c-api/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/tutorial/c-api/">Using result&lt;T&gt; from C code</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
         <ul>
       <li data-nav-id="/outcome/tutorial/c-api/limitations/" class="dd-item">
-        <a href="/outcome/tutorial/c-api/limitations/">
-          <span>Limitations</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/c-api/limitations/">
+            Limitations
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/c-api/example/" class="dd-item">
-        <a href="/outcome/tutorial/c-api/example/">
-          <span>Example C&#43;&#43; function</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/c-api/example/">
+            Example C&#43;&#43; function
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/c-api/example2/" class="dd-item">
-        <a href="/outcome/tutorial/c-api/example2/">
-          <span>Calling it from C</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/c-api/example2/">
+            Calling it from C
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/c-api/variations/" class="dd-item">
-        <a href="/outcome/tutorial/c-api/variations/">
-          <span>Variations</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/c-api/variations/">
+            Variations
+          </a>
+        </div>
     </li>
         </ul>
     </li>
-    <li data-nav-id="/outcome/tutorial/interop/" class="dd-item">
-      <a href="/outcome/tutorial/interop/">
-        <span>Interoperation</span><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </a>
+    <li data-nav-id="/outcome/tutorial/interop/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/tutorial/interop/">Interoperation</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
         <ul>
       <li data-nav-id="/outcome/tutorial/interop/problem/" class="dd-item">
-        <a href="/outcome/tutorial/interop/problem/">
-          <span>Incommensurate E types</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/interop/problem/">
+            Incommensurate E types
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/interop/value-or-error/" class="dd-item">
-        <a href="/outcome/tutorial/interop/value-or-error/">
-          <span>ValueOrError Concept</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/interop/value-or-error/">
+            ValueOrError Concept
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/interop/httplib/" class="dd-item">
-        <a href="/outcome/tutorial/interop/httplib/">
-          <span>The HTTP library</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/interop/httplib/">
+            The HTTP library
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/interop/tidylib/" class="dd-item">
-        <a href="/outcome/tutorial/interop/tidylib/">
-          <span>The HTMLTidy library</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/interop/tidylib/">
+            The HTMLTidy library
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/interop/filelib/" class="dd-item">
-        <a href="/outcome/tutorial/interop/filelib/">
-          <span>The File I/O library</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/interop/filelib/">
+            The File I/O library
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/interop/app/" class="dd-item">
-        <a href="/outcome/tutorial/interop/app/">
-          <span>The Application</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/interop/app/">
+            The Application
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/interop/app-map-httplib1/" class="dd-item">
-        <a href="/outcome/tutorial/interop/app-map-httplib1/">
-          <span>Mapping the HTTP library into the Application 1/2</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/interop/app-map-httplib1/">
+            Mapping the HTTP library into the Application 1/2
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/interop/app-map-httplib2/" class="dd-item">
-        <a href="/outcome/tutorial/interop/app-map-httplib2/">
-          <span>Mapping the HTTP library into the Application 2/2</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/interop/app-map-httplib2/">
+            Mapping the HTTP library into the Application 2/2
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/interop/app-map-filelib/" class="dd-item">
-        <a href="/outcome/tutorial/interop/app-map-filelib/">
-          <span>Mapping the File I/O library into the Application</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/interop/app-map-filelib/">
+            Mapping the File I/O library into the Application
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/interop/app-map-tidylib/" class="dd-item">
-        <a href="/outcome/tutorial/interop/app-map-tidylib/">
-          <span>Mapping the HTMLTidy library into the Application</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/interop/app-map-tidylib/">
+            Mapping the HTMLTidy library into the Application
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/interop/app-go/" class="dd-item">
-        <a href="/outcome/tutorial/interop/app-go/">
-          <span>In use</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/interop/app-go/">
+            In use
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/tutorial/interop/conclusion/" class="dd-item">
-        <a href="/outcome/tutorial/interop/conclusion/">
-          <span>Conclusion</span>
-        </a>
+        <div>
+          <a href="/outcome/tutorial/interop/conclusion/">
+            Conclusion
+          </a>
+        </div>
     </li>
         </ul>
     </li>
         </ul>
     </li>
-    <li data-nav-id="/outcome/reference/" class="dd-item">
-      <a href="/outcome/reference/">
-        <span>API reference</span><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </a>
+    <li data-nav-id="/outcome/reference/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/reference/">API reference</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
         <ul>
       <li data-nav-id="/outcome/reference/outcome/" class="dd-item">
-        <a href="/outcome/reference/outcome/">
-          <span>outcome&lt;R, S, P&gt;</span>
-        </a>
+        <div>
+          <a href="/outcome/reference/outcome/">
+            outcome&lt;R, S, P&gt;
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/reference/result/" class="dd-item">
-        <a href="/outcome/reference/result/">
-          <span>result&lt;R, S&gt;</span>
-        </a>
+        <div>
+          <a href="/outcome/reference/result/">
+            result&lt;R, S&gt;
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/reference/try/" class="dd-item">
-        <a href="/outcome/reference/try/">
-          <span>Try operations</span>
-        </a>
+        <div>
+          <a href="/outcome/reference/try/">
+            Try operations
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/reference/success_failure/" class="dd-item">
-        <a href="/outcome/reference/success_failure/">
-          <span>Success/Failure</span>
-        </a>
+        <div>
+          <a href="/outcome/reference/success_failure/">
+            Success/Failure
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/reference/utils/" class="dd-item">
-        <a href="/outcome/reference/utils/">
-          <span>Utilities</span>
-        </a>
+        <div>
+          <a href="/outcome/reference/utils/">
+            Utilities
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/reference/convert/" class="dd-item">
-        <a href="/outcome/reference/convert/">
-          <span>Interoperation</span>
-        </a>
+        <div>
+          <a href="/outcome/reference/convert/">
+            Interoperation
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/reference/bad_access/" class="dd-item">
-        <a href="/outcome/reference/bad_access/">
-          <span>Exceptions</span>
-        </a>
+        <div>
+          <a href="/outcome/reference/bad_access/">
+            Exceptions
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/reference/iostream_support/" class="dd-item">
-        <a href="/outcome/reference/iostream_support/">
-          <span>iostream support</span>
-        </a>
+        <div>
+          <a href="/outcome/reference/iostream_support/">
+            iostream support
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/reference/result_c/" class="dd-item">
-        <a href="/outcome/reference/result_c/">
-          <span>C API</span>
-        </a>
+        <div>
+          <a href="/outcome/reference/result_c/">
+            C API
+          </a>
+        </div>
     </li>
-    <li data-nav-id="/outcome/reference/policies/" class="dd-item">
-      <a href="/outcome/reference/policies/">
-        <span>Policies</span><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </a>
+    <li data-nav-id="/outcome/reference/policies/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/reference/policies/">Policies</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
         <ul>
       <li data-nav-id="/outcome/reference/policies/all_narrow/" class="dd-item">
-        <a href="/outcome/reference/policies/all_narrow/">
-          <span>All narrow (hard UB)</span>
-        </a>
+        <div>
+          <a href="/outcome/reference/policies/all_narrow/">
+            All narrow (hard UB)
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/reference/policies/outcome_error_code_throw_as_system_error/" class="dd-item">
-        <a href="/outcome/reference/policies/outcome_error_code_throw_as_system_error/">
-          <span>error_code throw as system_error (Outcome)</span>
-        </a>
+        <div>
+          <a href="/outcome/reference/policies/outcome_error_code_throw_as_system_error/">
+            error_code throw as system_error (Outcome)
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/reference/policies/result_error_code_throw_as_system_error/" class="dd-item">
-        <a href="/outcome/reference/policies/result_error_code_throw_as_system_error/">
-          <span>error_code throw as system_error (Result)</span>
-        </a>
+        <div>
+          <a href="/outcome/reference/policies/result_error_code_throw_as_system_error/">
+            error_code throw as system_error (Result)
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/reference/policies/outcome_exception_ptr_rethrow/" class="dd-item">
-        <a href="/outcome/reference/policies/outcome_exception_ptr_rethrow/">
-          <span>exception_ptr rethrow (Outcome)</span>
-        </a>
+        <div>
+          <a href="/outcome/reference/policies/outcome_exception_ptr_rethrow/">
+            exception_ptr rethrow (Outcome)
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/reference/policies/result_exception_ptr_rethrow/" class="dd-item">
-        <a href="/outcome/reference/policies/result_exception_ptr_rethrow/">
-          <span>exception_ptr rethrow (Result)</span>
-        </a>
+        <div>
+          <a href="/outcome/reference/policies/result_exception_ptr_rethrow/">
+            exception_ptr rethrow (Result)
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/reference/policies/terminate/" class="dd-item">
-        <a href="/outcome/reference/policies/terminate/">
-          <span>Termimate</span>
-        </a>
+        <div>
+          <a href="/outcome/reference/policies/terminate/">
+            Termimate
+          </a>
+        </div>
     </li>
       <li data-nav-id="/outcome/reference/policies/throw_bad_result_access/" class="dd-item">
-        <a href="/outcome/reference/policies/throw_bad_result_access/">
-          <span>Throw bad_result_access</span>
-        </a>
+        <div>
+          <a href="/outcome/reference/policies/throw_bad_result_access/">
+            Throw bad_result_access
+          </a>
+        </div>
     </li>
         </ul>
     </li>
         </ul>
     </li>
-    <li data-nav-id="/outcome/faq/" class="dd-item">
-      <a href="/outcome/faq/">
-        <span>Frequently asked questions</span>
-      </a>
+    <li data-nav-id="/outcome/faq/" class="dd-item
+        ">
+      <div>
+      <a href="/outcome/faq/">Frequently asked questions</a>
+      </div>
     </li>
-    <li data-nav-id="/outcome/videos/" class="dd-item">
-      <a href="/outcome/videos/">
-        <span>Videos</span>
-      </a>
+    <li data-nav-id="/outcome/videos/" class="dd-item
+        ">
+      <div>
+      <a href="/outcome/videos/">Videos</a>
+      </div>
     </li>
-    <li data-nav-id="/outcome/changelog/" class="dd-item">
-      <a href="/outcome/changelog/">
-        <span>Changelog</span>
-      </a>
+    <li data-nav-id="/outcome/changelog/" class="dd-item
+        ">
+      <div>
+      <a href="/outcome/changelog/">Changelog</a>
+      </div>
     </li>
-    <li data-nav-id="/outcome/history/" class="dd-item">
-      <a href="/outcome/history/">
-        <span>History</span>
-      </a>
+    <li data-nav-id="/outcome/history/" class="dd-item
+        ">
+      <div>
+      <a href="/outcome/history/">History</a>
+      </div>
     </li>
-        <section id="shortcuts">
-                <li class="" role=""><h3>More</h3><a href="https://github.com/ned14/outcome" target="_blank" rel="noopener"><i class='fa fa-github'></i> Outcome 2.0 github repo</a></li>
-                <li class="" role=""><a href="/outcome/credits" target="_blank" rel="noopener"><i class='fa fa-bullhorn'></i> Acknowledgements</a></li>
-        </section>
+
+
+
+
     </ul>
-
-
-    <section id="footer"><center>
-
-<a class="github-button" href="https://dedi4.nedprod.com/static/files/outcome-v2.0-source-latest.tar.xz" data-icon="octicon-cloud-download" aria-label="Download Outcome">Download</a>
-
-
-<a class="github-button" href="https://github.com/ned14/outcome" data-icon="octicon-star" data-show-count="false" aria-label="Star Outcome on GitHub">Star</a>
-
-
-<a class="github-button" href="https://github.com/ned14/outcome/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork Outcome on GitHub">Fork</a>
-
-</center>
-
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+    <section>
     </section>
-  </div>
-</nav>
+  </aside>
+  <section class="page">
+    
+    <div class="nav-select">
+      <center>Navigation : 
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/outcome/requirements/" >
+   Prerequisites</option>
+    <option value="/outcome/build/" >
+   Build and install</option>
+    <option value="/outcome/use-matrix/" >
+   Decision matrix</option>
+    <option value="/outcome/motivation/" >
+   Motivation</option>
+    <option value="/outcome/tutorial/" >
+   Tutorial</option> 
+    <option value="/outcome/tutorial/result/" >
+  - 
+   result&lt;&gt;</option>
+    <option value="/outcome/tutorial/outcome/"  selected>
+  - 
+   outcome&lt;&gt;</option> 
+      <option value="/outcome/tutorial/outcome/inspecting/" >-- Inspecting outcome&lt;T, EC, EP&gt;</option>
+  
+    <option value="/outcome/tutorial/no-value/" >
+  - 
+   No-value policies</option>
+    <option value="/outcome/tutorial/payload/" >
+  - 
+   Custom payloads</option>
+    <option value="/outcome/tutorial/constructors/" >
+  - 
+   Result returning constructors</option>
+    <option value="/outcome/tutorial/hooks/" >
+  - 
+   Hooking events</option>
+    <option value="/outcome/tutorial/c-api/" >
+  - 
+   Using result&lt;T&gt; from C code</option>
+    <option value="/outcome/tutorial/interop/" >
+  - 
+   Interoperation</option>
+  
+    <option value="/outcome/reference/" >
+   API reference</option>
+    <option value="/outcome/faq/" >
+   Frequently asked questions</option>
+    <option value="/outcome/videos/" >
+   Videos</option>
+    <option value="/outcome/changelog/" >
+   Changelog</option>
+    <option value="/outcome/history/" >
+   History</option>
 
 
 
-        <section id="body">
-        <div id="overlay"></div>
-        <div class="padding highlightable">
-        
-          <div id="top-bar">
-            
-              
-              
-              
-            <div id="top-github-link">
-              <a class="github-link" href="https://github.com/ned14/outcome/edit/develop/doc/src/content/tutorial/outcome/_index.md" target="blank">
-                <i class="fa fa-code-fork"></i>
-                Edit page
-              </a>
-            </div><div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                <span id="sidebar-toggle-span">
-                  <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
-                    <i class="fa fa-bars"></i>
-                  </a>
-                </span>
-                <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
-                <span class="links">
-                
-
-
-
-
-
-
-
- <a href='/outcome/'>Home</a> > <a href='/outcome/tutorial/'>Tutorial</a> > outcome<>
-
- 
-
- 
-
-   
-                </span>
-            </div>
-            <div class="progress">
-    <div class="wrapper">
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#outcome"><code>outcome&lt;&gt;</code></a></li>
-</ul></li>
-</ul>
-</nav>
+        </select>
+      </center>
     </div>
-</div>
-
-          </div>
-        
-        
-          <div id="tags">
-            
-              <a class="label label-default" href="https://ned14.github.io/outcome//tags/outcome">outcome</a>
-            
-          </div>
-        
-        <div id="body-inner">
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="/outcome/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/outcome/js/auto-complete.js"></script>
+        <link href="/outcome/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
           
-            <h1>outcome&lt;&gt;</h1>
+              var baseurl = "https:\/\/ned14.github.io\/outcome\/";
           
+        </script>
+        <script type="text/javascript" src="/outcome/js/search.js"></script>
+      </div>
+    
 
-
-
+    <h1>outcome&lt;&gt;</h1>
+    
+    
+    
 
 
 
@@ -576,6 +701,8 @@
 
 <p>Consider a program consisting of three layers:</p>
 
+<link href="/outcome/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+<script defer src="/outcome/mermaid/mermaid.js">mermaid.initialize({startOnLoad:true});</script>
 <div class="mermaid" align="center" >
 graph BT
     L3["Layer3"]
@@ -620,48 +747,69 @@ and be able to rethrow it in <code>Layer3</code>.</p>
     (provided that <code>EP</code> is <code>std::exception_ptr</code>).</p>
 
 
-<footer class=" footline" >
-	
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/outcome/tutorial/result/try/" title="TRY operations"> <i class="fa fa-chevron-left"></i><label>TRY operations</label></a>
+    <a class="nav nav-next" href="/outcome/tutorial/outcome/inspecting/" title="Inspecting outcome&lt;T, EC, EP&gt;" style="margin-right: 0px;"><label>Inspecting outcome&lt;T, EC, EP&gt;</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+    <div class="tags"> 
+      
+        <a class="label label-default" href="https://ned14.github.io/outcome/tags/outcome">outcome</a>
+      
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="github-link">
+      <a href="https://github.com/ned14/outcome/edit/develop/doc/src/content/tutorial/outcome/_index.md" target="blank"><i class="fa fa-code-fork"></i>
+        Improve this page</a>
+    </div>
+    
+  </div>
+
+
+	<div>
+
+
+  
+    Create a content/_footer.md file to customize the footer content
+  
+
+
+
+	</div>
 </footer>
 
+<script src="/outcome/js/clipboard.min.js"></script>
 
-
-
-
-
-        
-
-      </div>
-    </div>
-
-    
- 
-    
-
-    <div id="navigation">
-        <a class="nav nav-prev" href="/outcome/tutorial/result/try/" title="TRY operations"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="/outcome/tutorial/outcome/inspecting/" title="Inspecting outcome&lt;T, EC, EP&gt;" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
-    </div>
-
-    </section>
-    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
-      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
-    </div>    
-
-    <script src="/outcome/js/clipboard.min.js"></script>
+<link href="/outcome/css/featherlight.min.css" rel="stylesheet">
 <script src="/outcome/js/featherlight.min.js"></script>
-<script src="/outcome/js/html5shiv-printshiv.min.js"></script>
 
 
-<script src="/outcome/js/modernizr.custom.71422.js"></script>
-<script src="/outcome/js/learn.js"></script>
-<script src="/outcome/js/hugo-learn.js"></script>
+
+<script src="/outcome/theme-flex/script.js"></script>
 
 
-<link href="/outcome/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
-<script src="/outcome/mermaid/mermaid.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
     
 
+    
+    
+
+    
   </body>
 </html>
