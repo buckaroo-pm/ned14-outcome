@@ -6,7 +6,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-06T00:17:44 UTC">
+<meta name="revised" content="2018-12-06T14:42:32 UTC">
 <title>Home :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -693,16 +693,14 @@ to not use exceptions to propagate failure reports across thread, tasks, fibers;
 
 <p>One of the tools in the Outcome library is <code>result&lt;T&gt;</code>: it represents either a successfully computed value of type <code>T</code> or an <code>std::error_code</code> representing the reason for failure. You use it in the function&rsquo;s return type:</p>
 
-<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
-<span class="k">auto</span> <span class="nf">read_data_from_file</span><span class="p">(</span><span class="n">string_view</span> <span class="n">path</span><span class="p">)</span> <span class="k">noexcept</span>
+<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">auto</span> <span class="nf">read_data_from_file</span><span class="p">(</span><span class="n">string_view</span> <span class="n">path</span><span class="p">)</span> <span class="k">noexcept</span>
   <span class="o">-&gt;</span> <span class="n">outcome</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/intro_example.cpp#L20" class="code-snippet-url" target="_blank">View this code on Github</a></div>
 
 
 <p>It is possible to inspect the state manually:</p>
 
-<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
-<span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">rslt</span> <span class="o">=</span> <span class="n">read_data_from_file</span><span class="p">(</span><span class="s">&#34;config.cfg&#34;</span><span class="p">))</span>
+<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">rslt</span> <span class="o">=</span> <span class="n">read_data_from_file</span><span class="p">(</span><span class="s">&#34;config.cfg&#34;</span><span class="p">))</span>
   <span class="n">use_string</span><span class="p">(</span><span class="n">rslt</span><span class="p">.</span><span class="n">value</span><span class="p">());</span>                   <span class="c1">// returns string
 </span><span class="c1"></span><span class="k">else</span>
   <span class="k">throw</span> <span class="n">LibError</span><span class="p">{</span><span class="n">rslt</span><span class="p">.</span><span class="n">error</span><span class="p">(),</span> <span class="s">&#34;config.cfg&#34;</span><span class="p">};</span> <span class="c1">// returns error_code
@@ -711,8 +709,7 @@ to not use exceptions to propagate failure reports across thread, tasks, fibers;
 
 <p>Or, if this function is called in another function that also returns <code>result&lt;T&gt;</code> you can use a dedicated control statement:</p>
 
-<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
-<span class="k">auto</span> <span class="nf">process</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">content</span><span class="p">)</span> <span class="k">noexcept</span>
+<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">auto</span> <span class="nf">process</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">content</span><span class="p">)</span> <span class="k">noexcept</span>
   <span class="o">-&gt;</span> <span class="n">outcome</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">;</span>
 
 <span class="k">auto</span> <span class="nf">get_int_from_file</span><span class="p">(</span><span class="n">string_view</span> <span class="n">path</span><span class="p">)</span> <span class="k">noexcept</span>

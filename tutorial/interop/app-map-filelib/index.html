@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-06T00:17:43 UTC">
+<meta name="revised" content="2018-12-06T14:42:31 UTC">
 <title>Mapping the File I/O library into the Application :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -697,8 +697,7 @@
     <p>To handle the File I/O library, once again we turn to custom <code>ValueOrError</code>
 converters:</p>
 
-<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
-<span class="c1">// Inject custom ValueOrError conversion
+<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// Inject custom ValueOrError conversion
 </span><span class="c1"></span><span class="n">OUTCOME_V2_NAMESPACE_BEGIN</span>
 <span class="k">namespace</span> <span class="n">convert</span>
 <span class="p">{</span>

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-06T00:17:43 UTC">
+<meta name="revised" content="2018-12-06T14:42:31 UTC">
 <title>TRY operations :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -733,8 +733,7 @@ so you can test for its presence using <code>#ifdef OUTCOME_TRYX</code>.</p>
 
 <p>When you are calling functions that return <code>result&lt;void&gt;</code> the first of the two things does not make sense. You then have to use macro <code>OUTCOME_TRYV</code> instead. Let&rsquo;s use our function <code>print_half</code>:</p>
 
-<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
-<span class="n">outcome</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span> <span class="n">test</span><span class="p">()</span>
+<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">outcome</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span> <span class="n">test</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="n">OUTCOME_TRY</span> <span class="p">((</span><span class="n">print_half</span><span class="p">(</span><span class="s">&#34;2&#34;</span><span class="p">)));</span>
   <span class="n">OUTCOME_TRY</span> <span class="p">((</span><span class="n">print_half</span><span class="p">(</span><span class="s">&#34;X&#34;</span><span class="p">)));</span>

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-06T00:17:43 UTC">
+<meta name="revised" content="2018-12-06T14:42:31 UTC">
 <title>Phase 2 construction :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -690,8 +690,7 @@
     
     <p>Its phase 2 constructor:</p>
 
-<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
-<span class="c1">// Phase 2 static member constructor function, which cannot throw
+<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// Phase 2 static member constructor function, which cannot throw
 </span><span class="c1"></span><span class="kr">inline</span> <span class="n">outcome</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="n">file_handle</span><span class="o">&gt;</span> <span class="n">file_handle</span><span class="o">::</span><span class="n">file</span><span class="p">(</span><span class="n">file_handle</span><span class="o">::</span><span class="n">path_type</span> <span class="n">path</span><span class="p">,</span> <span class="n">file_handle</span><span class="o">::</span><span class="n">mode</span> <span class="n">mode</span><span class="p">)</span> <span class="k">noexcept</span>
 <span class="p">{</span>
   <span class="c1">// Perform phase 1 of object construction
