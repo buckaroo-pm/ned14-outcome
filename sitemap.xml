@@ -4,306 +4,382 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/requirements/</loc>
+    <lastmod>2018-09-20T09:20:50+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/build/</loc>
+    <lastmod>2018-09-04T19:13:49+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/use-matrix/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/problem/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/value-or-error/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/motivation/</loc>
+    <lastmod>2018-10-24T00:10:44+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/no-value/custom/</loc>
+    <lastmod>2018-11-12T10:00:22+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/policies/all_narrow/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/motivation/exceptions/</loc>
+    <lastmod>2018-10-25T01:23:57+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/hooks/keeping_state/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/c-api/limitations/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/payload/copy_file/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/httplib/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/constructors/two-phase-init/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/outcome/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/result/</loc>
+    <lastmod>2018-10-28T00:29:27+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/tidylib/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/constructors/file_handle/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/hooks/adl_bridging/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/no-value/builtin/</loc>
+    <lastmod>2018-11-15T01:03:50+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/c-api/example/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/result/inspecting/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/filelib/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/payload/copy_file2/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/motivation/errno/</loc>
+    <lastmod>2018-10-25T22:53:11+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/policies/outcome_error_code_throw_as_system_error/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/outcome/</loc>
+    <lastmod>2018-10-28T00:29:27+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/result/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/no-value/</loc>
+    <lastmod>2018-11-15T00:51:58+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/app/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/payload/copy_file3/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/c-api/example2/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/payload/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/motivation/error_codes/</loc>
+    <lastmod>2018-10-25T22:53:11+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/faq/</loc>
+    <lastmod>2018-06-21T21:30:16+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/hooks/hook_result/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/outcome/inspecting/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/app-map-httplib1/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/constructors/static-constructor/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/result/try/</loc>
+    <lastmod>2018-10-24T00:10:44+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/try/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/policies/result_error_code_throw_as_system_error/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/app-map-httplib2/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/hooks/poke_exception/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/app-map-filelib/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/constructors/metaprogrammg1/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/success_failure/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/c-api/variations/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/videos/</loc>
+    <lastmod>2018-09-20T09:21:47+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/policies/outcome_exception_ptr_rethrow/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/motivation/std_error_code/</loc>
+    <lastmod>2018-10-27T23:56:41+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/app-map-tidylib/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/constructors/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/hooks/hook_outcome/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/hooks/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/app-go/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/motivation/plug_error_code/</loc>
+    <lastmod>2018-11-12T10:00:22+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/utils/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/constructors/metaprogrammg2/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/policies/result_exception_ptr_rethrow/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/conclusion/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/constructors/metaprogrammg3/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/convert/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/motivation/narrow_contract/</loc>
+    <lastmod>2018-11-21T09:20:22+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/policies/terminate/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/bad_access/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/policies/throw_bad_result_access/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/c-api/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/changelog/</loc>
+    <lastmod>2018-09-20T09:20:50+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/iostream_support/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/result_c/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/history/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/policies/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
@@ -312,15 +388,18 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/credits/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/adl-bridging/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/backtrace/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -331,95 +410,114 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/constructors/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/default-actions/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/dual-api/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/error/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/exception/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/has_error_code/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/</loc>
+    <lastmod>2018-12-06T00:14:55+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/hooks/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/make_error_code/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/namespace/</loc>
+    <lastmod>2018-10-28T00:29:27+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/nodiscard/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/outcome/</loc>
+    <lastmod>2018-10-28T00:29:27+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/payload/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/policies/</loc>
+    <lastmod>2018-11-15T00:51:58+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/result/</loc>
+    <lastmod>2018-10-28T00:29:27+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/try/</loc>
+    <lastmod>2018-10-28T00:29:27+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/value/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/value-or-error/</loc>
+    <lastmod>2018-05-29T09:33:17+01:00</lastmod>
     <priority>0</priority>
   </url>
   
