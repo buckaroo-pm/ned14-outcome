@@ -16,7 +16,7 @@
       
       <guid>https://ned14.github.io/outcome/tutorial/result/</guid>
       <description>Outcome 2.0 namespace It is recommended that you refer to entities from this Outcome 2.0 via the following namespace alias:
-namespace outcome = OUTCOME_V2_NAMESPACE;View this code on GithubAs patches and modifications are applied to this library, namespaces get permuted in order not to break any backward compatibility. At some point namespace outcome::v2 will be defined, and this will be the prefered namespace. Until then OUTCOME_V2_NAMESPACE denotes the most recently updated version, getting closer to outcome::v2.</description>
+namespace outcome = OUTCOME_V2_NAMESPACE; View this code on Github As patches and modifications are applied to this library, namespaces get permuted in order not to break any backward compatibility. At some point namespace outcome::v2 will be defined, and this will be the prefered namespace. Until then OUTCOME_V2_NAMESPACE denotes the most recently updated version, getting closer to outcome::v2.</description>
     </item>
     
   </channel>

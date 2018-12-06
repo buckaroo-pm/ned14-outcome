@@ -35,7 +35,7 @@ Expected and Outcome are isomorphic to one another in design intent, but interop
       
       <guid>https://ned14.github.io/outcome/tutorial/no-value/custom/</guid>
       <description>If you want your basic_outcome&amp;lt;&amp;gt; or basic_result&amp;lt;&amp;gt; instances to call std::abort() whenever .value() is called on an object that does not contain a value, or .error() is called on an object that does not contain an error, you will need to define your own no-value policy as follows:
-struct abort_policy : outcome::policy::base { template &amp;lt;class Impl&amp;gt; static constexpr void wide_value_check(const Impl&amp;amp; self) { if (!base::_has_value(self)) std::abort(); } template &amp;lt;class Impl&amp;gt; static constexpr void wide_error_check(const Impl&amp;amp; self) { if (!</description>
+struct abort_policy : outcome::policy::base { template &amp;lt;classImpl&amp;gt; static constexpr void wide_value_check(const Impl&amp;amp; self) { if (!base::_has_value(self)) std::abort(); } template &amp;lt;classImpl&amp;gt; static constexpr void wide_error_check(const Impl&amp;amp; self) { if (!</description>
     </item>
     
     <item>
@@ -61,7 +61,7 @@ template&amp;nbsp;&amp;lt;class&amp;nbsp;Impl&amp;gt; static&amp;nbsp;constexpr&
       
       <guid>https://ned14.github.io/outcome/motivation/exceptions/</guid>
       <description>Exceptions Exceptions are the default mechanism in C++ for reporting, propagating and processing the information about function failures. Their main advantage is the ability to describe the &amp;ldquo;success dependency&amp;rdquo; between functions: if you want to say that calling function g() depends on the successful execution of function f(), you just put g() below f() and that&amp;rsquo;s it:
-int a() { f(); g(); // don&amp;#39;t call g() and further if f() fails  return h(); // don&amp;#39;t call h() if g() fails } In the C++ Standard terms this means that f() is sequenced before g().</description>
+int a() { f(); g(); // don&amp;#39;t call g() and further if f() fails  return h(); // don&amp;#39;t call h() if g() fails }  In the C++ Standard terms this means that f() is sequenced before g().</description>
     </item>
     
     <item>
@@ -103,7 +103,7 @@ namespace filesystem { /*! Copies the file at path `from` to path `to`. \returns
       <guid>https://ned14.github.io/outcome/tutorial/interop/httplib/</guid>
       <description>Let us imagine a simple application: it fetches a HTTP page using a HTTP library, sends it through HTML tidy via the htmltidy library, and then writes it to disc using a filelib library. So three third party libraries, two using Outcome in incompatible ways, and the third being a C library just for kicks.
 Let us imagine that the HTTP library has the following public interface:
-// This is some standalone library implementing high level HTTP namespace httplib { // These are the error code that this HTTP library can return  enum class status_code { success = 0, // not the HTTP success code of 200  // A subset of all HTTP status codes for brevity  bad_request = 400, access_denied = 401, logon_failed = 402, forbidden = 403, not_found = 404, internal_error = 500 }; // This is the error type that this HTTP library can return  struct failure { status_code status{status_code::success}; std::string url{}; // The failing URL  }; // Localise a result implementation to this library  template &amp;lt;class T&amp;gt; using result = OUTCOME_V2_NAMESPACE::result&amp;lt;T, failure&amp;gt;; /* Performs a HTTP GET on the url, returning the body if successful, a failure with status_code if unsuccessful at the HTTP level, or a C++ exception throw if something catastrophic happened e.</description>
+// This is some standalone library implementing high level HTTP namespace httplib { // These are the error code that this HTTP library can return  enum classstatus_code { success = 0, // not the HTTP success code of 200  // A subset of all HTTP status codes for brevity  bad_request = 400, access_denied = 401, logon_failed = 402, forbidden = 403, not_found = 404, internal_error = 500 }; // This is the error type that this HTTP library can return  struct failure { status_code status{status_code::success}; std::string url{}; // The failing URL  }; // Localise a result implementation to this library  template &amp;lt;classT&amp;gt; using result = OUTCOME_V2_NAMESPACE::result&amp;lt;T, failure&amp;gt;; /* Performs a HTTP GET on the url, returning the body if successful, a failure with status_code if unsuccessful at the HTTP level, or a C++ exception throw if something catastrophic happened e.</description>
     </item>
     
     <item>
@@ -142,7 +142,7 @@ namespace&amp;nbsp;outcome_v2_xxx { &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;temp
       
       <guid>https://ned14.github.io/outcome/tutorial/constructors/file_handle/</guid>
       <description>Borrowing from afio::file_handle which uses this design pattern, here is a simplified file_handle implementation:
-class file_handle { int _fd{-1}; // file descriptor  struct stat _stat { 0 }; // stat of the fd at open  // Phase 1 private constexpr constructor  constexpr file_handle() {} public: using path_type = filesystem::path; //! The behaviour of the handle: does it read, read and write, or atomic append?  enum class mode : unsigned char // bit 0 set means writable  { unchanged = 0, none = 2, //!</description>
+classfile_handle { int _fd{-1}; // file descriptor  struct stat _stat { 0 }; // stat of the fd at open  // Phase 1 private constexpr constructor  constexpr file_handle() {} public: using path_type = filesystem::path; //! The behaviour of the handle: does it read, read and write, or atomic append?  enum classmode : unsigned char // bit 0 set means writable  { unchanged = 0, none = 2, //!</description>
     </item>
     
     <item>
@@ -215,7 +215,7 @@ namespace filesystem2 { // Error code + paths related to a failure. Also causes 
       
       <guid>https://ned14.github.io/outcome/motivation/errno/</guid>
       <description>errno The idiom of returning, upon failure, a special value and storing an error code (an int) inside a global (or thread-local) object errno is inherited from C, and used in its Standard Library:
-int readValue(const char * filename) { FILE* f = fopen(filename, &amp;#34;r&amp;#34;); if (f == NULL) return 0; // special value indicating failure  // keep errno value set by fopen()  int i; int r = fscanf(f, &amp;#34;%d&amp;#34;, &amp;amp;i); if (r == 0 || r == EOF) { // special values: i not read  errno = ENODATA; // choose error value to return  return 0; fclose(f); errno = 0; // clear error info (success)  return i; } One advantage (to some and a disadvantage to others) of this technique is that it uses familiar control statements (if and return) to indicate all execution paths that handle failures.</description>
+int readValue(const char * filename) { FILE* f = fopen(filename, &amp;#34;r&amp;#34;); if (f == NULL) return 0; // special value indicating failure  // keep errno value set by fopen()  int i; int r = fscanf(f, &amp;#34;%d&amp;#34;, &amp;amp;i); if (r == 0 || r == EOF) { // special values: i not read  errno = ENODATA; // choose error value to return  return 0; fclose(f); errno = 0; // clear error info (success)  return i; }  One advantage (to some and a disadvantage to others) of this technique is that it uses familiar control statements (if and return) to indicate all execution paths that handle failures.</description>
     </item>
     
     <item>
@@ -249,7 +249,7 @@ namespace&amp;nbsp;outcome_v2_xxx { &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;name
       
       <guid>https://ned14.github.io/outcome/tutorial/interop/app/</guid>
       <description>The application is of course also based on Outcome, and like the HTTP library is also of mixed-failure design in that failure can be returned via error code, type erased exception_ptr or indeed a C++ exception throw.
-// This is the namespace of the application which is connecting together the httplib, // filelib and tidylib libraries into a solution. namespace app { // Create an ADL bridge so copy/move hooks will be searched for in this namespace  struct error_code : public std::error_code { // passthrough  using std::error_code::error_code; error_code() = default; error_code(std::error_code ec) : std::error_code(ec) { } }; // Localise an outcome implementation for this namespace  template &amp;lt;class T&amp;gt; using outcome = OUTCOME_V2_NAMESPACE::outcome&amp;lt;T, error_code /*, std::exception_ptr */&amp;gt;; using OUTCOME_V2_NAMESPACE::success; } View this code on Github Here we localise a passthrough error_code solely for the purpose of ADL bridging, otherwise the localised outcome configured is the default one which comes with Outcome.</description>
+// This is the namespace of the application which is connecting together the httplib, // filelib and tidylib libraries into a solution. namespace app { // Create an ADL bridge so copy/move hooks will be searched for in this namespace  struct error_code : public std::error_code { // passthrough  using std::error_code::error_code; error_code() = default; error_code(std::error_code ec) : std::error_code(ec) { } }; // Localise an outcome implementation for this namespace  template &amp;lt;classT&amp;gt; using outcome = OUTCOME_V2_NAMESPACE::outcome&amp;lt;T, error_code /*, std::exception_ptr */&amp;gt;; using OUTCOME_V2_NAMESPACE::success; } View this code on Github Here we localise a passthrough error_code solely for the purpose of ADL bridging, otherwise the localised outcome configured is the default one which comes with Outcome.</description>
     </item>
     
     <item>
@@ -308,7 +308,7 @@ namespace error_code_extended { // Specialise the result construction hook for o
       
       <guid>https://ned14.github.io/outcome/tutorial/interop/app-map-httplib1/</guid>
       <description>Firstly we are going to need to wrap up httplib::failure into a custom STL exception type before we can type erase it into an exception_ptr instance. Please note that this code is defined in the app namespace:
-namespace app { // Specialise an exception type for httplib errors  struct httplib_error : std::runtime_error { // passthrough  using std::runtime_error::runtime_error; httplib_error(httplib::failure _failure, std::string msg) : std::runtime_error(std::move(msg)) , failure(std::move(_failure)) { } // the original failure  httplib::failure failure; }; // Type erase httplib::result&amp;lt;U&amp;gt; into a httplib_error exception ptr  template &amp;lt;class U&amp;gt; inline std::exception_ptr make_httplib_exception(const httplib::result&amp;lt;U&amp;gt; &amp;amp;src) { std::string str(&amp;#34;httplib failed with error &amp;#34;); switch(src.</description>
+namespace app { // Specialise an exception type for httplib errors  struct httplib_error : std::runtime_error { // passthrough  using std::runtime_error::runtime_error; httplib_error(httplib::failure _failure, std::string msg) : std::runtime_error(std::move(msg)) , failure(std::move(_failure)) { } // the original failure  httplib::failure failure; }; // Type erase httplib::result&amp;lt;U&amp;gt; into a httplib_error exception ptr  template &amp;lt;classU&amp;gt; inline std::exception_ptr make_httplib_exception(const httplib::result&amp;lt;U&amp;gt; &amp;amp;src) { std::string str(&amp;#34;httplib failed with error &amp;#34;); switch(src.</description>
     </item>
     
     <item>
@@ -328,8 +328,8 @@ namespace app { // Specialise an exception type for httplib errors  struct httpl
       
       <guid>https://ned14.github.io/outcome/tutorial/result/try/</guid>
       <description>In the implementation of function print_half we have seen the usage of the macro  OUTCOME_TRY :
-OUTCOME_TRY (i, BigInt::fromString(text)); The OUTCOME_TRY macro uses C macro overloading to select between two implementations based on the number of input parameters. If there is exactly one input parameter i.e. without the i,, the control statement is roughly equivalent to:
-auto&amp;amp;&amp;amp; __result = BigInt::fromString(text); if (!__result) return __result.as_failure(); Where __result is a compile time generated unique name.</description>
+OUTCOME_TRY (i, BigInt::fromString(text));  The OUTCOME_TRY macro uses C macro overloading to select between two implementations based on the number of input parameters. If there is exactly one input parameter i.e. without the i,, the control statement is roughly equivalent to:
+auto&amp;amp;&amp;amp; __result = BigInt::fromString(text); if (!__result) return __result.as_failure();  Where __result is a compile time generated unique name.</description>
     </item>
     
     <item>
@@ -370,7 +370,7 @@ Any wide attempt to access the successful state where there is none causes:
       
       <guid>https://ned14.github.io/outcome/tutorial/interop/app-map-httplib2/</guid>
       <description>If you remember the tutorial section on the ValueOrError Concept, this is an example of how to implement a custom ValueOrError Concept converter in Outcome:
-// Inject custom ValueOrError conversion OUTCOME_V2_NAMESPACE_BEGIN namespace convert { // Provide custom ValueOrError conversion from httplib::result&amp;lt;U&amp;gt; into any app::outcome&amp;lt;T&amp;gt;  template &amp;lt;class T, class U&amp;gt; struct value_or_error&amp;lt;app::outcome&amp;lt;T&amp;gt;, httplib::result&amp;lt;U&amp;gt;&amp;gt; { // False to indicate that this converter wants `result`/`outcome` to NOT reject all other `result`  static constexpr bool enable_result_inputs = true; // False to indicate that this converter wants `outcome` to NOT reject all other `outcome`  static constexpr bool enable_outcome_inputs = true; template &amp;lt;class X, //  typename = std::enable_if_t&amp;lt;std::is_same&amp;lt;httplib::result&amp;lt;U&amp;gt;, std::decay_t&amp;lt;X&amp;gt;&amp;gt;::value //  &amp;amp;&amp;amp; std::is_constructible&amp;lt;T, U&amp;gt;::value&amp;gt;&amp;gt; //  constexpr app::outcome&amp;lt;T&amp;gt; operator()(X &amp;amp;&amp;amp;src) { // Forward any successful value, else synthesise an exception ptr  return src.</description>
+// Inject custom ValueOrError conversion OUTCOME_V2_NAMESPACE_BEGIN namespace convert { // Provide custom ValueOrError conversion from httplib::result&amp;lt;U&amp;gt; into any app::outcome&amp;lt;T&amp;gt;  template &amp;lt;classT, classU&amp;gt; struct value_or_error&amp;lt;app::outcome&amp;lt;T&amp;gt;, httplib::result&amp;lt;U&amp;gt;&amp;gt; { // False to indicate that this converter wants `result`/`outcome` to NOT reject all other `result`  static constexpr bool enable_result_inputs = true; // False to indicate that this converter wants `outcome` to NOT reject all other `outcome`  static constexpr bool enable_outcome_inputs = true; template &amp;lt;classX, //  typename = std::enable_if_t&amp;lt;std::is_same&amp;lt;httplib::result&amp;lt;U&amp;gt;, std::decay_t&amp;lt;X&amp;gt;&amp;gt;::value //  &amp;amp;&amp;amp; std::is_constructible&amp;lt;T, U&amp;gt;::value&amp;gt;&amp;gt; //  constexpr app::outcome&amp;lt;T&amp;gt; operator()(X &amp;amp;&amp;amp;src) { // Forward any successful value, else synthesise an exception ptr  return src.</description>
     </item>
     
     <item>
@@ -390,7 +390,7 @@ But let&amp;rsquo;s keep going by intercepting any construction of our localised
       
       <guid>https://ned14.github.io/outcome/tutorial/interop/app-map-filelib/</guid>
       <description>To handle the File I/O library, once again we turn to custom ValueOrError converters:
-// Inject custom ValueOrError conversion OUTCOME_V2_NAMESPACE_BEGIN namespace convert { // Provide custom ValueOrError conversion from filelib::result&amp;lt;U&amp;gt; into any app::outcome&amp;lt;T&amp;gt;  template &amp;lt;class T, class U&amp;gt; struct value_or_error&amp;lt;app::outcome&amp;lt;T&amp;gt;, filelib::result&amp;lt;U&amp;gt;&amp;gt; { // True to indicate that this converter wants `result`/`outcome` to NOT reject all other `result`  static constexpr bool enable_result_inputs = true; // False to indicate that this converter wants `outcome` to NOT reject all other `outcome`  static constexpr bool enable_outcome_inputs = true; template &amp;lt;class X, //  typename = std::enable_if_t&amp;lt;std::is_same&amp;lt;filelib::result&amp;lt;U&amp;gt;, std::decay_t&amp;lt;X&amp;gt;&amp;gt;::value //  &amp;amp;&amp;amp; std::is_constructible&amp;lt;T, U&amp;gt;::value&amp;gt;&amp;gt; //  constexpr app::outcome&amp;lt;T&amp;gt; operator()(X &amp;amp;&amp;amp;src) { // Forward any successful value  if(src.</description>
+// Inject custom ValueOrError conversion OUTCOME_V2_NAMESPACE_BEGIN namespace convert { // Provide custom ValueOrError conversion from filelib::result&amp;lt;U&amp;gt; into any app::outcome&amp;lt;T&amp;gt;  template &amp;lt;classT, classU&amp;gt; struct value_or_error&amp;lt;app::outcome&amp;lt;T&amp;gt;, filelib::result&amp;lt;U&amp;gt;&amp;gt; { // True to indicate that this converter wants `result`/`outcome` to NOT reject all other `result`  static constexpr bool enable_result_inputs = true; // False to indicate that this converter wants `outcome` to NOT reject all other `outcome`  static constexpr bool enable_outcome_inputs = true; template &amp;lt;classX, //  typename = std::enable_if_t&amp;lt;std::is_same&amp;lt;filelib::result&amp;lt;U&amp;gt;, std::decay_t&amp;lt;X&amp;gt;&amp;gt;::value //  &amp;amp;&amp;amp; std::is_constructible&amp;lt;T, U&amp;gt;::value&amp;gt;&amp;gt; //  constexpr app::outcome&amp;lt;T&amp;gt; operator()(X &amp;amp;&amp;amp;src) { // Forward any successful value  if(src.</description>
     </item>
     
     <item>
@@ -448,7 +448,7 @@ Any wide attempt to access the successful state where there is none causes: std:
       
       <guid>https://ned14.github.io/outcome/motivation/std_error_code/</guid>
       <description>std::error_code Type std::error_code has been designed to be sufficiently small and trivial to be cheaply passed around, and at the same time be able to store sufficient information to represent any error situation from any library/sub-system in the world without a clash. Its representation is basically:
-class error_code { error_category* domain; // domain from which the error originates  int value; // numeric value of error within the domain }; Here, domain indicates the library from which the error originates.</description>
+classerror_code { error_category* domain; // domain from which the error originates  int value; // numeric value of error within the domain };  Here, domain indicates the library from which the error originates.</description>
     </item>
     
     <item>
@@ -509,7 +509,7 @@ Effects: Rethrows the exception in the pointer, and via a long sequence of catch
       
       <guid>https://ned14.github.io/outcome/tutorial/constructors/metaprogrammg2/</guid>
       <description>First, we need a base definition for construct&amp;lt;T&amp;gt;:
-template &amp;lt;class T&amp;gt; struct construct { outcome::result&amp;lt;T&amp;gt; operator()() const noexcept { //  static_assert(!std::is_same&amp;lt;T, T&amp;gt;::value, &amp;#34;construct&amp;lt;T&amp;gt;() was not specialised for the type T supplied&amp;#34;); } }; View this code on Github This fails a static assert if the type is ever instantiated unspecialised.
+template &amp;lt;classT&amp;gt; struct construct { outcome::result&amp;lt;T&amp;gt; operator()() const noexcept { //  static_assert(!std::is_same&amp;lt;T, T&amp;gt;::value, &amp;#34;construct&amp;lt;T&amp;gt;() was not specialised for the type T supplied&amp;#34;); } }; View this code on Github This fails a static assert if the type is ever instantiated unspecialised.
 We then specialise for construct&amp;lt;file_handle&amp;gt;:
 template &amp;lt;&amp;gt; struct construct&amp;lt;file_handle&amp;gt; { file_handle::path_type _path; file_handle::mode _mode{file_handle::mode::read}; // Any other args, default initialised if necessary, follow here .</description>
     </item>
@@ -545,9 +545,9 @@ However there are occasions when you don&amp;rsquo;t have control over the imple
       
       <guid>https://ned14.github.io/outcome/tutorial/constructors/metaprogrammg3/</guid>
       <description>No doubt many will dislike the two-stage invocation pattern i.e.
-construct&amp;lt;file_handle&amp;gt;{&amp;#34;hello&amp;#34;}(); So let us examine the most obvious alternative: a templated free function construct&amp;lt;T&amp;gt;.
+construct&amp;lt;file_handle&amp;gt;{&amp;#34;hello&amp;#34;}();  So let us examine the most obvious alternative: a templated free function construct&amp;lt;T&amp;gt;.
 Due to the inability to partially specialise templated functions in C++, you need to use tagged overloading e.g.
-template&amp;lt;class... Args&amp;gt; inline outcome::result&amp;lt;file_handle&amp;gt; construct(std::in_place_type_t&amp;lt;file_handle&amp;gt;, Args&amp;amp;&amp;amp; ... args) { return file_handle::file(std::forward&amp;lt;Args&amp;gt;(args)...); } ... // Now you must always write this: construct(std::in_place_type&amp;lt;file_handle&amp;gt;, &amp;#34;hello&amp;#34;); Tagged overloading is fine for smaller projects, but for larger code bases:</description>
+template&amp;lt;class... Args&amp;gt; inline outcome::result&amp;lt;file_handle&amp;gt; construct(std::in_place_type_t&amp;lt;file_handle&amp;gt;, Args&amp;amp;&amp;amp; ... args) { return file_handle::file(std::forward&amp;lt;Args&amp;gt;(args)...); } ... // Now you must always write this: construct(std::in_place_type&amp;lt;file_handle&amp;gt;, &amp;#34;hello&amp;#34;);  Tagged overloading is fine for smaller projects, but for larger code bases:</description>
     </item>
     
     <item>
@@ -662,7 +662,9 @@ Macro CXX_DECLARE_RESULT_EC
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/credits/</guid>
-      <description>github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @ned14 929 commits   @akrzemi1 37 commits   @menuet 2 commits   @norbertwenzel 1 commits   @vinipsmaker 1 commits   @andoks 1 commits   @catskul 1 commits   @johnthagen 1 commits   @jenkins-nedprod 1 commits   This pretty, modern C++ documentation  Hugo - static website generator of this documentation.</description>
+      <description>github contributors HAHAHUGOSHORTCODE-0xc00024f900-1-HBHB
+This pretty, modern C++ documentation  Hugo - static website generator of this documentation. hugo-theme-docdock - the Hugo theme used by this documentation. Standardese - the API reference generator  Special thanks for Outcome v2 For a second time, Charley Bay stepped up as review manager. Given how much work it was for the v1 review, I can only say thank you.
+Andrzej Krzemienski went far beyond the call of duty in the development of Outcome v2.</description>
     </item>
     
   </channel>

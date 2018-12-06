@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-05T15:03:03 UTC">
+<meta name="revised" content="2018-12-06T00:17:43 UTC">
 <title>The HTTP library :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -706,7 +706,7 @@ incompatible ways, and the third being a C library just for kicks.</p>
 </span><span class="c1"></span><span class="k">namespace</span> <span class="n">httplib</span>
 <span class="p">{</span>
   <span class="c1">// These are the error code that this HTTP library can return
-</span><span class="c1"></span>  <span class="k">enum</span> <span class="k">class</span> <span class="nc">status_code</span>
+</span><span class="c1"></span>  <span class="k">enum</span> <span class="k">class</span><span class="err"> </span><span class="nc">status_code</span>
   <span class="p">{</span>
     <span class="n">success</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1">// not the HTTP success code of 200
 </span><span class="c1"></span>
@@ -725,7 +725,7 @@ incompatible ways, and the third being a C library just for kicks.</p>
     <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">url</span><span class="p">{};</span>  <span class="c1">// The failing URL
 </span><span class="c1"></span>  <span class="p">};</span>
   <span class="c1">// Localise a result implementation to this library
-</span><span class="c1"></span>  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">using</span> <span class="n">result</span> <span class="o">=</span> <span class="n">OUTCOME_V2_NAMESPACE</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">failure</span><span class="o">&gt;</span><span class="p">;</span>
+</span><span class="c1"></span>  <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span><span class="err"> </span><span class="nc">T</span><span class="o">&gt;</span> <span class="k">using</span> <span class="n">result</span> <span class="o">=</span> <span class="n">OUTCOME_V2_NAMESPACE</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">failure</span><span class="o">&gt;</span><span class="p">;</span>
 
   <span class="cm">/* Performs a HTTP GET on the url, returning the body if successful,
 </span><span class="cm">  a failure with status_code if unsuccessful at the HTTP level, or a

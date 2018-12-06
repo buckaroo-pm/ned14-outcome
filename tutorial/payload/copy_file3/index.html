@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-05T15:03:03 UTC">
+<meta name="revised" content="2018-12-06T00:17:43 UTC">
 <title>Auto-throwing filesystem_error :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -723,13 +723,13 @@ failing paths is easy:</p>
 
 <p>Usage of our new &ldquo;upgraded&rdquo; Filesystem <code>copy_file()</code> might now be as follows:</p>
 
-<p><div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
+<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
   <span class="c1">// Non-throwing use case
-</span><span class="c1"></span>  <span class="k">auto</span> <span class="n">o</span> <span class="o">=</span> <span class="n">filesystem2</span><span class="o">::</span><span class="n">copy_file</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;dontexist&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s">&#34;alsodontexist&#34;</span><span class="p">);</span>
+</span><span class="c1"></span>  <span class="k">auto</span> <span class="n">o</span> <span class="o">=</span> <span class="n">filesystem2</span><span class="o">::</span><span class="n">copy_file</span><span class="p">(</span><span class="s">&#34;dontexist&#34;</span><span class="p">,</span> <span class="s">&#34;alsodontexist&#34;</span><span class="p">);</span>
   <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">o</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="sa"></span><span class="s">&#34;Copy file failed with error &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">o</span><span class="p">.</span><span class="n">error</span><span class="p">().</span><span class="n">ec</span><span class="p">.</span><span class="n">message</span><span class="p">()</span>                   <span class="c1">//
-</span><span class="c1"></span>              <span class="o">&lt;&lt;</span> <span class="sa"></span><span class="s">&#34; (path1 = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">o</span><span class="p">.</span><span class="n">error</span><span class="p">().</span><span class="n">path1</span> <span class="o">&lt;&lt;</span> <span class="sa"></span><span class="s">&#34;, path2 = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">o</span><span class="p">.</span><span class="n">error</span><span class="p">().</span><span class="n">path2</span> <span class="o">&lt;&lt;</span> <span class="sa"></span><span class="s">&#34;)&#34;</span>  <span class="c1">//
+    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Copy file failed with error &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">o</span><span class="p">.</span><span class="n">error</span><span class="p">().</span><span class="n">ec</span><span class="p">.</span><span class="n">message</span><span class="p">()</span>                   <span class="c1">//
+</span><span class="c1"></span>              <span class="o">&lt;&lt;</span> <span class="s">&#34; (path1 = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">o</span><span class="p">.</span><span class="n">error</span><span class="p">().</span><span class="n">path1</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;, path2 = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">o</span><span class="p">.</span><span class="n">error</span><span class="p">().</span><span class="n">path2</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;)&#34;</span>  <span class="c1">//
 </span><span class="c1"></span>              <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
   <span class="p">}</span>
 
@@ -739,21 +739,22 @@ failing paths is easy:</p>
     <span class="c1">// Try to observe the successful value, thus triggering default actions which invokes
 </span><span class="c1"></span>    <span class="c1">// our outcome_throw_as_system_error_with_payload() above which then throws filesystem_error
 </span><span class="c1"></span>    <span class="c1">// exactly like the Filesystem TS does for its throwing overload.
-</span><span class="c1"></span>    <span class="n">filesystem2</span><span class="o">::</span><span class="n">copy_file</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;dontexist&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s">&#34;alsodontexist&#34;</span><span class="p">).</span><span class="n">value</span><span class="p">();</span>
+</span><span class="c1"></span>    <span class="n">filesystem2</span><span class="o">::</span><span class="n">copy_file</span><span class="p">(</span><span class="s">&#34;dontexist&#34;</span><span class="p">,</span> <span class="s">&#34;alsodontexist&#34;</span><span class="p">).</span><span class="n">value</span><span class="p">();</span>
   <span class="p">}</span>
   <span class="k">catch</span><span class="p">(</span><span class="k">const</span> <span class="n">filesystem2</span><span class="o">::</span><span class="n">filesystem_error</span> <span class="o">&amp;</span><span class="n">e</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="sa"></span><span class="s">&#34;Copy file failed with exception &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span>                 <span class="c1">//
-</span><span class="c1"></span>              <span class="o">&lt;&lt;</span> <span class="sa"></span><span class="s">&#34; (path1 = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">path1</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sa"></span><span class="s">&#34;, path2 = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">path2</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sa"></span><span class="s">&#34;)&#34;</span>  <span class="c1">//
+    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Copy file failed with exception &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span>                 <span class="c1">//
+</span><span class="c1"></span>              <span class="o">&lt;&lt;</span> <span class="s">&#34; (path1 = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">path1</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;, path2 = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">path2</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;)&#34;</span>  <span class="c1">//
 </span><span class="c1"></span>              <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
   <span class="p">}</span>
   <span class="k">catch</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">exception</span> <span class="o">&amp;</span><span class="n">e</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="sa"></span><span class="s">&#34;Copy file failed with exception &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span>  <span class="c1">//
+    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Copy file failed with exception &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span>  <span class="c1">//
 </span><span class="c1"></span>              <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
   <span class="p">}</span>
-  </code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/outcome_payload.cpp#L93" class="code-snippet-url" target="_blank">View this code on Github</a></div>
-</p>
+  
+</code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/outcome_payload.cpp#L93" class="code-snippet-url" target="_blank">View this code on Github</a></div>
+
 
 
     

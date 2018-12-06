@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-05T15:03:03 UTC">
+<meta name="revised" content="2018-12-06T00:17:43 UTC">
 <title>A file handle :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -692,7 +692,7 @@
 which uses this design pattern, here is a simplified <code>file_handle</code> implementation:</p>
 
 <div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">
-<span class="k">class</span> <span class="nc">file_handle</span>
+<span class="k">class</span><span class="err"> </span><span class="nc">file_handle</span>
 <span class="p">{</span>
   <span class="kt">int</span> <span class="n">_fd</span><span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">};</span>  <span class="c1">// file descriptor
 </span><span class="c1"></span>  <span class="k">struct</span> <span class="n">stat</span> <span class="n">_stat</span>
@@ -707,7 +707,7 @@ which uses this design pattern, here is a simplified <code>file_handle</code> im
   <span class="k">using</span> <span class="n">path_type</span> <span class="o">=</span> <span class="n">filesystem</span><span class="o">::</span><span class="n">path</span><span class="p">;</span>
 
   <span class="c1">//! The behaviour of the handle: does it read, read and write, or atomic append?
-</span><span class="c1"></span>  <span class="k">enum</span> <span class="k">class</span> <span class="nc">mode</span> <span class="o">:</span> <span class="kt">unsigned</span> <span class="kt">char</span>  <span class="c1">// bit 0 set means writable
+</span><span class="c1"></span>  <span class="k">enum</span> <span class="k">class</span><span class="err"> </span><span class="nc">mode</span> <span class="o">:</span> <span class="kt">unsigned</span> <span class="kt">char</span>  <span class="c1">// bit 0 set means writable
 </span><span class="c1"></span>  <span class="p">{</span>
     <span class="n">unchanged</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
     <span class="n">none</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>        <span class="c1">//!&lt; No ability to read or write anything, but can synchronise (SYNCHRONIZE or 0)
@@ -736,7 +736,7 @@ which uses this design pattern, here is a simplified <code>file_handle</code> im
       <span class="k">if</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">==</span> <span class="o">::</span><span class="n">close</span><span class="p">(</span><span class="n">_fd</span><span class="p">))</span>
       <span class="p">{</span>
         <span class="kt">int</span> <span class="n">e</span> <span class="o">=</span> <span class="n">errno</span><span class="p">;</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="sa"></span><span class="s">&#34;FATAL: Closing the fd during destruction failed due to &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">strerror</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;FATAL: Closing the fd during destruction failed due to &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">strerror</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
         <span class="n">std</span><span class="o">::</span><span class="n">terminate</span><span class="p">();</span>
       <span class="p">}</span>
       <span class="n">_fd</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>

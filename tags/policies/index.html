@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-05T15:03:03 UTC">
+<meta name="revised" content="2018-12-06T00:17:44 UTC">
 <title>Policies :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -667,7 +667,27 @@
 </div>
 
 
-   
+   <article class="post tutorial">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/outcome/tutorial/no-value/">No-value policies</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>In the previous section we have seen that calling member function .value() on object of type outcome&lt;T&gt; that did not contain a value caused an exception to be thrown. This is only part of the story. The full semantics of member function .value() are a bit more complex.
+Let&rsquo;s consider result&lt;T&gt; first. It is an alias on basic_result&lt;T, EC, NVP&gt;, where EC is the type storing error information and defaulted to std::error_code and NVP is a no-value policy and defaulted to policy::default_policy&lt;T, EC, void&gt;. <a class="read-more" href="/outcome/tutorial/no-value/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+          
+            
+                <a class="label label-default" href="https://ned14.github.io/outcome/tags/policies/">policies</a>
+            
+        
+
+    </footer>
+</article>
 
 
 <div style="margin-bottom:2rem"></div>
