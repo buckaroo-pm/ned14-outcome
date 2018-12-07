@@ -5,7 +5,7 @@
     <link>https://ned14.github.io/outcome/</link>
     <description>Recent content in Home on Outcome documentation</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 06 Dec 2018 00:14:55 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 07 Dec 2018 15:30:45 +0000</lastBuildDate>
     
 	<atom:link href="https://ned14.github.io/outcome/index.xml" rel="self" type="application/rss+xml" />
     
@@ -663,7 +663,7 @@ Macro CXX_DECLARE_RESULT_EC
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/credits/</guid>
-      <description>github contributors HAHAHUGOSHORTCODE-0xc000bc0000-1-HBHB
+      <description>github contributors HAHAHUGOSHORTCODE-0xc0003f8a00-1-HBHB
 This pretty, modern C++ documentation  Hugo - static website generator of this documentation. hugo-theme-docdock - the Hugo theme used by this documentation. Standardese - the API reference generator  Special thanks for Outcome v2 For a second time, Charley Bay stepped up as review manager. Given how much work it was for the v1 review, I can only say thank you.
 Andrzej Krzemienski went far beyond the call of duty in the development of Outcome v2.</description>
     </item>
