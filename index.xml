@@ -442,7 +442,7 @@ template&amp;lt;class... Args&amp;gt; inline outcome::result&amp;lt;file_handle&
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/credits/</guid>
-      <description>github contributors HAHAHUGOSHORTCODE-0xc000344f00-1-HBHB
+      <description>github contributors HAHAHUGOSHORTCODE-0xc000105900-1-HBHB
 This pretty, modern C++ documentation  Hugo - static website generator of this documentation. hugo-theme-docdock - the Hugo theme used by this documentation. Standardese - the API reference generator  Special thanks for Outcome v2 For a second time, Charley Bay stepped up as review manager. Given how much work it was for the v1 review, I can only say thank you.
 Andrzej Krzemienski went far beyond the call of duty in the development of Outcome v2.</description>
     </item>
@@ -485,7 +485,7 @@ Default: To [[nodiscard]] if on C++ 17 or higher, __attribute__((warn_unused_res
       <guid>https://ned14.github.io/outcome/reference/macros/symbol_visible/</guid>
       <description>Compiler-specific markup used to mark throwable types as always having default ELF symbol visibility, without which it will be impossible to catch throws of such types across shared library boundaries on ELF only.
 Overridable: Define before inclusion.
-Default: - Standalone Outcome: To __attribute__((visibility(&amp;quot;default&amp;quot;)) on GCC and clang when targeting ELF, otherwise nothing. - Boost.Outcome: To BOOST_SYMBOL_VISIBLE.</description>
+Default: Standalone Outcome: To __attribute__((visibility(&amp;quot;default&amp;quot;)) on GCC and clang when targeting ELF, otherwise nothing. Boost.Outcome: To BOOST_SYMBOL_VISIBLE.</description>
     </item>
     
   </channel>

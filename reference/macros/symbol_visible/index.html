@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-10T20:34:12 UTC">
+<meta name="revised" content="2018-12-10T22:37:40 UTC">
 <title>`OUTCOME_SYMBOL_VISIBLE` :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -569,9 +569,12 @@
 
 <p><em>Overridable</em>: Define before inclusion.</p>
 
-<p><em>Default</em>:
-- Standalone Outcome: To <code>__attribute__((visibility(&quot;default&quot;))</code> on GCC and clang when targeting ELF, otherwise nothing.
-- Boost.Outcome: To <code>BOOST_SYMBOL_VISIBLE</code>.</p>
+<p><em>Default</em>:<dl>
+<dt>Standalone Outcome:</dt>
+<dd>To <code>__attribute__((visibility(&quot;default&quot;))</code> on GCC and clang when targeting ELF, otherwise nothing.</dd>
+<dt>Boost.Outcome:</dt>
+<dd>To <code>BOOST_SYMBOL_VISIBLE</code>.</dd>
+</dl></p>
 
 
     

@@ -48,7 +48,7 @@ Default: To [[nodiscard]] if on C++ 17 or higher, __attribute__((warn_unused_res
       <guid>https://ned14.github.io/outcome/reference/macros/symbol_visible/</guid>
       <description>Compiler-specific markup used to mark throwable types as always having default ELF symbol visibility, without which it will be impossible to catch throws of such types across shared library boundaries on ELF only.
 Overridable: Define before inclusion.
-Default: - Standalone Outcome: To __attribute__((visibility(&amp;quot;default&amp;quot;)) on GCC and clang when targeting ELF, otherwise nothing. - Boost.Outcome: To BOOST_SYMBOL_VISIBLE.</description>
+Default: Standalone Outcome: To __attribute__((visibility(&amp;quot;default&amp;quot;)) on GCC and clang when targeting ELF, otherwise nothing. Boost.Outcome: To BOOST_SYMBOL_VISIBLE.</description>
     </item>
     
   </channel>
