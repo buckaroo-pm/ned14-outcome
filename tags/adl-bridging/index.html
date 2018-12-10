@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-07T15:46:40 UTC">
+<meta name="revised" content="2018-12-10T20:34:11 UTC">
 <title>Adl Bridging :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -67,12 +67,6 @@
         ">
       <div>
       <a href="/outcome/build/">Build and install</a>
-      </div>
-    </li>
-    <li data-nav-id="/outcome/use-matrix/" class="dd-item
-        ">
-      <div>
-      <a href="/outcome/use-matrix/">Decision matrix</a>
       </div>
     </li>
     <li data-nav-id="/outcome/motivation/" class="dd-item haschildren
@@ -140,7 +134,7 @@
       <li data-nav-id="/outcome/tutorial/result/inspecting/" class="dd-item">
         <div>
           <a href="/outcome/tutorial/result/inspecting/">
-            Inspecting result&lt;T, EC&gt;
+            Inspecting result<T, EC>
           </a>
         </div>
     </li>
@@ -162,7 +156,7 @@
       <li data-nav-id="/outcome/tutorial/outcome/inspecting/" class="dd-item">
         <div>
           <a href="/outcome/tutorial/outcome/inspecting/">
-            Inspecting outcome&lt;T, EC, EP&gt;
+            Inspecting outcome<T, EC, EP>
           </a>
         </div>
     </li>
@@ -256,7 +250,7 @@
       <li data-nav-id="/outcome/tutorial/constructors/metaprogrammg2/" class="dd-item">
         <div>
           <a href="/outcome/tutorial/constructors/metaprogrammg2/">
-            construct&lt;T&gt;
+            construct<T>
           </a>
         </div>
     </li>
@@ -315,7 +309,7 @@
     <li data-nav-id="/outcome/tutorial/c-api/" class="dd-item haschildren
         ">
       <div>
-      <a href="/outcome/tutorial/c-api/">Using result&lt;T&gt; from C code</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/outcome/tutorial/c-api/">Using result<T> from C code</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/outcome/tutorial/c-api/limitations/" class="dd-item">
@@ -328,7 +322,7 @@
       <li data-nav-id="/outcome/tutorial/c-api/example/" class="dd-item">
         <div>
           <a href="/outcome/tutorial/c-api/example/">
-            Example C&#43;&#43; function
+            Example C++ function
           </a>
         </div>
     </li>
@@ -399,14 +393,14 @@
       <li data-nav-id="/outcome/tutorial/interop/app-map-httplib1/" class="dd-item">
         <div>
           <a href="/outcome/tutorial/interop/app-map-httplib1/">
-            Mapping the HTTP library into the Application 1/2
+            Mapping the HTTP library into the Application <sup>1</sup>&frasl;<sub>2</sub>
           </a>
         </div>
     </li>
       <li data-nav-id="/outcome/tutorial/interop/app-map-httplib2/" class="dd-item">
         <div>
           <a href="/outcome/tutorial/interop/app-map-httplib2/">
-            Mapping the HTTP library into the Application 2/2
+            Mapping the HTTP library into the Application <sup>2</sup>&frasl;<sub>2</sub>
           </a>
         </div>
     </li>
@@ -448,121 +442,30 @@
       <a href="/outcome/reference/">API reference</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/outcome/reference/outcome/" class="dd-item">
-        <div>
-          <a href="/outcome/reference/outcome/">
-            outcome&lt;R, S, P&gt;
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/outcome/reference/result/" class="dd-item">
-        <div>
-          <a href="/outcome/reference/result/">
-            result&lt;R, S&gt;
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/outcome/reference/try/" class="dd-item">
-        <div>
-          <a href="/outcome/reference/try/">
-            Try operations
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/outcome/reference/success_failure/" class="dd-item">
-        <div>
-          <a href="/outcome/reference/success_failure/">
-            Success/Failure
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/outcome/reference/utils/" class="dd-item">
-        <div>
-          <a href="/outcome/reference/utils/">
-            Utilities
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/outcome/reference/convert/" class="dd-item">
-        <div>
-          <a href="/outcome/reference/convert/">
-            Interoperation
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/outcome/reference/bad_access/" class="dd-item">
-        <div>
-          <a href="/outcome/reference/bad_access/">
-            Exceptions
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/outcome/reference/iostream_support/" class="dd-item">
-        <div>
-          <a href="/outcome/reference/iostream_support/">
-            iostream support
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/outcome/reference/result_c/" class="dd-item">
-        <div>
-          <a href="/outcome/reference/result_c/">
-            C API
-          </a>
-        </div>
-    </li>
-    <li data-nav-id="/outcome/reference/policies/" class="dd-item haschildren
+    <li data-nav-id="/outcome/reference/macros/" class="dd-item haschildren
         ">
       <div>
-      <a href="/outcome/reference/policies/">Policies</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/outcome/reference/macros/">Macros</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/outcome/reference/policies/all_narrow/" class="dd-item">
+      <li data-nav-id="/outcome/reference/macros/version/" class="dd-item">
         <div>
-          <a href="/outcome/reference/policies/all_narrow/">
-            All narrow (hard UB)
+          <a href="/outcome/reference/macros/version/">
+            Version macros
           </a>
         </div>
     </li>
-      <li data-nav-id="/outcome/reference/policies/outcome_error_code_throw_as_system_error/" class="dd-item">
+      <li data-nav-id="/outcome/reference/macros/nodiscard/" class="dd-item">
         <div>
-          <a href="/outcome/reference/policies/outcome_error_code_throw_as_system_error/">
-            error_code throw as system_error (Outcome)
+          <a href="/outcome/reference/macros/nodiscard/">
+            <code>OUTCOME_NODISCARD</code>
           </a>
         </div>
     </li>
-      <li data-nav-id="/outcome/reference/policies/result_error_code_throw_as_system_error/" class="dd-item">
+      <li data-nav-id="/outcome/reference/macros/symbol_visible/" class="dd-item">
         <div>
-          <a href="/outcome/reference/policies/result_error_code_throw_as_system_error/">
-            error_code throw as system_error (Result)
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/outcome/reference/policies/outcome_exception_ptr_rethrow/" class="dd-item">
-        <div>
-          <a href="/outcome/reference/policies/outcome_exception_ptr_rethrow/">
-            exception_ptr rethrow (Outcome)
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/outcome/reference/policies/result_exception_ptr_rethrow/" class="dd-item">
-        <div>
-          <a href="/outcome/reference/policies/result_exception_ptr_rethrow/">
-            exception_ptr rethrow (Result)
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/outcome/reference/policies/terminate/" class="dd-item">
-        <div>
-          <a href="/outcome/reference/policies/terminate/">
-            Termimate
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/outcome/reference/policies/throw_bad_result_access/" class="dd-item">
-        <div>
-          <a href="/outcome/reference/policies/throw_bad_result_access/">
-            Throw bad_result_access
+          <a href="/outcome/reference/macros/symbol_visible/">
+            <code>OUTCOME_SYMBOL_VISIBLE</code>
           </a>
         </div>
     </li>
@@ -612,8 +515,6 @@
    Prerequisites</option>
     <option value="/outcome/build/" >
    Build and install</option>
-    <option value="/outcome/use-matrix/" >
-   Decision matrix</option>
     <option value="/outcome/motivation/" >
    Motivation</option>
     <option value="/outcome/tutorial/" >
@@ -721,7 +622,7 @@ namespace error_code_extended { // Use the error_code type as the ADL bridge for
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 31/05/2018
+        <i class='fa fa-calendar'></i> Last update on 01/06/2018
     </div>
     
 
