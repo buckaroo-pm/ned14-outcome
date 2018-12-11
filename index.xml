@@ -442,9 +442,20 @@ template&amp;lt;class... Args&amp;gt; inline outcome::result&amp;lt;file_handle&
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/credits/</guid>
-      <description>github contributors HAHAHUGOSHORTCODE-0xc000105900-1-HBHB
+      <description>github contributors HAHAHUGOSHORTCODE-0xc000410f00-1-HBHB
 This pretty, modern C++ documentation  Hugo - static website generator of this documentation. hugo-theme-docdock - the Hugo theme used by this documentation. Standardese - the API reference generator  Special thanks for Outcome v2 For a second time, Charley Bay stepped up as review manager. Given how much work it was for the v1 review, I can only say thank you.
 Andrzej Krzemienski went far beyond the call of duty in the development of Outcome v2.</description>
+    </item>
+    
+    <item>
+      <title>Constrained template macros</title>
+      <link>https://ned14.github.io/outcome/reference/macros/template/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/macros/template/</guid>
+      <description>Overridable: All of the following macros are overridable, define before inclusion.
+These macros expand into either the syntax for directly specifying constrained templates in C++ 20, or into a SFINAE based emulation for earlier C++ versions. Form of usage looks as follows:
+OUTCOME_TEMPLATE(classErrorCondEnum) OUTCOME_TREQUIRES( // If this is a valid expression  OUTCOME_TEXPR(error_type(make_error_code(ErrorCondEnum()))), // If this predicate is true  OUTCOME_TPRED(predicate::template enable_error_condition_converting_constructor&amp;lt;ErrorCondEnum&amp;gt;) // Any additional requirements follow here ...  ) constexpr basic_result(ErrorCondEnum &amp;amp;&amp;amp;t, error_condition_converting_constructor_tag /*unused*/ = {});  Be aware that slightly different semantics occur for real C++ 20 constrained templates than for the SFINAE emulation.</description>
     </item>
     
     <item>
@@ -467,6 +478,18 @@ Defined between stable releases of Outcome. It means the inline namespace will b
     </item>
     
     <item>
+      <title>`OUTCOME_DISABLE_EXECINFO`</title>
+      <link>https://ned14.github.io/outcome/reference/macros/disable_execinfo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/macros/disable_execinfo/</guid>
+      <description>If defined, disables the use of the &amp;lt;execinfo.h&amp;gt; header (or the win32 emulation).
+Some embedded Linux toolchains do not define &amp;lt;execinfo.h&amp;gt;, thus disabling C++ exceptions on those toolchains produces a failure to find this file. Avoid that problem by defining this macro to disable stack backtrace support entirely.
+Overridable: Define before inclusion.
+Default: Defined if __ANDROID__ is defined, else undefined.</description>
+    </item>
+    
+    <item>
       <title>`OUTCOME_NODISCARD`</title>
       <link>https://ned14.github.io/outcome/reference/macros/nodiscard/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -478,6 +501,17 @@ Default: To [[nodiscard]] if on C++ 17 or higher, __attribute__((warn_unused_res
     </item>
     
     <item>
+      <title>`OUTCOME_REQUIRES(...)`</title>
+      <link>https://ned14.github.io/outcome/reference/macros/requires/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/macros/requires/</guid>
+      <description>A C++ 20 requires(...), if available.
+Overridable: Define before inclusion.
+Default: To requires(...) if on C++ 20 or later, else to nothing.</description>
+    </item>
+    
+    <item>
       <title>`OUTCOME_SYMBOL_VISIBLE`</title>
       <link>https://ned14.github.io/outcome/reference/macros/symbol_visible/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -486,6 +520,29 @@ Default: To [[nodiscard]] if on C++ 17 or higher, __attribute__((warn_unused_res
       <description>Compiler-specific markup used to mark throwable types as always having default ELF symbol visibility, without which it will be impossible to catch throws of such types across shared library boundaries on ELF only.
 Overridable: Define before inclusion.
 Default: Standalone Outcome: To __attribute__((visibility(&amp;quot;default&amp;quot;)) on GCC and clang when targeting ELF, otherwise nothing. Boost.Outcome: To BOOST_SYMBOL_VISIBLE.</description>
+    </item>
+    
+    <item>
+      <title>`OUTCOME_THREAD_LOCAL`</title>
+      <link>https://ned14.github.io/outcome/reference/macros/thread_local/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/macros/thread_local/</guid>
+      <description>Compiler-specific markup used to mark variables as having thread local storage duration.
+This isn&amp;rsquo;t used inside Outcome, but is used by its unit test suite.
+ Overridable: Define before inclusion.
+Default: To thread_local if the compiler implements C++ 11 thread_local, else __thread for the one supported compiler (older Mac OS XCode) which does not.</description>
+    </item>
+    
+    <item>
+      <title>`OUTCOME_THROW_EXCEPTION(expr)`</title>
+      <link>https://ned14.github.io/outcome/reference/macros/throw_exception/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/macros/throw_exception/</guid>
+      <description>Throws a C++ exception, or equivalent thereof.
+Overridable: Define before inclusion.
+Default: Standalone Outcome (C++ exceptions enabled): To throw expr Standalone Outcome (C++ exceptions disabled): To OUTCOME_V2_NAMESPACE::detail::do_fatal_exit(#expr) which is a function which prints a useful error message including a stack backtrace (where available) to stderr before calling abort(). Boost.Outcome: To BOOST_THROW_EXCEPTION(expr).</description>
     </item>
     
   </channel>
