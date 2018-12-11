@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-11T13:11:54 UTC">
+<meta name="revised" content="2018-12-11T14:58:22 UTC">
 <title>Try :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -506,6 +506,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/outcome/reference/concepts/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/reference/concepts/">Concepts</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/outcome/reference/concepts/valueorerror/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/concepts/valueorerror/">
+            <code>ValueOrError&lt;T&gt;</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/concepts/valueornone/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/concepts/valueornone/">
+            <code>ValueOrNone&lt;T&gt;</code>
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/outcome/faq/" class="dd-item
@@ -636,7 +658,7 @@ outcome::result&lt;void&gt; print_half(const std::string&amp; text); View this c
         <h2 class="post-title"><a href="/outcome/tutorial/result/try/">TRY operations</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>In the implementation of function print_half we have seen the usage of the macro  OUTCOME_TRY :
+        <p>In the implementation of function print_half we have seen the usage of the macro :
 OUTCOME_TRY (i, BigInt::fromString(text));  The OUTCOME_TRY macro uses C macro overloading to select between two implementations based on the number of input parameters. If there is exactly one input parameter i.e. without the i,, the control statement is roughly equivalent to:
 auto&amp;&amp; __result = BigInt::fromString(text); if (!__result) return __result.as_failure();  Where __result is a compile time generated unique name. <a class="read-more" href="/outcome/tutorial/result/try/">&raquo;</a></p>
     </section>

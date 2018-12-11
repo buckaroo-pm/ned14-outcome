@@ -25,8 +25,8 @@
       <pubDate>Sun, 28 Oct 2018 00:29:27 +0200</pubDate>
       
       <guid>https://ned14.github.io/outcome/tutorial/outcome/</guid>
-      <description>outcome&amp;lt;&amp;gt; Type  outcome&amp;lt;T, EC, EP, NVP&amp;gt; represets either a successfully computed value of type T or a reason for failure. Failure can be represented by EC or EP or both. Although usually it will either be an EC or an EP. EC defaults to std::error_code and EP defaults to std::exception_ptr. The distinction is made into two types, EC and EP:
- EC represents a failue from lower-layer function which was retured through  result&amp;lt;T, EC&amp;gt; .</description>
+      <description>outcome&amp;lt;&amp;gt; Type represets either a successfully computed value of type T or a reason for failure. Failure can be represented by EC or EP or both. Although usually it will either be an EC or an EP. EC defaults to std::error_code and EP defaults to std::exception_ptr. The distinction is made into two types, EC and EP:
+ EC represents a failue from lower-layer function which was retured through . EP represents pointer to an exception thrown in a lower-layer function to signal a failure; but at the current level we do not want to proceed with stack unwinding.</description>
     </item>
     
   </channel>

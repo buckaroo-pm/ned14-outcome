@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-11T13:11:53 UTC">
+<meta name="revised" content="2018-12-11T14:58:21 UTC">
 <title>Tutorial :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -507,6 +507,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/outcome/reference/concepts/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/reference/concepts/">Concepts</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/outcome/reference/concepts/valueorerror/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/concepts/valueorerror/">
+            <code>ValueOrError&lt;T&gt;</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/concepts/valueornone/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/concepts/valueornone/">
+            <code>ValueOrNone&lt;T&gt;</code>
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/outcome/faq/" class="dd-item
@@ -635,7 +657,7 @@
 	<a href="/outcome/tutorial/payload/copy_file2/" >Upgrading the Filesystem TS</a><li>
 	<a href="/outcome/tutorial/payload/copy_file3/" >Auto-throwing filesystem_error</a></li></ol><li>
 	<a href="/outcome/tutorial/constructors/" >Result returning constructors</a>
-<p>How to metaprogram construction of objects which use result&lt;T, EC&gt; to return failure instead of throwing a C&#43;&#43; exception.</p><ol><li>
+<p>How to metaprogram construction of objects which use result<T, EC> to return failure instead of throwing a C++ exception.</p><ol><li>
 	<a href="/outcome/tutorial/constructors/two-phase-init/" >Two phase construction</a><li>
 	<a href="/outcome/tutorial/constructors/file_handle/" >A file handle</a><li>
 	<a href="/outcome/tutorial/constructors/static-constructor/" >Phase 2 construction</a><li>
@@ -650,13 +672,13 @@
 	<a href="/outcome/tutorial/hooks/poke_exception/" >Custom exception ptr</a><li>
 	<a href="/outcome/tutorial/hooks/hook_outcome/" >Hook outcome</a></li></ol><li>
 	<a href="/outcome/tutorial/c-api/" >Using result<T> from C code</a>
-<p>Interacting with result&lt;T, EC&gt; returning C&#43;&#43; functions from C code.</p><ol><li>
+<p>Interacting with result<T, EC> returning C++ functions from C code.</p><ol><li>
 	<a href="/outcome/tutorial/c-api/limitations/" >Limitations</a><li>
 	<a href="/outcome/tutorial/c-api/example/" >Example C++ function</a><li>
 	<a href="/outcome/tutorial/c-api/example2/" >Calling it from C</a><li>
 	<a href="/outcome/tutorial/c-api/variations/" >Variations</a></li></ol><li>
 	<a href="/outcome/tutorial/interop/" >Interoperation</a>
-<p>Interoperating with std::expected&lt;T, E&gt; and other ValueOrError concept matching types.</p><ol><li>
+<p>Interoperating with std::expected<T, E> and other ValueOrError concept matching types.</p><ol><li>
 	<a href="/outcome/tutorial/interop/problem/" >Incommensurate E types</a><li>
 	<a href="/outcome/tutorial/interop/value-or-error/" >ValueOrError Concept</a><li>
 	<a href="/outcome/tutorial/interop/httplib/" >The HTTP library</a><li>
@@ -697,7 +719,7 @@
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 08/06/2018
+        <i class='fa fa-calendar'></i> Last update on 15/06/2018
     </div>
     
 

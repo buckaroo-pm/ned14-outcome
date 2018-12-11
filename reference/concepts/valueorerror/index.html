@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-11T14:58:21 UTC">
-<title>Inspecting result&lt;T, EC&gt; :: Outcome documentation</title>
+<meta name="revised" content="2018-12-11T14:58:22 UTC">
+<title>`ValueOrError&lt;T&gt;` :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
 <link href="/outcome/css/nucleus.css" rel="stylesheet">
@@ -22,7 +22,7 @@
 
     
   </head>
-  <body data-url="/outcome/tutorial/result/inspecting/">
+  <body data-url="/outcome/reference/concepts/valueorerror/">
     
       <header>
   <div class="logo">
@@ -119,21 +119,19 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/outcome/tutorial/" class="dd-item parent haschildren
+    <li data-nav-id="/outcome/tutorial/" class="dd-item haschildren
         ">
       <div>
-      <a href="/outcome/tutorial/">Tutorial</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/outcome/tutorial/">Tutorial</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/outcome/tutorial/result/" class="dd-item parent haschildren
+    <li data-nav-id="/outcome/tutorial/result/" class="dd-item haschildren
         ">
       <div>
-      <a href="/outcome/tutorial/result/">result&lt;&gt;</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/outcome/tutorial/result/">result&lt;&gt;</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/outcome/tutorial/result/inspecting/" class="dd-item active">
+      <li data-nav-id="/outcome/tutorial/result/inspecting/" class="dd-item">
         <div>
           <a href="/outcome/tutorial/result/inspecting/">
             Inspecting result<T, EC>
@@ -438,10 +436,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/outcome/reference/" class="dd-item haschildren
+    <li data-nav-id="/outcome/reference/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/outcome/reference/">API reference</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/outcome/reference/">API reference</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/outcome/reference/macros/" class="dd-item haschildren
@@ -508,13 +507,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/outcome/reference/concepts/" class="dd-item haschildren
+    <li data-nav-id="/outcome/reference/concepts/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/outcome/reference/concepts/">Concepts</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/outcome/reference/concepts/">Concepts</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/outcome/reference/concepts/valueorerror/" class="dd-item">
+      <li data-nav-id="/outcome/reference/concepts/valueorerror/" class="dd-item active">
         <div>
           <a href="/outcome/reference/concepts/valueorerror/">
             <code>ValueOrError&lt;T&gt;</code>
@@ -577,37 +577,19 @@
     <option value="/outcome/motivation/" >
    Motivation</option>
     <option value="/outcome/tutorial/" >
-   Tutorial</option> 
-    <option value="/outcome/tutorial/result/" >
-  - 
-   result&lt;&gt;</option> 
-      <option value="/outcome/tutorial/result/inspecting/"  selected>-- Inspecting result&lt;T, EC&gt;</option>
-      <option value="/outcome/tutorial/result/try/" >-- TRY operations</option>
-  
-    <option value="/outcome/tutorial/outcome/" >
-  - 
-   outcome&lt;&gt;</option>
-    <option value="/outcome/tutorial/no-value/" >
-  - 
-   No-value policies</option>
-    <option value="/outcome/tutorial/payload/" >
-  - 
-   Custom payloads</option>
-    <option value="/outcome/tutorial/constructors/" >
-  - 
-   Result returning constructors</option>
-    <option value="/outcome/tutorial/hooks/" >
-  - 
-   Hooking events</option>
-    <option value="/outcome/tutorial/c-api/" >
-  - 
-   Using result&lt;T&gt; from C code</option>
-    <option value="/outcome/tutorial/interop/" >
-  - 
-   Interoperation</option>
-  
+   Tutorial</option>
     <option value="/outcome/reference/" >
-   API reference</option>
+   API reference</option> 
+    <option value="/outcome/reference/macros/" >
+  - 
+   Macros</option>
+    <option value="/outcome/reference/concepts/" >
+  - 
+   Concepts</option> 
+      <option value="/outcome/reference/concepts/valueorerror/"  selected>-- `ValueOrError&lt;T&gt;`</option>
+      <option value="/outcome/reference/concepts/valueornone/" >-- `ValueOrNone&lt;T&gt;`</option>
+  
+  
     <option value="/outcome/faq/" >
    Frequently asked questions</option>
     <option value="/outcome/videos/" >
@@ -638,70 +620,25 @@
       </div>
     
 
-    <h1>Inspecting result<T, EC></h1>
+    <h1><code>ValueOrError&lt;T&gt;</code></h1>
     
     
     
-    <p>Suppose we will be writing a function <code>print_half</code> that takes an integer number (however big) represented as an <code>std::string</code> and outputs a number which is twice smaller:</p>
+    <p>If on C++ 20 or the Concepts TS is enabled, a boolean concept matching types with a public <code>.has_value()</code> observer which returns <code>bool</code>, a public <code>.value()</code> observer function, and a public <code>.error()</code> observer function.</p>
 
-<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">outcome</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span> <span class="n">print_half</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">text</span><span class="p">);</span>
-</code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/using_result.cpp#L114" class="code-snippet-url" target="_blank">View this code on Github</a></div>
+<p>If without Concepts, a static constexpr bool which is true for types matching the same requirements, using a SFINAE based emulation.</p>
 
-
-<p>The type <code>result&lt;void&gt;</code> means that there is no value to be retuned upon success, but that the operation might still fail, and we may be interested in inspecting the cause of the failure. The class template <code>result&lt;&gt;</code> is declared with the attribute <code>[[nodiscard]]</code>, which means the compiler will warn you if you forget to inspect the returned object (in C++ 17 or later).</p>
-
-<p>The implementation will do the following: if the integral number can be represented by an <code>int</code>, we will convert to <code>int</code> and use its arithmetical operations. If the number is too large, we will fall back to using a custom <code>BigInt</code> implementation that needs to allocate memory. In the implementation we will use the function <code>convert</code> defined in the previous section.</p>
-
-<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">outcome</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span> <span class="n">print_half</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">text</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">outcome</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">r</span> <span class="o">=</span> <span class="n">convert</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>     <span class="c1">// #1
-</span><span class="c1"></span>  <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">value</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>    <span class="c1">// #2
-</span><span class="c1"></span>  <span class="p">}</span>
-  <span class="k">else</span>
-  <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">error</span><span class="p">()</span> <span class="o">==</span> <span class="n">ConversionErrc</span><span class="o">::</span><span class="n">TooLong</span><span class="p">)</span>     <span class="c1">// #3
-</span><span class="c1"></span>    <span class="p">{</span>
-      <span class="n">OUTCOME_TRY</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">BigInt</span><span class="o">::</span><span class="n">fromString</span><span class="p">(</span><span class="n">text</span><span class="p">));</span>  <span class="c1">// #4
-</span><span class="c1"></span>      <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span><span class="p">.</span><span class="n">half</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">else</span>
-    <span class="p">{</span>
-      <span class="k">return</span> <span class="n">r</span><span class="p">.</span><span class="n">as_failure</span><span class="p">();</span>                      <span class="c1">// #5
-</span><span class="c1"></span>    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="n">outcome</span><span class="o">::</span><span class="n">success</span><span class="p">();</span>                      <span class="c1">// #6
-</span><span class="c1"></span><span class="p">}</span>
-</code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/using_result.cpp#L118" class="code-snippet-url" target="_blank">View this code on Github</a></div>
-
-
-<p>#1. You test if <code>result&lt;&gt;</code> object represents a successful operation with contextual conversion to <code>bool</code>.</p>
-
-<p>#2. The function <code>.value()</code> extracts the successfully returned <code>int</code>.</p>
-
-<p>#3. The function <code>.error()</code> allows you to inspect the error sub-object, representing information about the reason for failure.</p>
-
-<p>#4. Macro <code>OUTCOME_TRY</code> represents a control statement. It implies that the expression in the second argument returns a <code>result&lt;&gt;</code>. The function is defined as:</p>
-
-<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cm">/*static*/</span> <span class="n">outcome</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="n">BigInt</span><span class="o">&gt;</span> <span class="n">BigInt</span><span class="o">::</span><span class="n">fromString</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">)</span>
-</code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/using_result.cpp#L107" class="code-snippet-url" target="_blank">View this code on Github</a></div>
-
-
-<p>Our control statement means: if <code>fromString</code> returned failure, this same error information should be returned from <code>print_half</code>, even though the type of <code>result&lt;&gt;</code> is different. If <code>fromString</code> returned success, we create  variable <code>i</code> of type <code>BigInt</code> with the value returned from <code>fromString</code>. If control goes to subsequent line, it means <code>fromString</code> succeeded and variable of type <code>BigInt</code> is in scope.</p>
-
-<p>#5. In the return statement we extract the error information and use it to initialize the return value from <code>print_half</code>. We could have written <code>return r.error();</code> instead,
-    and it would have the same effect, but <code>r.as_failure()</code> will work when implicit construction from <code>E</code> has been disabled due to <code>T</code> and <code>E</code> having a constructibility relationship.</p>
-
-<p>#6. Function <code>success()</code> returns an object of type <code>success&lt;void&gt;</code> representing success. This is implicitly converted by
-all <code>result</code> and <code>outcome</code> types into a successful return, default constructing any <code>T</code> if necessary.</p>
+<p>This concept matches expected-like types such as 
+<a href="https://wg21.link/P0323" class="api-reference" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> P0323 std::expected&lt;T, E&gt;</a>, one of which is 
+    . Be aware it does not differentiate between value-or-error types and value-and-error types if they present the interface matched above.</p>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/outcome/tutorial/result/" title="result&lt;&gt;"> <i class="fa fa-chevron-left"></i><label>result&lt;&gt;</label></a>
-    <a class="nav nav-next" href="/outcome/tutorial/result/try/" title="TRY operations" style="margin-right: 0px;"><label>TRY operations</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/outcome/reference/concepts/" title="Concepts"> <i class="fa fa-chevron-left"></i><label>Concepts</label></a>
+    <a class="nav nav-next" href="/outcome/reference/concepts/valueornone/" title="`ValueOrNone&lt;T&gt;`" style="margin-right: 0px;"><label><code>ValueOrNone&lt;T&gt;</code></label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -711,30 +648,18 @@ all <code>result</code> and <code>outcome</code> types into a successful return,
 
 <div class="footline">
     
-    <div class="tags"> 
-      
-        <a class="label label-default" href="https://ned14.github.io/outcome/tags/nodiscard">nodiscard</a>
-      
-        <a class="label label-default" href="https://ned14.github.io/outcome/tags/value">value</a>
-      
-        <a class="label label-default" href="https://ned14.github.io/outcome/tags/error">error</a>
-      
-        <a class="label label-default" href="https://ned14.github.io/outcome/tags/try">try</a>
-      
-    </div>
-    
 
     
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 15/06/2018
+        <i class='fa fa-calendar'></i> Last update on 11/12/2018
     </div>
     
 
     
     <div class="github-link">
-      <a href="https://github.com/ned14/outcome/edit/develop/doc/src/content/tutorial/result/inspecting.md" target="blank"><i class="fa fa-code-fork"></i>
+      <a href="https://github.com/ned14/outcome/edit/develop/doc/src/content/reference/concepts/ValueOrError.md" target="blank"><i class="fa fa-code-fork"></i>
         Improve this page</a>
     </div>
     

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-11T13:11:53 UTC">
+<meta name="revised" content="2018-12-11T14:58:21 UTC">
 <title>outcome&lt;&gt; :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -508,6 +508,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/outcome/reference/concepts/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/reference/concepts/">Concepts</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/outcome/reference/concepts/valueorerror/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/concepts/valueorerror/">
+            <code>ValueOrError&lt;T&gt;</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/concepts/valueornone/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/concepts/valueornone/">
+            <code>ValueOrNone&lt;T&gt;</code>
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/outcome/faq/" class="dd-item
@@ -624,12 +646,12 @@
 
 <h2 id="outcome"><code>outcome&lt;&gt;</code></h2>
 
-<p>Type <a href="https://ned14.github.io/outcome/reference/outcome/#standardese-outcome_v2_xxx__outcome-R-S-P-NoValuePolicy-" class="api-reference"><i class="fa fa-book" aria-hidden="true"></i> outcome&lt;T, EC, EP, NVP&gt;</a>
- represets either a successfully computed value of type <code>T</code> or a reason for failure. Failure can be represented by <code>EC</code> or <code>EP</code> or both. Although usually it will either be an <code>EC</code> or an <code>EP</code>. <code>EC</code> defaults to <code>std::error_code</code> and <code>EP</code> defaults to <code>std::exception_ptr</code>. The distinction is made into two types, <code>EC</code> and <code>EP</code>:</p>
+<p>Type 
+     represets either a successfully computed value of type <code>T</code> or a reason for failure. Failure can be represented by <code>EC</code> or <code>EP</code> or both. Although usually it will either be an <code>EC</code> or an <code>EP</code>. <code>EC</code> defaults to <code>std::error_code</code> and <code>EP</code> defaults to <code>std::exception_ptr</code>. The distinction is made into two types, <code>EC</code> and <code>EP</code>:</p>
 
 <ul>
-<li><code>EC</code> represents a failue from lower-layer function which was retured through <a href="https://ned14.github.io/outcome/reference/result/#standardese-outcome_v2_xxx__result-R-S-NoValuePolicy-" class="api-reference"><i class="fa fa-book" aria-hidden="true"></i> result&lt;T, EC&gt;</a>
-.</li>
+<li><code>EC</code> represents a failue from lower-layer function which was retured through 
+    .</li>
 <li><code>EP</code> represents pointer to an exception thrown in a lower-layer function to signal a failure; but at the current level we do not want to proceed with stack unwinding.</li>
 </ul>
 

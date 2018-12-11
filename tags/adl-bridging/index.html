@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-11T13:11:54 UTC">
+<meta name="revised" content="2018-12-11T14:58:22 UTC">
 <title>Adl Bridging :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -506,6 +506,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/outcome/reference/concepts/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/reference/concepts/">Concepts</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/outcome/reference/concepts/valueorerror/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/concepts/valueorerror/">
+            <code>ValueOrError&lt;T&gt;</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/concepts/valueornone/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/concepts/valueornone/">
+            <code>ValueOrNone&lt;T&gt;</code>
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/outcome/faq/" class="dd-item
@@ -608,7 +630,7 @@
         <h2 class="post-title"><a href="/outcome/tutorial/hooks/adl_bridging/">ADL bridging</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>In a previous section, we used the failure_info type to create the ADL bridge into the namespace where the ADL discovered  throw_as_system_error_with_payload() function was to be found.
+        <p>In a previous section, we used the failure_info type to create the ADL bridge into the namespace where the ADL discovered function was to be found.
 Here we do the same, but more directly by creating a thin clone of std::error_code into the local namespace. This ensures that this namespace will be searched by the compiler when discovering the event hooks.
 namespace error_code_extended { // Use the error_code type as the ADL bridge for the hooks by creating a type here  // It can be any type that your localised result uses, including the value type but  // by localising the error code type here you prevent nasty surprises later when the  // value type you use doesn&#39;t trigger the ADL bridge. <a class="read-more" href="/outcome/tutorial/hooks/adl_bridging/">&raquo;</a></p>
     </section>
@@ -657,7 +679,7 @@ namespace error_code_extended { // Use the error_code type as the ADL bridge for
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 08/06/2018
+        <i class='fa fa-calendar'></i> Last update on 15/06/2018
     </div>
     
 

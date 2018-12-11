@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-11T13:11:53 UTC">
+<meta name="revised" content="2018-12-11T14:58:21 UTC">
 <title>API reference :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -507,6 +507,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/outcome/reference/concepts/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/reference/concepts/">Concepts</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/outcome/reference/concepts/valueorerror/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/concepts/valueorerror/">
+            <code>ValueOrError&lt;T&gt;</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/concepts/valueornone/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/concepts/valueornone/">
+            <code>ValueOrNone&lt;T&gt;</code>
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/outcome/faq/" class="dd-item
@@ -560,6 +582,9 @@
     <option value="/outcome/reference/macros/" >
   - 
    Macros</option>
+    <option value="/outcome/reference/concepts/" >
+  - 
+   Concepts</option>
   
     <option value="/outcome/faq/" >
    Frequently asked questions</option>
@@ -600,12 +625,23 @@
 	<a href="/outcome/reference/macros/" >Macros</a><ol><li>
 	<a href="/outcome/reference/macros/template/" >Constrained template macros</a><li>
 	<a href="/outcome/reference/macros/version/" >Version macros</a><li>
-	<a href="/outcome/reference/macros/disable_execinfo/" ><code>OUTCOME_DISABLE_EXECINFO</code></a><li>
-	<a href="/outcome/reference/macros/nodiscard/" ><code>OUTCOME_NODISCARD</code></a><li>
-	<a href="/outcome/reference/macros/requires/" ><code>OUTCOME_REQUIRES(...)</code></a><li>
-	<a href="/outcome/reference/macros/symbol_visible/" ><code>OUTCOME_SYMBOL_VISIBLE</code></a><li>
-	<a href="/outcome/reference/macros/thread_local/" ><code>OUTCOME_THREAD_LOCAL</code></a><li>
-	<a href="/outcome/reference/macros/throw_exception/" ><code>OUTCOME_THROW_EXCEPTION(expr)</code></a></li></ol></li></ol>
+	<a href="/outcome/reference/macros/disable_execinfo/" ><code>OUTCOME_DISABLE_EXECINFO</code></a>
+<p>If defined, disables the use of the <code>&lt;execinfo.h&gt;</code> header (or the win32 emulation).</p><li>
+	<a href="/outcome/reference/macros/nodiscard/" ><code>OUTCOME_NODISCARD</code></a>
+<p>How to tell the compiler than the return value of a function should not be discarded without examining it.</p><li>
+	<a href="/outcome/reference/macros/requires/" ><code>OUTCOME_REQUIRES(...)</code></a>
+<p>A C++ 20 <code>requires(...)</code>, if available.</p><li>
+	<a href="/outcome/reference/macros/symbol_visible/" ><code>OUTCOME_SYMBOL_VISIBLE</code></a>
+<p>How to mark throwable types as always having default ELF symbol visibility.</p><li>
+	<a href="/outcome/reference/macros/thread_local/" ><code>OUTCOME_THREAD_LOCAL</code></a>
+<p>How to mark variables as having thread local storage duration.</p><li>
+	<a href="/outcome/reference/macros/throw_exception/" ><code>OUTCOME_THROW_EXCEPTION(expr)</code></a>
+<p>How to throw a C++ exception, or equivalent thereof.</p></li></ol><li>
+	<a href="/outcome/reference/concepts/" >Concepts</a><ol><li>
+	<a href="/outcome/reference/concepts/valueorerror/" ><code>ValueOrError&lt;T&gt;</code></a>
+<p>A boolean concept matching types with either a value or an error.</p><li>
+	<a href="/outcome/reference/concepts/valueornone/" ><code>ValueOrNone&lt;T&gt;</code></a>
+<p>A boolean concept matching types with an optional value.</p></li></ol></li></ol>
 
 
 

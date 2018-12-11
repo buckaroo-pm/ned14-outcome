@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-11T13:11:54 UTC">
+<meta name="revised" content="2018-12-11T14:58:22 UTC">
 <title>Outcome :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -506,6 +506,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/outcome/reference/concepts/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/reference/concepts/">Concepts</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/outcome/reference/concepts/valueorerror/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/concepts/valueorerror/">
+            <code>ValueOrError&lt;T&gt;</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/concepts/valueornone/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/concepts/valueornone/">
+            <code>ValueOrNone&lt;T&gt;</code>
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/outcome/faq/" class="dd-item
@@ -635,8 +657,8 @@
         <h2 class="post-title"><a href="/outcome/tutorial/outcome/">outcome&lt;&gt;</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>outcome&lt;&gt; Type  outcome&lt;T, EC, EP, NVP&gt; represets either a successfully computed value of type T or a reason for failure. Failure can be represented by EC or EP or both. Although usually it will either be an EC or an EP. EC defaults to std::error_code and EP defaults to std::exception_ptr. The distinction is made into two types, EC and EP:
- EC represents a failue from lower-layer function which was retured through  result&lt;T, EC&gt; . <a class="read-more" href="/outcome/tutorial/outcome/">&raquo;</a></p>
+        <p>outcome&lt;&gt; Type represets either a successfully computed value of type T or a reason for failure. Failure can be represented by EC or EP or both. Although usually it will either be an EC or an EP. EC defaults to std::error_code and EP defaults to std::exception_ptr. The distinction is made into two types, EC and EP:
+ EC represents a failue from lower-layer function which was retured through . EP represents pointer to an exception thrown in a lower-layer function to signal a failure; but at the current level we do not want to proceed with stack unwinding. <a class="read-more" href="/outcome/tutorial/outcome/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          

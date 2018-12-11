@@ -126,7 +126,7 @@ classfile_handle { int _fd{-1}; // file descriptor  struct stat _stat { 0 }; // 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/tutorial/hooks/adl_bridging/</guid>
-      <description>In a previous section, we used the failure_info type to create the ADL bridge into the namespace where the ADL discovered  throw_as_system_error_with_payload() function was to be found.
+      <description>In a previous section, we used the failure_info type to create the ADL bridge into the namespace where the ADL discovered function was to be found.
 Here we do the same, but more directly by creating a thin clone of std::error_code into the local namespace. This ensures that this namespace will be searched by the compiler when discovering the event hooks.
 namespace error_code_extended { // Use the error_code type as the ADL bridge for the hooks by creating a type here  // It can be any type that your localised result uses, including the value type but  // by localising the error code type here you prevent nasty surprises later when the  // value type you use doesn&amp;#39;t trigger the ADL bridge.</description>
     </item>
@@ -138,9 +138,9 @@ namespace error_code_extended { // Use the error_code type as the ADL bridge for
       
       <guid>https://ned14.github.io/outcome/tutorial/no-value/builtin/</guid>
       <description>These are the predefined policies built into Outcome:
- all_narrow If there is an observation of a value/error/exception which is not present, the behavior is undefined. However this is a tool-friendly UB using intrinsics such as __builtin_unreachable() that allows tool to make use of it, e.g., better bug detection or optimizations.
- terminate Observation of a missing value/error/exception causes the call to std::terminate().
- error_code_throw_as_system_error&amp;lt;T, EC, EP&amp;gt; This policy assumes that EC has the interface of std::error_code, and EP has the interface of std::exception_ptr.</description>
+If there is an observation of a value/error/exception which is not present, the behavior is undefined. However this is a tool-friendly UB using intrinsics such as __builtin_unreachable() that allows tool to make use of it, e.g., better bug detection or optimizations.
+Observation of a missing value/error/exception causes the call to std::terminate().
+This policy assumes that EC has the interface of std::error_code, and EP has the interface of std::exception_ptr.</description>
     </item>
     
     <item>
@@ -278,7 +278,7 @@ namespace app { // Specialise an exception type for httplib errors  struct httpl
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/tutorial/result/try/</guid>
-      <description>In the implementation of function print_half we have seen the usage of the macro  OUTCOME_TRY :
+      <description>In the implementation of function print_half we have seen the usage of the macro :
 OUTCOME_TRY (i, BigInt::fromString(text));  The OUTCOME_TRY macro uses C macro overloading to select between two implementations based on the number of input parameters. If there is exactly one input parameter i.e. without the i,, the control statement is roughly equivalent to:
 auto&amp;amp;&amp;amp; __result = BigInt::fromString(text); if (!__result) return __result.as_failure();  Where __result is a compile time generated unique name.</description>
     </item>
@@ -331,7 +331,7 @@ outcome::result&amp;lt;file_handle&amp;gt; fh2 = construct&amp;lt;file_handle&am
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/tutorial/c-api/variations/</guid>
-      <description>You can of course choose your own E type so long as it has standard layout and is trivially copyable. You would declare that with  CXX_DECLARE_RESULT(t_ident, t_decl, e_ident, e_decl) , refer to it with  CXX_RESULT(t_ident, e_ident) and need to do your own decoding of errors from your E type. By using the _EC postfixed macros, you are in fact using E =
+      <description>You can of course choose your own E type so long as it has standard layout and is trivially copyable. You would declare that with , refer to it with and need to do your own decoding of errors from your E type. By using the _EC postfixed macros, you are in fact using E =
 struct cxx_error_code { int code; void *category; }; &amp;hellip; which is declared for you by result.</description>
     </item>
     
@@ -442,7 +442,7 @@ template&amp;lt;class... Args&amp;gt; inline outcome::result&amp;lt;file_handle&
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/credits/</guid>
-      <description>github contributors HAHAHUGOSHORTCODE-0xc000410f00-1-HBHB
+      <description>github contributors HAHAHUGOSHORTCODE-0xc000105900-1-HBHB
 This pretty, modern C++ documentation  Hugo - static website generator of this documentation. hugo-theme-docdock - the Hugo theme used by this documentation. Standardese - the API reference generator  Special thanks for Outcome v2 For a second time, Charley Bay stepped up as review manager. Given how much work it was for the v1 review, I can only say thank you.
 Andrzej Krzemienski went far beyond the call of duty in the development of Outcome v2.</description>
     </item>
@@ -543,6 +543,28 @@ Default: To thread_local if the compiler implements C++ 11 thread_local, else __
       <description>Throws a C++ exception, or equivalent thereof.
 Overridable: Define before inclusion.
 Default: Standalone Outcome (C++ exceptions enabled): To throw expr Standalone Outcome (C++ exceptions disabled): To OUTCOME_V2_NAMESPACE::detail::do_fatal_exit(#expr) which is a function which prints a useful error message including a stack backtrace (where available) to stderr before calling abort(). Boost.Outcome: To BOOST_THROW_EXCEPTION(expr).</description>
+    </item>
+    
+    <item>
+      <title>`ValueOrError&lt;T&gt;`</title>
+      <link>https://ned14.github.io/outcome/reference/concepts/valueorerror/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/concepts/valueorerror/</guid>
+      <description>If on C++ 20 or the Concepts TS is enabled, a boolean concept matching types with a public .has_value() observer which returns bool, a public .value() observer function, and a public .error() observer function.
+If without Concepts, a static constexpr bool which is true for types matching the same requirements, using a SFINAE based emulation.
+This concept matches expected-like types such as  P0323 std::expected&amp;lt;T, E&amp;gt;, one of which is .</description>
+    </item>
+    
+    <item>
+      <title>`ValueOrNone&lt;T&gt;`</title>
+      <link>https://ned14.github.io/outcome/reference/concepts/valueornone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/concepts/valueornone/</guid>
+      <description>If on C++ 20 or the Concepts TS is enabled, a boolean concept matching types with a public .has_value() observer which returns bool, and a public .value() observer function.
+If without Concepts, a static constexpr bool which is true for types matching the same requirements, using a SFINAE based emulation.
+This concept matches optional-like types such as  std::optional&amp;lt;T&amp;gt;. Note it also matches  P0323 std::expected&amp;lt;T, E&amp;gt;, which also has an optional-like interface.</description>
     </item>
     
   </channel>

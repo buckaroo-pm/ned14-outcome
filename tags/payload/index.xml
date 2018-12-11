@@ -5,7 +5,7 @@
     <link>https://ned14.github.io/outcome/tags/payload/</link>
     <description>Recent content in Payload on Outcome documentation</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 08 Jun 2018 14:33:47 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 15 Jun 2018 18:54:09 +0100</lastBuildDate>
     
 	<atom:link href="https://ned14.github.io/outcome/tags/payload/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,10 +13,10 @@
     <item>
       <title>Custom payloads</title>
       <link>https://ned14.github.io/outcome/tutorial/payload/</link>
-      <pubDate>Fri, 08 Jun 2018 14:33:47 +0200</pubDate>
+      <pubDate>Fri, 15 Jun 2018 18:54:09 +0100</pubDate>
       
       <guid>https://ned14.github.io/outcome/tutorial/payload/</guid>
-      <description>So far in this tutorial, type EC in result&amp;lt;T, EC&amp;gt; has always been a std::error_code (though it can be of any type you wish instead). EC needs in fact to merely satisfy  trait::has_error_code_v&amp;lt;EC&amp;gt; for EC to be treated as if an std::error_code.
+      <description>So far in this tutorial, type EC in result&amp;lt;T, EC&amp;gt; has always been a std::error_code (though it can be of any type you wish instead). EC needs in fact to merely satisfy for EC to be treated as if an std::error_code.
 In turn, trait::has_error_code_v&amp;lt;EC&amp;gt; is true if there exists some ADL discovered free function:
  make_error_code(EC) returning a std::error_code. make_error_code(get&amp;lt;0&amp;gt;(EC)) returning a std::error_code (i.e. EC might be pair&amp;lt;std::error_code, U&amp;gt; or tuple&amp;lt;std::error_code, .</description>
     </item>

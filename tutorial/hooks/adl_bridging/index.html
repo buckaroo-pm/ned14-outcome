@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-11T13:11:53 UTC">
+<meta name="revised" content="2018-12-11T14:58:21 UTC">
 <title>ADL bridging :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -132,6 +132,20 @@
       <a href="/outcome/tutorial/result/">result&lt;&gt;</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/outcome/tutorial/result/inspecting/" class="dd-item">
+        <div>
+          <a href="/outcome/tutorial/result/inspecting/">
+            Inspecting result<T, EC>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/tutorial/result/try/" class="dd-item">
+        <div>
+          <a href="/outcome/tutorial/result/try/">
+            TRY operations
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/outcome/tutorial/outcome/" class="dd-item haschildren
@@ -494,6 +508,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/outcome/reference/concepts/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/reference/concepts/">Concepts</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/outcome/reference/concepts/valueorerror/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/concepts/valueorerror/">
+            <code>ValueOrError&lt;T&gt;</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/concepts/valueornone/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/concepts/valueornone/">
+            <code>ValueOrNone&lt;T&gt;</code>
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/outcome/faq/" class="dd-item
@@ -610,8 +646,8 @@
     
     
     <p>In a previous section, we used the <code>failure_info</code> type to create
-the ADL bridge into the namespace where the ADL discovered <a href="https://ned14.github.io/outcome/reference/success_failure/#standardese-outcome_v2_xxx__policy__throw_as_system_error_with_payload-Error--Errorconst--" class="api-reference"><i class="fa fa-book" aria-hidden="true"></i> throw_as_system_error_with_payload()</a>
-
+the ADL bridge into the namespace where the ADL discovered 
+    
 function was to be found.</p>
 
 <p>Here we do the same, but more directly by creating a thin clone of <code>std::error_code</code>
@@ -672,7 +708,7 @@ namespace bound to the ADL bridging <code>error_code</code>.</p>
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 08/06/2018
+        <i class='fa fa-calendar'></i> Last update on 15/06/2018
     </div>
     
 

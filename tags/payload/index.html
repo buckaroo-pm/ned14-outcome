@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-11T13:11:54 UTC">
+<meta name="revised" content="2018-12-11T14:58:22 UTC">
 <title>Payload :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -506,6 +506,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/outcome/reference/concepts/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/reference/concepts/">Concepts</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/outcome/reference/concepts/valueorerror/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/concepts/valueorerror/">
+            <code>ValueOrError&lt;T&gt;</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/concepts/valueornone/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/concepts/valueornone/">
+            <code>ValueOrNone&lt;T&gt;</code>
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/outcome/faq/" class="dd-item
@@ -608,7 +630,7 @@
         <h2 class="post-title"><a href="/outcome/tutorial/payload/">Custom payloads</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>So far in this tutorial, type EC in result&lt;T, EC&gt; has always been a std::error_code (though it can be of any type you wish instead). EC needs in fact to merely satisfy  trait::has_error_code_v&lt;EC&gt; for EC to be treated as if an std::error_code.
+        <p>So far in this tutorial, type EC in result&lt;T, EC&gt; has always been a std::error_code (though it can be of any type you wish instead). EC needs in fact to merely satisfy for EC to be treated as if an std::error_code.
 In turn, trait::has_error_code_v&lt;EC&gt; is true if there exists some ADL discovered free function:
  make_error_code(EC) returning a std::error_code. make_error_code(get&lt;0&gt;(EC)) returning a std::error_code (i.e. EC might be pair&lt;std::error_code, U&gt; or tuple&lt;std::error_code, . <a class="read-more" href="/outcome/tutorial/payload/">&raquo;</a></p>
     </section>
@@ -683,7 +705,7 @@ namespace filesystem2 { // Error code + paths related to a failure. Also causes 
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 08/06/2018
+        <i class='fa fa-calendar'></i> Last update on 15/06/2018
     </div>
     
 
