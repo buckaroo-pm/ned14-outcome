@@ -11,14 +11,14 @@
     
     
     <item>
-      <title>`ValueOrError&lt;T&gt;`</title>
+      <title>`ValueOrError&lt;T, E&gt;`</title>
       <link>https://ned14.github.io/outcome/reference/concepts/valueorerror/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/reference/concepts/valueorerror/</guid>
       <description>If on C++ 20 or the Concepts TS is enabled, a boolean concept matching types with a public .has_value() observer which returns bool, a public .value() observer function, and a public .error() observer function.
 If without Concepts, a static constexpr bool which is true for types matching the same requirements, using a SFINAE based emulation.
-This concept matches expected-like types such as  P0323 std::expected&amp;lt;T, E&amp;gt;, one of which is .</description>
+This concept matches expected-like types such as  P0323 std::expected&amp;lt;T, E&amp;gt;, one of which is API NOT FOUND IN DOCS basic_result&amp;lt;T, E, NoValuePolicy&amp;gt;.</description>
     </item>
     
     <item>

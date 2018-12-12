@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-11T14:58:22 UTC">
-<title>`ValueOrError&lt;T&gt;` :: Outcome documentation</title>
+<meta name="revised" content="2018-12-12T22:04:09 UTC">
+<title>`ValueOrError&lt;T, E&gt;` :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
 <link href="/outcome/css/nucleus.css" rel="stylesheet">
@@ -505,6 +505,27 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/outcome/reference/macros/try/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/macros/try/">
+            <code>OUTCOME_TRY(var, expr)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/macros/tryv/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/macros/tryv/">
+            <code>OUTCOME_TRYV(expr)/OUTCOME_TRY(expr)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/macros/tryx/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/macros/tryx/">
+            <code>OUTCOME_TRYX(expr)</code>
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/outcome/reference/concepts/" class="dd-item parent haschildren
@@ -517,7 +538,7 @@
       <li data-nav-id="/outcome/reference/concepts/valueorerror/" class="dd-item active">
         <div>
           <a href="/outcome/reference/concepts/valueorerror/">
-            <code>ValueOrError&lt;T&gt;</code>
+            <code>ValueOrError&lt;T, E&gt;</code>
           </a>
         </div>
     </li>
@@ -586,7 +607,7 @@
     <option value="/outcome/reference/concepts/" >
   - 
    Concepts</option> 
-      <option value="/outcome/reference/concepts/valueorerror/"  selected>-- `ValueOrError&lt;T&gt;`</option>
+      <option value="/outcome/reference/concepts/valueorerror/"  selected>-- `ValueOrError&lt;T, E&gt;`</option>
       <option value="/outcome/reference/concepts/valueornone/" >-- `ValueOrNone&lt;T&gt;`</option>
   
   
@@ -620,7 +641,7 @@
       </div>
     
 
-    <h1><code>ValueOrError&lt;T&gt;</code></h1>
+    <h1><code>ValueOrError&lt;T, E&gt;</code></h1>
     
     
     
@@ -630,7 +651,10 @@
 
 <p>This concept matches expected-like types such as 
 <a href="https://wg21.link/P0323" class="api-reference" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> P0323 std::expected&lt;T, E&gt;</a>, one of which is 
-    . Be aware it does not differentiate between value-or-error types and value-and-error types if they present the interface matched above.</p>
+    
+    <b>API NOT FOUND IN DOCS <code>basic_result&lt;T, E, NoValuePolicy&gt;</code></b>. Be aware it does not differentiate between value-or-error types and value-and-error types if they present the interface matched above.</p>
+
+<p><em>Header</em>: <code>&lt;outcome/convert.hpp&gt;</code></p>
 
 
     
@@ -653,7 +677,7 @@
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 11/12/2018
+        <i class='fa fa-calendar'></i> Last update on 12/12/2018
     </div>
     
 

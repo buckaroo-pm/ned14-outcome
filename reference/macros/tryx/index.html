@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-12T22:04:08 UTC">
-<title>Phase 2 construction :: Outcome documentation</title>
+<meta name="revised" content="2018-12-12T22:04:09 UTC">
+<title>`OUTCOME_TRYX(expr)` :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
 <link href="/outcome/css/nucleus.css" rel="stylesheet">
@@ -22,7 +22,7 @@
 
     
   </head>
-  <body data-url="/outcome/tutorial/constructors/static-constructor/">
+  <body data-url="/outcome/reference/macros/tryx/">
     
       <header>
   <div class="logo">
@@ -119,11 +119,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/outcome/tutorial/" class="dd-item parent haschildren
+    <li data-nav-id="/outcome/tutorial/" class="dd-item haschildren
         ">
       <div>
-      <a href="/outcome/tutorial/">Tutorial</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/outcome/tutorial/">Tutorial</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/outcome/tutorial/result/" class="dd-item haschildren
@@ -214,11 +213,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/outcome/tutorial/constructors/" class="dd-item parent haschildren
+    <li data-nav-id="/outcome/tutorial/constructors/" class="dd-item haschildren
         ">
       <div>
-      <a href="/outcome/tutorial/constructors/">Result returning constructors</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/outcome/tutorial/constructors/">Result returning constructors</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/outcome/tutorial/constructors/two-phase-init/" class="dd-item">
@@ -235,7 +233,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/outcome/tutorial/constructors/static-constructor/" class="dd-item active">
+      <li data-nav-id="/outcome/tutorial/constructors/static-constructor/" class="dd-item">
         <div>
           <a href="/outcome/tutorial/constructors/static-constructor/">
             Phase 2 construction
@@ -438,16 +436,18 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/outcome/reference/" class="dd-item haschildren
+    <li data-nav-id="/outcome/reference/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/outcome/reference/">API reference</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/outcome/reference/">API reference</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/outcome/reference/macros/" class="dd-item haschildren
+    <li data-nav-id="/outcome/reference/macros/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/outcome/reference/macros/">Macros</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/outcome/reference/macros/">Macros</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/outcome/reference/macros/template/" class="dd-item">
@@ -520,7 +520,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/outcome/reference/macros/tryx/" class="dd-item">
+      <li data-nav-id="/outcome/reference/macros/tryx/" class="dd-item active">
         <div>
           <a href="/outcome/reference/macros/tryx/">
             <code>OUTCOME_TRYX(expr)</code>
@@ -598,41 +598,28 @@
     <option value="/outcome/motivation/" >
    Motivation</option>
     <option value="/outcome/tutorial/" >
-   Tutorial</option> 
-    <option value="/outcome/tutorial/result/" >
-  - 
-   result&lt;&gt;</option>
-    <option value="/outcome/tutorial/outcome/" >
-  - 
-   outcome&lt;&gt;</option>
-    <option value="/outcome/tutorial/no-value/" >
-  - 
-   No-value policies</option>
-    <option value="/outcome/tutorial/payload/" >
-  - 
-   Custom payloads</option>
-    <option value="/outcome/tutorial/constructors/" >
-  - 
-   Result returning constructors</option> 
-      <option value="/outcome/tutorial/constructors/two-phase-init/" >-- Two phase construction</option>
-      <option value="/outcome/tutorial/constructors/file_handle/" >-- A file handle</option>
-      <option value="/outcome/tutorial/constructors/static-constructor/"  selected>-- Phase 2 construction</option>
-      <option value="/outcome/tutorial/constructors/metaprogrammg1/" >-- Phase 3</option>
-      <option value="/outcome/tutorial/constructors/metaprogrammg2/" >-- construct&lt;T&gt;</option>
-      <option value="/outcome/tutorial/constructors/metaprogrammg3/" >-- Alternatives</option>
-  
-    <option value="/outcome/tutorial/hooks/" >
-  - 
-   Hooking events</option>
-    <option value="/outcome/tutorial/c-api/" >
-  - 
-   Using result&lt;T&gt; from C code</option>
-    <option value="/outcome/tutorial/interop/" >
-  - 
-   Interoperation</option>
-  
+   Tutorial</option>
     <option value="/outcome/reference/" >
-   API reference</option>
+   API reference</option> 
+    <option value="/outcome/reference/macros/" >
+  - 
+   Macros</option> 
+      <option value="/outcome/reference/macros/template/" >-- Constrained template macros</option>
+      <option value="/outcome/reference/macros/version/" >-- Version macros</option>
+      <option value="/outcome/reference/macros/disable_execinfo/" >-- `OUTCOME_DISABLE_EXECINFO`</option>
+      <option value="/outcome/reference/macros/nodiscard/" >-- `OUTCOME_NODISCARD`</option>
+      <option value="/outcome/reference/macros/requires/" >-- `OUTCOME_REQUIRES(...)`</option>
+      <option value="/outcome/reference/macros/symbol_visible/" >-- `OUTCOME_SYMBOL_VISIBLE`</option>
+      <option value="/outcome/reference/macros/thread_local/" >-- `OUTCOME_THREAD_LOCAL`</option>
+      <option value="/outcome/reference/macros/throw_exception/" >-- `OUTCOME_THROW_EXCEPTION(expr)`</option>
+      <option value="/outcome/reference/macros/try/" >-- `OUTCOME_TRY(var, expr)`</option>
+      <option value="/outcome/reference/macros/tryv/" >-- `OUTCOME_TRYV(expr)/OUTCOME_TRY(expr)`</option>
+      <option value="/outcome/reference/macros/tryx/"  selected>-- `OUTCOME_TRYX(expr)`</option>
+  
+    <option value="/outcome/reference/concepts/" >
+  - 
+   Concepts</option>
+  
     <option value="/outcome/faq/" >
    Frequently asked questions</option>
     <option value="/outcome/videos/" >
@@ -663,79 +650,33 @@
       </div>
     
 
-    <h1>Phase 2 construction</h1>
+    <h1><code>OUTCOME_TRYX(expr)</code></h1>
     
     
     
-    <p>Its phase 2 constructor:</p>
+    <p>Evaluate an expression which results in a type matching the <code>ValueOrError&lt;T, E&gt;</code> concept, emitting the <code>T</code> if successful, immediately returning <code>E</code> from the calling function if unsuccessful.</p>
 
-<div class="code-snippet"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// Phase 2 static member constructor function, which cannot throw
-</span><span class="c1"></span><span class="kr">inline</span> <span class="n">outcome</span><span class="o">::</span><span class="n">result</span><span class="o">&lt;</span><span class="n">file_handle</span><span class="o">&gt;</span> <span class="n">file_handle</span><span class="o">::</span><span class="n">file</span><span class="p">(</span><span class="n">file_handle</span><span class="o">::</span><span class="n">path_type</span> <span class="n">path</span><span class="p">,</span> <span class="n">file_handle</span><span class="o">::</span><span class="n">mode</span> <span class="n">mode</span><span class="p">)</span> <span class="k">noexcept</span>
-<span class="p">{</span>
-  <span class="c1">// Perform phase 1 of object construction
-</span><span class="c1"></span>  <span class="n">file_handle</span> <span class="n">ret</span><span class="p">;</span>
+<p><em>Availability</em>: GCC and clang only. Use <code>#ifdef OUTCOME_TRYX</code> to determine if available.</p>
 
-  <span class="c1">// Perform phase 2 of object construction
-</span><span class="c1"></span>  <span class="kt">int</span> <span class="n">flags</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="k">switch</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span>
-  <span class="p">{</span>
-  <span class="k">case</span> <span class="n">mode</span><span class="o">::</span><span class="nl">attr_read</span><span class="p">:</span>
-  <span class="k">case</span> <span class="n">mode</span><span class="o">::</span><span class="nl">read</span><span class="p">:</span>
-    <span class="n">flags</span> <span class="o">=</span> <span class="n">O_RDONLY</span><span class="p">;</span>
-    <span class="k">break</span><span class="p">;</span>
-  <span class="k">case</span> <span class="n">mode</span><span class="o">::</span><span class="nl">attr_write</span><span class="p">:</span>
-  <span class="k">case</span> <span class="n">mode</span><span class="o">::</span><span class="nl">write</span><span class="p">:</span>
-    <span class="n">flags</span> <span class="o">=</span> <span class="n">O_RDWR</span><span class="p">;</span>
-    <span class="k">break</span><span class="p">;</span>
-  <span class="k">case</span> <span class="n">mode</span><span class="o">::</span><span class="nl">append</span><span class="p">:</span>
-    <span class="n">flags</span> <span class="o">=</span> <span class="n">O_APPEND</span><span class="p">;</span>
-    <span class="k">break</span><span class="p">;</span>
-  <span class="k">default</span><span class="o">:</span>
-    <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">errc</span><span class="o">::</span><span class="n">invalid_argument</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="n">ret</span><span class="p">.</span><span class="n">_fd</span> <span class="o">=</span> <span class="o">::</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">.</span><span class="n">u8string</span><span class="p">().</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">flags</span><span class="p">);</span>
-  <span class="k">if</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">==</span> <span class="n">ret</span><span class="p">.</span><span class="n">_fd</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="c1">// Note that if we bail out here, ~file_handle() will correctly not call ::close()
-</span><span class="c1"></span>    <span class="k">return</span> <span class="p">{</span><span class="n">errno</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">system_category</span><span class="p">()};</span>
-  <span class="p">}</span>
-  <span class="k">if</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">==</span> <span class="o">::</span><span class="n">fstat</span><span class="p">(</span><span class="n">ret</span><span class="p">.</span><span class="n">_fd</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ret</span><span class="p">.</span><span class="n">_stat</span><span class="p">))</span>
-  <span class="p">{</span>
-    <span class="c1">// Note that if we bail out here, ~file_handle() will correctly call ::close()
-</span><span class="c1"></span>    <span class="k">return</span> <span class="p">{</span><span class="n">errno</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">system_category</span><span class="p">()};</span>
-  <span class="p">}</span>
+<p><em>Overridable</em>: Not overridable.</p>
 
-  <span class="c1">// Returning ret directly is an area full of compiler specific behaviour quirks,
-</span><span class="c1"></span>  <span class="c1">// so be explicit by wrapping into an initialiser list with embedded move.
-</span><span class="c1"></span>  <span class="k">return</span> <span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">ret</span><span class="p">)};</span>
-<span class="p">}</span>
-</code></pre></div><a href="https://github.com/ned14/outcome/tree/master/doc/src/snippets/constructors.cpp#L103" class="code-snippet-url" target="_blank">View this code on Github</a></div>
+<p><em>Definition</em>: See 
+<a href="/outcome/reference/macros/tryv/" class="api-reference"> OUTCOME_TRYV(expr)</a> for most of the mechanics.</p>
 
+<p>This macro makes use of a proprietary extension in GCC and clang to emit the <code>T</code> from a successful expression. You can thus use <code>OUTCOME_TRYX(expr)</code> directly in expressions e.g. <code>auto x = y + OUTCOME_TRYX(foo(z));</code>.</p>
 
-<p>The static member function implementing phase 2 firstly calls phase 1
-which puts the object into a legally destructible state. We then
-proceed to implement phase 2 of construction, filling in the various
-parts as we go, reporting via <code>result</code> any failures.</p>
+<p>Be aware there are compiler quirks in preserving the rvalue/lvalue/etc-ness of emitted <code>T</code>&rsquo;s, specifically copy or move constructors may be called unexpectedly and/or copy elision not work as expected. If these prove to be problematic, use 
+<a href="/outcome/reference/macros/try/" class="api-reference"> OUTCOME_TRY(var, expr)</a> instead.</p>
 
-<div class="notices note" ><p>Remember that <code>operator new</code> has a non-throwing form, <code>new(std::nothrow)</code>.</p>
-</div>
-
-
-<p>For the final return, in theory we could just <code>return ret</code> and
-depending on the C++ version currently in force, it might work
-via move, or via copy, or it might refuse to compile. You can
-of course type lots of boilerplate to be explicit, but this use
-via initialiser list is a reasonable balance of explicitness
-versus brevity, and it should generate minimum overhead code
-irrespective of compiler, C++ version, or any other factor.</p>
+<p><em>Header</em>: <code>&lt;outcome/try.hpp&gt;</code></p>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/outcome/tutorial/constructors/file_handle/" title="A file handle"> <i class="fa fa-chevron-left"></i><label>A file handle</label></a>
-    <a class="nav nav-next" href="/outcome/tutorial/constructors/metaprogrammg1/" title="Phase 3" style="margin-right: 0px;"><label>Phase 3</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/outcome/reference/macros/tryv/" title="`OUTCOME_TRYV(expr)/OUTCOME_TRY(expr)`"> <i class="fa fa-chevron-left"></i><label><code>OUTCOME_TRYV(expr)/OUTCOME_TRY(expr)</code></label></a>
+    <a class="nav nav-next" href="/outcome/reference/concepts/" title="Concepts" style="margin-right: 0px;"><label>Concepts</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -750,13 +691,13 @@ irrespective of compiler, C++ version, or any other factor.</p>
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 19/06/2018
+        <i class='fa fa-calendar'></i> Last update on 12/12/2018
     </div>
     
 
     
     <div class="github-link">
-      <a href="https://github.com/ned14/outcome/edit/develop/doc/src/content/tutorial/constructors/static-constructor.md" target="blank"><i class="fa fa-code-fork"></i>
+      <a href="https://github.com/ned14/outcome/edit/develop/doc/src/content/reference/macros/tryx.md" target="blank"><i class="fa fa-code-fork"></i>
         Improve this page</a>
     </div>
     

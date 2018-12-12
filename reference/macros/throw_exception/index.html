@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-11T14:58:22 UTC">
+<meta name="revised" content="2018-12-12T22:04:09 UTC">
 <title>`OUTCOME_THROW_EXCEPTION(expr)` :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -506,6 +506,27 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/outcome/reference/macros/try/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/macros/try/">
+            <code>OUTCOME_TRY(var, expr)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/macros/tryv/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/macros/tryv/">
+            <code>OUTCOME_TRYV(expr)/OUTCOME_TRY(expr)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/macros/tryx/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/macros/tryx/">
+            <code>OUTCOME_TRYX(expr)</code>
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/outcome/reference/concepts/" class="dd-item haschildren
@@ -517,7 +538,7 @@
       <li data-nav-id="/outcome/reference/concepts/valueorerror/" class="dd-item">
         <div>
           <a href="/outcome/reference/concepts/valueorerror/">
-            <code>ValueOrError&lt;T&gt;</code>
+            <code>ValueOrError&lt;T, E&gt;</code>
           </a>
         </div>
     </li>
@@ -591,6 +612,9 @@
       <option value="/outcome/reference/macros/symbol_visible/" >-- `OUTCOME_SYMBOL_VISIBLE`</option>
       <option value="/outcome/reference/macros/thread_local/" >-- `OUTCOME_THREAD_LOCAL`</option>
       <option value="/outcome/reference/macros/throw_exception/"  selected>-- `OUTCOME_THROW_EXCEPTION(expr)`</option>
+      <option value="/outcome/reference/macros/try/" >-- `OUTCOME_TRY(var, expr)`</option>
+      <option value="/outcome/reference/macros/tryv/" >-- `OUTCOME_TRYV(expr)/OUTCOME_TRY(expr)`</option>
+      <option value="/outcome/reference/macros/tryx/" >-- `OUTCOME_TRYX(expr)`</option>
   
     <option value="/outcome/reference/concepts/" >
   - 
@@ -643,13 +667,15 @@
 <dd>To <code>BOOST_THROW_EXCEPTION(expr)</code>.
 </dl></p>
 
+<p><em>Header</em>: <code>&lt;outcome/config.hpp&gt;</code></p>
+
 
     
     
         <div class="chevrons">
     <div id="navigation">
 <a class="nav nav-prev" href="/outcome/reference/macros/thread_local/" title="`OUTCOME_THREAD_LOCAL`"> <i class="fa fa-chevron-left"></i><label><code>OUTCOME_THREAD_LOCAL</code></label></a>
-    <a class="nav nav-next" href="/outcome/reference/concepts/" title="Concepts" style="margin-right: 0px;"><label>Concepts</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/outcome/reference/macros/try/" title="`OUTCOME_TRY(var, expr)`" style="margin-right: 0px;"><label><code>OUTCOME_TRY(var, expr)</code></label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -664,7 +690,7 @@
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 11/12/2018
+        <i class='fa fa-calendar'></i> Last update on 12/12/2018
     </div>
     
 

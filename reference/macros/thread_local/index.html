@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-11T14:58:22 UTC">
+<meta name="revised" content="2018-12-12T22:04:08 UTC">
 <title>`OUTCOME_THREAD_LOCAL` :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -506,6 +506,27 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/outcome/reference/macros/try/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/macros/try/">
+            <code>OUTCOME_TRY(var, expr)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/macros/tryv/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/macros/tryv/">
+            <code>OUTCOME_TRYV(expr)/OUTCOME_TRY(expr)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/macros/tryx/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/macros/tryx/">
+            <code>OUTCOME_TRYX(expr)</code>
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/outcome/reference/concepts/" class="dd-item haschildren
@@ -517,7 +538,7 @@
       <li data-nav-id="/outcome/reference/concepts/valueorerror/" class="dd-item">
         <div>
           <a href="/outcome/reference/concepts/valueorerror/">
-            <code>ValueOrError&lt;T&gt;</code>
+            <code>ValueOrError&lt;T, E&gt;</code>
           </a>
         </div>
     </li>
@@ -591,6 +612,9 @@
       <option value="/outcome/reference/macros/symbol_visible/" >-- `OUTCOME_SYMBOL_VISIBLE`</option>
       <option value="/outcome/reference/macros/thread_local/"  selected>-- `OUTCOME_THREAD_LOCAL`</option>
       <option value="/outcome/reference/macros/throw_exception/" >-- `OUTCOME_THROW_EXCEPTION(expr)`</option>
+      <option value="/outcome/reference/macros/try/" >-- `OUTCOME_TRY(var, expr)`</option>
+      <option value="/outcome/reference/macros/tryv/" >-- `OUTCOME_TRYV(expr)/OUTCOME_TRY(expr)`</option>
+      <option value="/outcome/reference/macros/tryx/" >-- `OUTCOME_TRYX(expr)`</option>
   
     <option value="/outcome/reference/concepts/" >
   - 
@@ -640,6 +664,8 @@
 
 <p><em>Default</em>: To <code>thread_local</code> if the compiler implements C++ 11 <code>thread_local</code>, else <code>__thread</code> for the one supported compiler (older Mac OS XCode) which does not.</p>
 
+<p><em>Header</em>: <code>&lt;outcome/config.hpp&gt;</code></p>
+
 
     
     
@@ -661,7 +687,7 @@
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 11/12/2018
+        <i class='fa fa-calendar'></i> Last update on 12/12/2018
     </div>
     
 

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-11T14:58:21 UTC">
+<meta name="revised" content="2018-12-12T22:04:07 UTC">
 <title>API reference :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -505,6 +505,27 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/outcome/reference/macros/try/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/macros/try/">
+            <code>OUTCOME_TRY(var, expr)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/macros/tryv/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/macros/tryv/">
+            <code>OUTCOME_TRYV(expr)/OUTCOME_TRY(expr)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/macros/tryx/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/macros/tryx/">
+            <code>OUTCOME_TRYX(expr)</code>
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/outcome/reference/concepts/" class="dd-item haschildren
@@ -516,7 +537,7 @@
       <li data-nav-id="/outcome/reference/concepts/valueorerror/" class="dd-item">
         <div>
           <a href="/outcome/reference/concepts/valueorerror/">
-            <code>ValueOrError&lt;T&gt;</code>
+            <code>ValueOrError&lt;T, E&gt;</code>
           </a>
         </div>
     </li>
@@ -636,9 +657,15 @@
 	<a href="/outcome/reference/macros/thread_local/" ><code>OUTCOME_THREAD_LOCAL</code></a>
 <p>How to mark variables as having thread local storage duration.</p><li>
 	<a href="/outcome/reference/macros/throw_exception/" ><code>OUTCOME_THROW_EXCEPTION(expr)</code></a>
-<p>How to throw a C++ exception, or equivalent thereof.</p></li></ol><li>
+<p>How to throw a C++ exception, or equivalent thereof.</p><li>
+	<a href="/outcome/reference/macros/try/" ><code>OUTCOME_TRY(var, expr)</code></a>
+<p>Evaluate an expression which results in a type matching the <code>ValueOrError&lt;T, E&gt;</code> concept, assigning <code>T</code> to a variable called <code>var</code> if successful, immediately returning <code>E</code> from the calling function if unsuccessful.</p><li>
+	<a href="/outcome/reference/macros/tryv/" ><code>OUTCOME_TRYV(expr)/OUTCOME_TRY(expr)</code></a>
+<p>Evaluate an expression which results in a type matching the <code>ValueOrError&lt;void, E&gt;</code> concept, continuing execution if successful, immediately returning <code>E</code> from the calling function if unsuccessful.</p><li>
+	<a href="/outcome/reference/macros/tryx/" ><code>OUTCOME_TRYX(expr)</code></a>
+<p>Evaluate an expression which results in a type matching the <code>ValueOrError&lt;T, E&gt;</code> concept, emitting the <code>T</code> if successful, immediately returning <code>E</code> from the calling function if unsuccessful.</p></li></ol><li>
 	<a href="/outcome/reference/concepts/" >Concepts</a><ol><li>
-	<a href="/outcome/reference/concepts/valueorerror/" ><code>ValueOrError&lt;T&gt;</code></a>
+	<a href="/outcome/reference/concepts/valueorerror/" ><code>ValueOrError&lt;T, E&gt;</code></a>
 <p>A boolean concept matching types with either a value or an error.</p><li>
 	<a href="/outcome/reference/concepts/valueornone/" ><code>ValueOrNone&lt;T&gt;</code></a>
 <p>A boolean concept matching types with an optional value.</p></li></ol></li></ol>

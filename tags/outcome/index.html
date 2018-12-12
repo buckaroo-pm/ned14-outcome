@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-11T14:58:22 UTC">
+<meta name="revised" content="2018-12-12T22:04:08 UTC">
 <title>Outcome :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -504,6 +504,27 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/outcome/reference/macros/try/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/macros/try/">
+            <code>OUTCOME_TRY(var, expr)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/macros/tryv/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/macros/tryv/">
+            <code>OUTCOME_TRYV(expr)/OUTCOME_TRY(expr)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/macros/tryx/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/macros/tryx/">
+            <code>OUTCOME_TRYX(expr)</code>
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/outcome/reference/concepts/" class="dd-item haschildren
@@ -515,7 +536,7 @@
       <li data-nav-id="/outcome/reference/concepts/valueorerror/" class="dd-item">
         <div>
           <a href="/outcome/reference/concepts/valueorerror/">
-            <code>ValueOrError&lt;T&gt;</code>
+            <code>ValueOrError&lt;T, E&gt;</code>
           </a>
         </div>
     </li>
@@ -657,8 +678,8 @@
         <h2 class="post-title"><a href="/outcome/tutorial/outcome/">outcome&lt;&gt;</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>outcome&lt;&gt; Type represets either a successfully computed value of type T or a reason for failure. Failure can be represented by EC or EP or both. Although usually it will either be an EC or an EP. EC defaults to std::error_code and EP defaults to std::exception_ptr. The distinction is made into two types, EC and EP:
- EC represents a failue from lower-layer function which was retured through . EP represents pointer to an exception thrown in a lower-layer function to signal a failure; but at the current level we do not want to proceed with stack unwinding. <a class="read-more" href="/outcome/tutorial/outcome/">&raquo;</a></p>
+        <p>outcome&lt;&gt; Type API NOT FOUND IN DOCS outcome/#standardese-outcome_v2_xxx__outcome-R-S-P-NoValuePolicy- represets either a successfully computed value of type T or a reason for failure. Failure can be represented by EC or EP or both. Although usually it will either be an EC or an EP. EC defaults to std::error_code and EP defaults to std::exception_ptr. The distinction is made into two types, EC and EP:
+ EC represents a failue from lower-layer function which was retured through API NOT FOUND IN DOCS result/#standardese-outcome_v2_xxx__result-R-S-NoValuePolicy-. <a class="read-more" href="/outcome/tutorial/outcome/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          

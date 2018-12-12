@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-11T14:58:22 UTC">
+<meta name="revised" content="2018-12-12T22:04:09 UTC">
 <title>`ValueOrNone&lt;T&gt;` :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -505,6 +505,27 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/outcome/reference/macros/try/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/macros/try/">
+            <code>OUTCOME_TRY(var, expr)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/macros/tryv/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/macros/tryv/">
+            <code>OUTCOME_TRYV(expr)/OUTCOME_TRY(expr)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/macros/tryx/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/macros/tryx/">
+            <code>OUTCOME_TRYX(expr)</code>
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/outcome/reference/concepts/" class="dd-item parent haschildren
@@ -517,7 +538,7 @@
       <li data-nav-id="/outcome/reference/concepts/valueorerror/" class="dd-item">
         <div>
           <a href="/outcome/reference/concepts/valueorerror/">
-            <code>ValueOrError&lt;T&gt;</code>
+            <code>ValueOrError&lt;T, E&gt;</code>
           </a>
         </div>
     </li>
@@ -586,7 +607,7 @@
     <option value="/outcome/reference/concepts/" >
   - 
    Concepts</option> 
-      <option value="/outcome/reference/concepts/valueorerror/" >-- `ValueOrError&lt;T&gt;`</option>
+      <option value="/outcome/reference/concepts/valueorerror/" >-- `ValueOrError&lt;T, E&gt;`</option>
       <option value="/outcome/reference/concepts/valueornone/"  selected>-- `ValueOrNone&lt;T&gt;`</option>
   
   
@@ -631,14 +652,16 @@
 <p>This concept matches optional-like types such as 
 <a href="https://en.cppreference.com/w/cpp/utility/optional" class="api-reference" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> std::optional&lt;T&gt;</a>. Note it also matches 
 <a href="https://wg21.link/P0323" class="api-reference" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> P0323 std::expected&lt;T, E&gt;</a>, which also has an optional-like interface. You may thus wish to preferentially match 
-<a href="/outcome/reference/concepts/valueorerror/" class="api-reference"> ValueOrError&lt;T&gt;</a> for any given <code>T</code>.</p>
+<a href="/outcome/reference/concepts/valueorerror/" class="api-reference"> ValueOrError&lt;T, E&gt;</a> for any given <code>T</code>.</p>
+
+<p><em>Header</em>: <code>&lt;outcome/convert.hpp&gt;</code></p>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/outcome/reference/concepts/valueorerror/" title="`ValueOrError&lt;T&gt;`"> <i class="fa fa-chevron-left"></i><label><code>ValueOrError&lt;T&gt;</code></label></a>
+<a class="nav nav-prev" href="/outcome/reference/concepts/valueorerror/" title="`ValueOrError&lt;T, E&gt;`"> <i class="fa fa-chevron-left"></i><label><code>ValueOrError&lt;T, E&gt;</code></label></a>
     <a class="nav nav-next" href="/outcome/faq/" title="Frequently asked questions" style="margin-right: 0px;"><label>Frequently asked questions</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
@@ -654,7 +677,7 @@
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 11/12/2018
+        <i class='fa fa-calendar'></i> Last update on 12/12/2018
     </div>
     
 

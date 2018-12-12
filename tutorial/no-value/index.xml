@@ -27,9 +27,8 @@ struct abort_policy : outcome::policy::base { template &amp;lt;classImpl&amp;gt;
       
       <guid>https://ned14.github.io/outcome/tutorial/no-value/builtin/</guid>
       <description>These are the predefined policies built into Outcome:
-If there is an observation of a value/error/exception which is not present, the behavior is undefined. However this is a tool-friendly UB using intrinsics such as __builtin_unreachable() that allows tool to make use of it, e.g., better bug detection or optimizations.
-Observation of a missing value/error/exception causes the call to std::terminate().
-This policy assumes that EC has the interface of std::error_code, and EP has the interface of std::exception_ptr.</description>
+API NOT FOUND IN DOCS policies/all_narrow If there is an observation of a value/error/exception which is not present, the behavior is undefined. However this is a tool-friendly UB using intrinsics such as __builtin_unreachable() that allows tool to make use of it, e.g., better bug detection or optimizations.
+API NOT FOUND IN DOCS policies/terminate Observation of a missing value/error/exception causes the call to std::terminate().</description>
     </item>
     
   </channel>

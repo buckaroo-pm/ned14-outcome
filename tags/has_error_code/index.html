@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-11T14:58:22 UTC">
+<meta name="revised" content="2018-12-12T22:04:08 UTC">
 <title>Has_error_code :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -504,6 +504,27 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/outcome/reference/macros/try/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/macros/try/">
+            <code>OUTCOME_TRY(var, expr)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/macros/tryv/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/macros/tryv/">
+            <code>OUTCOME_TRYV(expr)/OUTCOME_TRY(expr)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/macros/tryx/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/macros/tryx/">
+            <code>OUTCOME_TRYX(expr)</code>
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/outcome/reference/concepts/" class="dd-item haschildren
@@ -515,7 +536,7 @@
       <li data-nav-id="/outcome/reference/concepts/valueorerror/" class="dd-item">
         <div>
           <a href="/outcome/reference/concepts/valueorerror/">
-            <code>ValueOrError&lt;T&gt;</code>
+            <code>ValueOrError&lt;T, E&gt;</code>
           </a>
         </div>
     </li>
@@ -630,7 +651,7 @@
         <h2 class="post-title"><a href="/outcome/tutorial/payload/">Custom payloads</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>So far in this tutorial, type EC in result&lt;T, EC&gt; has always been a std::error_code (though it can be of any type you wish instead). EC needs in fact to merely satisfy for EC to be treated as if an std::error_code.
+        <p>So far in this tutorial, type EC in result&lt;T, EC&gt; has always been a std::error_code (though it can be of any type you wish instead). EC needs in fact to merely satisfy API NOT FOUND IN DOCS success_failure/#standardese-outcome_v2_xxx__trait__has_error_code-T- for EC to be treated as if an std::error_code.
 In turn, trait::has_error_code_v&lt;EC&gt; is true if there exists some ADL discovered free function:
  make_error_code(EC) returning a std::error_code. make_error_code(get&lt;0&gt;(EC)) returning a std::error_code (i.e. EC might be pair&lt;std::error_code, U&gt; or tuple&lt;std::error_code, . <a class="read-more" href="/outcome/tutorial/payload/">&raquo;</a></p>
     </section>
@@ -683,7 +704,7 @@ In turn, trait::has_error_code_v&lt;EC&gt; is true if there exists some ADL disc
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 15/06/2018
+        <i class='fa fa-calendar'></i> Last update on 19/06/2018
     </div>
     
 

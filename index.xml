@@ -126,7 +126,7 @@ classfile_handle { int _fd{-1}; // file descriptor  struct stat _stat { 0 }; // 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/tutorial/hooks/adl_bridging/</guid>
-      <description>In a previous section, we used the failure_info type to create the ADL bridge into the namespace where the ADL discovered function was to be found.
+      <description>In a previous section, we used the failure_info type to create the ADL bridge into the namespace where the ADL discovered API NOT FOUND IN DOCS success_failure/#standardese-outcome_v2_xxx__policy__throw_as_system_error_with_payload-Error--Errorconst-- function was to be found.
 Here we do the same, but more directly by creating a thin clone of std::error_code into the local namespace. This ensures that this namespace will be searched by the compiler when discovering the event hooks.
 namespace error_code_extended { // Use the error_code type as the ADL bridge for the hooks by creating a type here  // It can be any type that your localised result uses, including the value type but  // by localising the error code type here you prevent nasty surprises later when the  // value type you use doesn&amp;#39;t trigger the ADL bridge.</description>
     </item>
@@ -138,9 +138,8 @@ namespace error_code_extended { // Use the error_code type as the ADL bridge for
       
       <guid>https://ned14.github.io/outcome/tutorial/no-value/builtin/</guid>
       <description>These are the predefined policies built into Outcome:
-If there is an observation of a value/error/exception which is not present, the behavior is undefined. However this is a tool-friendly UB using intrinsics such as __builtin_unreachable() that allows tool to make use of it, e.g., better bug detection or optimizations.
-Observation of a missing value/error/exception causes the call to std::terminate().
-This policy assumes that EC has the interface of std::error_code, and EP has the interface of std::exception_ptr.</description>
+API NOT FOUND IN DOCS policies/all_narrow If there is an observation of a value/error/exception which is not present, the behavior is undefined. However this is a tool-friendly UB using intrinsics such as __builtin_unreachable() that allows tool to make use of it, e.g., better bug detection or optimizations.
+API NOT FOUND IN DOCS policies/terminate Observation of a missing value/error/exception causes the call to std::terminate().</description>
     </item>
     
     <item>
@@ -278,7 +277,7 @@ namespace app { // Specialise an exception type for httplib errors  struct httpl
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/tutorial/result/try/</guid>
-      <description>In the implementation of function print_half we have seen the usage of the macro :
+      <description>In the implementation of function print_half we have seen the usage of the macro API NOT FOUND IN DOCS try:
 OUTCOME_TRY (i, BigInt::fromString(text));  The OUTCOME_TRY macro uses C macro overloading to select between two implementations based on the number of input parameters. If there is exactly one input parameter i.e. without the i,, the control statement is roughly equivalent to:
 auto&amp;amp;&amp;amp; __result = BigInt::fromString(text); if (!__result) return __result.as_failure();  Where __result is a compile time generated unique name.</description>
     </item>
@@ -331,7 +330,7 @@ outcome::result&amp;lt;file_handle&amp;gt; fh2 = construct&amp;lt;file_handle&am
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/tutorial/c-api/variations/</guid>
-      <description>You can of course choose your own E type so long as it has standard layout and is trivially copyable. You would declare that with , refer to it with and need to do your own decoding of errors from your E type. By using the _EC postfixed macros, you are in fact using E =
+      <description>You can of course choose your own E type so long as it has standard layout and is trivially copyable. You would declare that with API NOT FOUND IN DOCS result_c/#standardese-CXX_DECLARE_RESULT, refer to it with API NOT FOUND IN DOCS result_c/#standardese-CXX_RESULT and need to do your own decoding of errors from your E type. By using the _EC postfixed macros, you are in fact using E =
 struct cxx_error_code { int code; void *category; }; &amp;hellip; which is declared for you by result.</description>
     </item>
     
@@ -442,7 +441,7 @@ template&amp;lt;class... Args&amp;gt; inline outcome::result&amp;lt;file_handle&
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/credits/</guid>
-      <description>github contributors HAHAHUGOSHORTCODE-0xc000105900-1-HBHB
+      <description>github contributors HAHAHUGOSHORTCODE-0xc00030aa00-1-HBHB
 This pretty, modern C++ documentation  Hugo - static website generator of this documentation. hugo-theme-docdock - the Hugo theme used by this documentation. Standardese - the API reference generator  Special thanks for Outcome v2 For a second time, Charley Bay stepped up as review manager. Given how much work it was for the v1 review, I can only say thank you.
 Andrzej Krzemienski went far beyond the call of duty in the development of Outcome v2.</description>
     </item>
@@ -454,8 +453,9 @@ Andrzej Krzemienski went far beyond the call of duty in the development of Outco
       
       <guid>https://ned14.github.io/outcome/reference/macros/template/</guid>
       <description>Overridable: All of the following macros are overridable, define before inclusion.
+Header: &amp;lt;outcome/config.hpp&amp;gt;
 These macros expand into either the syntax for directly specifying constrained templates in C++ 20, or into a SFINAE based emulation for earlier C++ versions. Form of usage looks as follows:
-OUTCOME_TEMPLATE(classErrorCondEnum) OUTCOME_TREQUIRES( // If this is a valid expression  OUTCOME_TEXPR(error_type(make_error_code(ErrorCondEnum()))), // If this predicate is true  OUTCOME_TPRED(predicate::template enable_error_condition_converting_constructor&amp;lt;ErrorCondEnum&amp;gt;) // Any additional requirements follow here ...  ) constexpr basic_result(ErrorCondEnum &amp;amp;&amp;amp;t, error_condition_converting_constructor_tag /*unused*/ = {});  Be aware that slightly different semantics occur for real C++ 20 constrained templates than for the SFINAE emulation.</description>
+OUTCOME_TEMPLATE(classErrorCondEnum) OUTCOME_TREQUIRES( // If this is a valid expression  OUTCOME_TEXPR(error_type(make_error_code(ErrorCondEnum()))), // If this predicate is true  OUTCOME_TPRED(predicate::template enable_error_condition_converting_constructor&amp;lt;ErrorCondEnum&amp;gt;) // Any additional requirements follow here .</description>
     </item>
     
     <item>
@@ -465,6 +465,7 @@ OUTCOME_TEMPLATE(classErrorCondEnum) OUTCOME_TREQUIRES( // If this is a valid ex
       
       <guid>https://ned14.github.io/outcome/reference/macros/version/</guid>
       <description>Overridable: None of the following macros are overridable.
+Header: &amp;lt;outcome/config.hpp&amp;gt;
  OUTCOME_VERSION_MAJOR &amp;lt;number&amp;gt;
 Major version for cmake and DLL version stamping.
  OUTCOME_VERSION_MINOR &amp;lt;number&amp;gt;
@@ -486,7 +487,8 @@ Defined between stable releases of Outcome. It means the inline namespace will b
       <description>If defined, disables the use of the &amp;lt;execinfo.h&amp;gt; header (or the win32 emulation).
 Some embedded Linux toolchains do not define &amp;lt;execinfo.h&amp;gt;, thus disabling C++ exceptions on those toolchains produces a failure to find this file. Avoid that problem by defining this macro to disable stack backtrace support entirely.
 Overridable: Define before inclusion.
-Default: Defined if __ANDROID__ is defined, else undefined.</description>
+Default: Defined if __ANDROID__ is defined, else undefined.
+Header: &amp;lt;outcome/config.hpp&amp;gt;</description>
     </item>
     
     <item>
@@ -497,7 +499,8 @@ Default: Defined if __ANDROID__ is defined, else undefined.</description>
       <guid>https://ned14.github.io/outcome/reference/macros/nodiscard/</guid>
       <description>Compiler-specific markup used to tell the compiler than the return value of a function should not be discarded without examining it.
 Overridable: Define before inclusion.
-Default: To [[nodiscard]] if on C++ 17 or higher, __attribute__((warn_unused_result)) if on clang, SAL _Must_inspect_result_ if on MSVC, otherwise nothing.</description>
+Default: To [[nodiscard]] if on C++ 17 or higher, __attribute__((warn_unused_result)) if on clang, SAL _Must_inspect_result_ if on MSVC, otherwise nothing.
+Header: &amp;lt;outcome/config.hpp&amp;gt;</description>
     </item>
     
     <item>
@@ -508,7 +511,8 @@ Default: To [[nodiscard]] if on C++ 17 or higher, __attribute__((warn_unused_res
       <guid>https://ned14.github.io/outcome/reference/macros/requires/</guid>
       <description>A C++ 20 requires(...), if available.
 Overridable: Define before inclusion.
-Default: To requires(...) if on C++ 20 or later, else to nothing.</description>
+Default: To requires(...) if on C++ 20 or later, else to nothing.
+Header: &amp;lt;outcome/config.hpp&amp;gt;</description>
     </item>
     
     <item>
@@ -519,7 +523,8 @@ Default: To requires(...) if on C++ 20 or later, else to nothing.</description>
       <guid>https://ned14.github.io/outcome/reference/macros/symbol_visible/</guid>
       <description>Compiler-specific markup used to mark throwable types as always having default ELF symbol visibility, without which it will be impossible to catch throws of such types across shared library boundaries on ELF only.
 Overridable: Define before inclusion.
-Default: Standalone Outcome: To __attribute__((visibility(&amp;quot;default&amp;quot;)) on GCC and clang when targeting ELF, otherwise nothing. Boost.Outcome: To BOOST_SYMBOL_VISIBLE.</description>
+Default: Standalone Outcome: To __attribute__((visibility(&amp;quot;default&amp;quot;)) on GCC and clang when targeting ELF, otherwise nothing. Boost.Outcome: To BOOST_SYMBOL_VISIBLE. 
+Header: &amp;lt;outcome/config.hpp&amp;gt;</description>
     </item>
     
     <item>
@@ -531,7 +536,8 @@ Default: Standalone Outcome: To __attribute__((visibility(&amp;quot;default&amp;
       <description>Compiler-specific markup used to mark variables as having thread local storage duration.
 This isn&amp;rsquo;t used inside Outcome, but is used by its unit test suite.
  Overridable: Define before inclusion.
-Default: To thread_local if the compiler implements C++ 11 thread_local, else __thread for the one supported compiler (older Mac OS XCode) which does not.</description>
+Default: To thread_local if the compiler implements C++ 11 thread_local, else __thread for the one supported compiler (older Mac OS XCode) which does not.
+Header: &amp;lt;outcome/config.hpp&amp;gt;</description>
     </item>
     
     <item>
@@ -542,18 +548,56 @@ Default: To thread_local if the compiler implements C++ 11 thread_local, else __
       <guid>https://ned14.github.io/outcome/reference/macros/throw_exception/</guid>
       <description>Throws a C++ exception, or equivalent thereof.
 Overridable: Define before inclusion.
-Default: Standalone Outcome (C++ exceptions enabled): To throw expr Standalone Outcome (C++ exceptions disabled): To OUTCOME_V2_NAMESPACE::detail::do_fatal_exit(#expr) which is a function which prints a useful error message including a stack backtrace (where available) to stderr before calling abort(). Boost.Outcome: To BOOST_THROW_EXCEPTION(expr).</description>
+Default: Standalone Outcome (C++ exceptions enabled): To throw expr Standalone Outcome (C++ exceptions disabled): To OUTCOME_V2_NAMESPACE::detail::do_fatal_exit(#expr) which is a function which prints a useful error message including a stack backtrace (where available) to stderr before calling abort(). Boost.Outcome: To BOOST_THROW_EXCEPTION(expr). 
+Header: &amp;lt;outcome/config.hpp&amp;gt;</description>
     </item>
     
     <item>
-      <title>`ValueOrError&lt;T&gt;`</title>
+      <title>`OUTCOME_TRY(var, expr)`</title>
+      <link>https://ned14.github.io/outcome/reference/macros/try/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/macros/try/</guid>
+      <description>Evaluate an expression which results in a type matching the ValueOrError&amp;lt;T, E&amp;gt; concept, assigning T to a variable called var if successful, immediately returning E from the calling function if unsuccessful.
+Overridable: Not overridable.
+Definition: See OUTCOME_TRYV(expr) for most of the mechanics.
+If successful, an auto &amp;amp;&amp;amp;var is initialised to the expression result&amp;rsquo;s .assume_value() if available, else to its .value(). This binds a reference possibly to the T stored inside the bound result of the expression, but possibly also to a temporary emitted from the value observer function.</description>
+    </item>
+    
+    <item>
+      <title>`OUTCOME_TRYV(expr)/OUTCOME_TRY(expr)`</title>
+      <link>https://ned14.github.io/outcome/reference/macros/tryv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/macros/tryv/</guid>
+      <description>Evaluate an expression which results in a type matching the ValueOrError&amp;lt;T, E&amp;gt; concept, continuing execution if successful, immediately returning E from the calling function if unsuccessful.
+The difference between the OUTCOME_TRYV(expr) and OUTCOME_TRY(expr) editions is that the latter will set a variable if two or more macro arguments are present (see OUTCOME_TRY(var, expr)). The former requires the T to be void.
+Overridable: Not overridable.
+Definition: Firstly the expression&amp;rsquo;s temporary is bound to a uniquely named, stack allocated, auto &amp;amp;&amp;amp;.</description>
+    </item>
+    
+    <item>
+      <title>`OUTCOME_TRYX(expr)`</title>
+      <link>https://ned14.github.io/outcome/reference/macros/tryx/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/macros/tryx/</guid>
+      <description>Evaluate an expression which results in a type matching the ValueOrError&amp;lt;T, E&amp;gt; concept, emitting the T if successful, immediately returning E from the calling function if unsuccessful.
+Availability: GCC and clang only. Use #ifdef OUTCOME_TRYX to determine if available.
+Overridable: Not overridable.
+Definition: See OUTCOME_TRYV(expr) for most of the mechanics.
+This macro makes use of a proprietary extension in GCC and clang to emit the T from a successful expression. You can thus use OUTCOME_TRYX(expr) directly in expressions e.</description>
+    </item>
+    
+    <item>
+      <title>`ValueOrError&lt;T, E&gt;`</title>
       <link>https://ned14.github.io/outcome/reference/concepts/valueorerror/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/reference/concepts/valueorerror/</guid>
       <description>If on C++ 20 or the Concepts TS is enabled, a boolean concept matching types with a public .has_value() observer which returns bool, a public .value() observer function, and a public .error() observer function.
 If without Concepts, a static constexpr bool which is true for types matching the same requirements, using a SFINAE based emulation.
-This concept matches expected-like types such as  P0323 std::expected&amp;lt;T, E&amp;gt;, one of which is .</description>
+This concept matches expected-like types such as  P0323 std::expected&amp;lt;T, E&amp;gt;, one of which is API NOT FOUND IN DOCS basic_result&amp;lt;T, E, NoValuePolicy&amp;gt;.</description>
     </item>
     
     <item>
