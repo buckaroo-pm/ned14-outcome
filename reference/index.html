@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-13T17:40:48 UTC">
+<meta name="revised" content="2018-12-13T21:12:52 UTC">
 <title>API reference :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -563,6 +563,13 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/outcome/reference/traits/has_exception_ptr/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/traits/has_exception_ptr/">
+            <code>has_exception_ptr&lt;T&gt;</code>
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/outcome/reference/traits/is_error_type/" class="dd-item">
         <div>
           <a href="/outcome/reference/traits/is_error_type/">
@@ -583,6 +590,53 @@
             <code>type_can_be_used_in_basic_result&lt;R&gt;</code>
           </a>
         </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/outcome/reference/policies/" class="dd-item
+        ">
+      <div>
+      <a href="/outcome/reference/policies/">Policies</a>
+      </div>
+    </li>
+    <li data-nav-id="/outcome/reference/types/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/reference/types/">Types</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/outcome/reference/types/basic_result/" class="dd-item
+        ">
+      <div>
+      <a href="/outcome/reference/types/basic_result/"><code>basic_result&lt;T, E, NoValuePolicy&gt;</code></a>
+      </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/in_place_type_t/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/in_place_type_t/">
+            <code>in_place_type_t&lt;T&gt;</code>
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/outcome/reference/aliases/" class="dd-item
+        ">
+      <div>
+      <a href="/outcome/reference/aliases/">Aliases</a>
+      </div>
+    </li>
+    <li data-nav-id="/outcome/reference/functions/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/reference/functions/">Functions</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/outcome/reference/functions/traits/" class="dd-item
+        ">
+      <div>
+      <a href="/outcome/reference/functions/traits/">Traits</a>
+      </div>
     </li>
         </ul>
     </li>
@@ -645,6 +699,18 @@
     <option value="/outcome/reference/traits/" >
   - 
    Traits</option>
+    <option value="/outcome/reference/policies/" >
+  - 
+   Policies</option>
+    <option value="/outcome/reference/types/" >
+  - 
+   Types</option>
+    <option value="/outcome/reference/aliases/" >
+  - 
+   Aliases</option>
+    <option value="/outcome/reference/functions/" >
+  - 
+   Functions</option>
   
     <option value="/outcome/faq/" >
    Frequently asked questions</option>
@@ -711,12 +777,23 @@
 	<a href="/outcome/reference/traits/" >Traits</a><ol><li>
 	<a href="/outcome/reference/traits/has_error_code/" ><code>has_error_code&lt;T&gt;</code></a>
 <p>True if an ADL discovered free function overload <code>make_error_code(T)</code> exists and returns an error type.</p><li>
+	<a href="/outcome/reference/traits/has_exception_ptr/" ><code>has_exception_ptr&lt;T&gt;</code></a>
+<p>True if an exception ptr can be constructed from a <code>T</code>.</p><li>
 	<a href="/outcome/reference/traits/is_error_type/" ><code>is_error_type&lt;E&gt;</code></a>
 <p>A customisable integral constant type true for <code>E</code> types which are to receive error throwing no-value policies.</p><li>
 	<a href="/outcome/reference/traits/is_error_type_enum/" ><code>is_error_type_enum&lt;E, Enum&gt;</code></a>
 <p>A customisable integral constant type true for <code>E</code> types constructible from <code>Enum</code> types which are to receive error throwing no-value policies.</p><li>
 	<a href="/outcome/reference/traits/type_can_be_used_in_basic_result/" ><code>type_can_be_used_in_basic_result&lt;R&gt;</code></a>
-<p>A constexpr boolean true for types permissible in <code>basic_result&lt;T, E, NoValuePolicy&gt;</code>.</p></li></ol></li></ol>
+<p>A constexpr boolean true for types permissible in <code>basic_result&lt;T, E, NoValuePolicy&gt;</code>.</p></li></ol><li>
+	<a href="/outcome/reference/policies/" >Policies</a><li>
+	<a href="/outcome/reference/types/" >Types</a><ol><li>
+	<a href="/outcome/reference/types/basic_result/" ><code>basic_result&lt;T, E, NoValuePolicy&gt;</code></a>
+<p>A sum type carrying either a successful <code>T</code>, or a disappointment <code>E</code>, with <code>NoValuePolicy</code> specifying what to do if one tries to read state which isn&rsquo;t there.</p><li>
+	<a href="/outcome/reference/types/in_place_type_t/" ><code>in_place_type_t&lt;T&gt;</code></a>
+<p>Either <code>std::in_place_type_t&lt;T&gt;</code> if C++ 17 or later, else a local emulation.</p></li></ol><li>
+	<a href="/outcome/reference/aliases/" >Aliases</a><li>
+	<a href="/outcome/reference/functions/" >Functions</a><ol><li>
+	<a href="/outcome/reference/functions/traits/" >Traits</a></li></ol></li></ol>
 
 
 

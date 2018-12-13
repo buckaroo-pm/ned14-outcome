@@ -25,6 +25,17 @@ Alias: has_error_code_v&amp;lt;T&amp;gt;</description>
     </item>
     
     <item>
+      <title>`has_exception_ptr&lt;T&gt;`</title>
+      <link>https://ned14.github.io/outcome/reference/traits/has_exception_ptr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/traits/has_exception_ptr/</guid>
+      <description>True if an exception ptr can be constructed from a T e.g. if there exists an ADL discovered free function make_exception_ptr(T) and it returns an exception ptr.
+Overridable: By template specialisation into the trait namespace.
+Default: True if T is implicitly constructible to an exception ptr, else to metaprogramming which performs the ADL discovery and testing of the result type of make_exception_ptr(T). Note that the STL defines an ADL discovered free function  std::make_exception_ptr(T).</description>
+    </item>
+    
+    <item>
       <title>`is_error_type&lt;E&gt;`</title>
       <link>https://ned14.github.io/outcome/reference/traits/is_error_type/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -63,7 +74,8 @@ Header: &amp;lt;outcome/trait.hpp&amp;gt;</description>
       <description>A constexpr boolean true for types permissible in basic_result&amp;lt;T, E, NoValuePolicy&amp;gt;.
 Overridable: Not overridable.
 Definition: True for a type which:
- Is not a reference. Is not an API NOT FOUND IN DOCS in_place_type_t&amp;lt;T&amp;gt;. Is not a API NOT FOUND IN DOCS success_type&amp;lt;T&amp;gt;. Is not a API NOT FOUND IN DOCS failure_type&amp;lt;E, P&amp;gt;. Is not an array. Is either void, or else is an Object and is Destructible.  Namespace: OUTCOME_V2_NAMESPACE::trait</description>
+ Is not a reference. Is not an in_place_type_t&amp;lt;T&amp;gt;. Is not a API NOT FOUND IN DOCS success_type&amp;lt;T&amp;gt;. Is not a API NOT FOUND IN DOCS failure_type&amp;lt;E, P&amp;gt;. Is not an array. Is either void, or else is an Object and is Destructible.  Namespace: OUTCOME_V2_NAMESPACE::trait
+Header: &amp;lt;outcome/trait.hpp&amp;gt;</description>
     </item>
     
   </channel>

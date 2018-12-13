@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Types on Outcome documentation</title>
+    <link>https://ned14.github.io/outcome/reference/types/</link>
+    <description>Recent content in Types on Outcome documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 13 Dec 2018 21:10:19 +0000</lastBuildDate>
+    
+	<atom:link href="https://ned14.github.io/outcome/reference/types/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>`in_place_type_t&lt;T&gt;`</title>
+      <link>https://ned14.github.io/outcome/reference/types/in_place_type_t/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/types/in_place_type_t/</guid>
+      <description>Either std::in_place_type_t&amp;lt;T&amp;gt; if C++ 17 or later, else a local emulation.
+Note that the templated variable in_place_type is also aliased or emulated locally.
+Requires: Nothing.
+Namespace: OUTCOME_V2_NAMESPACE
+Header: &amp;lt;outcome/config.hpp&amp;gt;
+Inclusions: &amp;lt;utility&amp;gt; if C++ 17 or later only, for  std::in_place_type_t&amp;lt;T&amp;gt;.</description>
+    </item>
+    
+  </channel>
+</rss>

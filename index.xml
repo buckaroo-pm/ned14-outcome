@@ -441,9 +441,7 @@ template&amp;lt;class... Args&amp;gt; inline outcome::result&amp;lt;file_handle&
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/credits/</guid>
-      <description>github contributors HAHAHUGOSHORTCODE-0xc0003fcf00-1-HBHB
-This pretty, modern C++ documentation  Hugo - static website generator of this documentation. hugo-theme-docdock - the Hugo theme used by this documentation. Standardese - the API reference generator  Special thanks for Outcome v2 For a second time, Charley Bay stepped up as review manager. Given how much work it was for the v1 review, I can only say thank you.
-Andrzej Krzemienski went far beyond the call of duty in the development of Outcome v2.</description>
+      <description>github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @ned14 942 commits   @akrzemi1 37 commits   @menuet 2 commits   @norbertwenzel 1 commits   @vinipsmaker 1 commits   @andoks 1 commits   @catskul 1 commits   @johnthagen 1 commits   @jenkins-nedprod 1 commits   This pretty, modern C++ documentation  Hugo - static website generator of this documentation.</description>
     </item>
     
     <item>
@@ -597,7 +595,7 @@ This macro makes use of a proprietary extension in GCC and clang to emit the T f
       <guid>https://ned14.github.io/outcome/reference/concepts/valueorerror/</guid>
       <description>If on C++ 20 or the Concepts TS is enabled, a boolean concept matching types with a public .has_value() observer which returns bool, a public .value() observer function, and a public .error() observer function.
 If without Concepts, a static constexpr bool which is true for types matching the same requirements, using a SFINAE based emulation.
-This concept matches expected-like types such as  P0323 std::expected&amp;lt;T, E&amp;gt;, one of which is API NOT FOUND IN DOCS basic_result&amp;lt;T, E, NoValuePolicy&amp;gt;.</description>
+This concept matches expected-like types such as  P0323 std::expected&amp;lt;T, E&amp;gt;, one of which is basic_result&amp;lt;T, E, NoValuePolicy&amp;gt;.</description>
     </item>
     
     <item>
@@ -623,6 +621,31 @@ Default: To metaprogramming which performs ADL discovery. Note that the STL defi
 Namespace: OUTCOME_V2_NAMESPACE::trait
 Header: Declared by &amp;lt;outcome/trait.hpp&amp;gt;, defined by &amp;lt;outcome/std_result.hpp&amp;gt;.
 Alias: has_error_code_v&amp;lt;T&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>`has_exception_ptr&lt;T&gt;`</title>
+      <link>https://ned14.github.io/outcome/reference/traits/has_exception_ptr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/traits/has_exception_ptr/</guid>
+      <description>True if an exception ptr can be constructed from a T e.g. if there exists an ADL discovered free function make_exception_ptr(T) and it returns an exception ptr.
+Overridable: By template specialisation into the trait namespace.
+Default: True if T is implicitly constructible to an exception ptr, else to metaprogramming which performs the ADL discovery and testing of the result type of make_exception_ptr(T). Note that the STL defines an ADL discovered free function  std::make_exception_ptr(T).</description>
+    </item>
+    
+    <item>
+      <title>`in_place_type_t&lt;T&gt;`</title>
+      <link>https://ned14.github.io/outcome/reference/types/in_place_type_t/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/types/in_place_type_t/</guid>
+      <description>Either std::in_place_type_t&amp;lt;T&amp;gt; if C++ 17 or later, else a local emulation.
+Note that the templated variable in_place_type is also aliased or emulated locally.
+Requires: Nothing.
+Namespace: OUTCOME_V2_NAMESPACE
+Header: &amp;lt;outcome/config.hpp&amp;gt;
+Inclusions: &amp;lt;utility&amp;gt; if C++ 17 or later only, for  std::in_place_type_t&amp;lt;T&amp;gt;.</description>
     </item>
     
     <item>
@@ -664,7 +687,8 @@ Header: &amp;lt;outcome/trait.hpp&amp;gt;</description>
       <description>A constexpr boolean true for types permissible in basic_result&amp;lt;T, E, NoValuePolicy&amp;gt;.
 Overridable: Not overridable.
 Definition: True for a type which:
- Is not a reference. Is not an API NOT FOUND IN DOCS in_place_type_t&amp;lt;T&amp;gt;. Is not a API NOT FOUND IN DOCS success_type&amp;lt;T&amp;gt;. Is not a API NOT FOUND IN DOCS failure_type&amp;lt;E, P&amp;gt;. Is not an array. Is either void, or else is an Object and is Destructible.  Namespace: OUTCOME_V2_NAMESPACE::trait</description>
+ Is not a reference. Is not an in_place_type_t&amp;lt;T&amp;gt;. Is not a API NOT FOUND IN DOCS success_type&amp;lt;T&amp;gt;. Is not a API NOT FOUND IN DOCS failure_type&amp;lt;E, P&amp;gt;. Is not an array. Is either void, or else is an Object and is Destructible.  Namespace: OUTCOME_V2_NAMESPACE::trait
+Header: &amp;lt;outcome/trait.hpp&amp;gt;</description>
     </item>
     
   </channel>
