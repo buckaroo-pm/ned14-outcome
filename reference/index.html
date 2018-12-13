@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-12T22:04:07 UTC">
+<meta name="revised" content="2018-12-13T17:40:48 UTC">
 <title>API reference :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -550,6 +550,42 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/outcome/reference/traits/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/reference/traits/">Traits</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/outcome/reference/traits/has_error_code/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/traits/has_error_code/">
+            <code>has_error_code&lt;T&gt;</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/traits/is_error_type/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/traits/is_error_type/">
+            <code>is_error_type&lt;E&gt;</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/traits/is_error_type_enum/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/traits/is_error_type_enum/">
+            <code>is_error_type_enum&lt;E, Enum&gt;</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/traits/type_can_be_used_in_basic_result/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/traits/type_can_be_used_in_basic_result/">
+            <code>type_can_be_used_in_basic_result&lt;R&gt;</code>
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/outcome/faq/" class="dd-item
@@ -606,6 +642,9 @@
     <option value="/outcome/reference/concepts/" >
   - 
    Concepts</option>
+    <option value="/outcome/reference/traits/" >
+  - 
+   Traits</option>
   
     <option value="/outcome/faq/" >
    Frequently asked questions</option>
@@ -668,7 +707,16 @@
 	<a href="/outcome/reference/concepts/valueorerror/" ><code>ValueOrError&lt;T, E&gt;</code></a>
 <p>A boolean concept matching types with either a value or an error.</p><li>
 	<a href="/outcome/reference/concepts/valueornone/" ><code>ValueOrNone&lt;T&gt;</code></a>
-<p>A boolean concept matching types with an optional value.</p></li></ol></li></ol>
+<p>A boolean concept matching types with an optional value.</p></li></ol><li>
+	<a href="/outcome/reference/traits/" >Traits</a><ol><li>
+	<a href="/outcome/reference/traits/has_error_code/" ><code>has_error_code&lt;T&gt;</code></a>
+<p>True if an ADL discovered free function overload <code>make_error_code(T)</code> exists and returns an error type.</p><li>
+	<a href="/outcome/reference/traits/is_error_type/" ><code>is_error_type&lt;E&gt;</code></a>
+<p>A customisable integral constant type true for <code>E</code> types which are to receive error throwing no-value policies.</p><li>
+	<a href="/outcome/reference/traits/is_error_type_enum/" ><code>is_error_type_enum&lt;E, Enum&gt;</code></a>
+<p>A customisable integral constant type true for <code>E</code> types constructible from <code>Enum</code> types which are to receive error throwing no-value policies.</p><li>
+	<a href="/outcome/reference/traits/type_can_be_used_in_basic_result/" ><code>type_can_be_used_in_basic_result&lt;R&gt;</code></a>
+<p>A constexpr boolean true for types permissible in <code>basic_result&lt;T, E, NoValuePolicy&gt;</code>.</p></li></ol></li></ol>
 
 
 
