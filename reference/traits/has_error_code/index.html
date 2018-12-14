@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-13T21:12:53 UTC">
+<meta name="revised" content="2018-12-14T15:53:10 UTC">
 <title>`has_error_code&lt;T&gt;` :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -571,6 +571,13 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/outcome/reference/traits/is_basic_result/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/traits/is_basic_result/">
+            <code>is_basic_result&lt;T&gt;</code>
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/outcome/reference/traits/is_error_type/" class="dd-item">
         <div>
           <a href="/outcome/reference/traits/is_error_type/">
@@ -606,11 +613,90 @@
       <a href="/outcome/reference/types/">Types</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/outcome/reference/types/basic_result/" class="dd-item
+    <li data-nav-id="/outcome/reference/types/basic_result/" class="dd-item haschildren
         ">
       <div>
-      <a href="/outcome/reference/types/basic_result/"><code>basic_result&lt;T, E, NoValuePolicy&gt;</code></a>
+      <a href="/outcome/reference/types/basic_result/"><code>basic_result&lt;T, E, NoValuePolicy&gt;</code></a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
+        <ul>
+      <li data-nav-id="/outcome/reference/types/basic_result/default/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/default/">
+            <code>basic_result() = delete</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/move_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/move_constructor/">
+            <code>basic_result(basic_result &amp;&amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/copy_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/copy_constructor/">
+            <code>basic_result(const basic_result &amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/move_assignment/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/move_assignment/">
+            <code>basic_result &amp;operator=(basic_result &amp;&amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/copy_assignment/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/copy_assignment/">
+            <code>basic_result &amp;operator=(const basic_result &amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/destructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/destructor/">
+            <code>~basic_result()</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/disabling_catchall/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/disabling_catchall/">
+            <code>basic_result(Args...) = delete</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/disabling_implicit_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/disabling_implicit_constructor/">
+            <code>basic_result(X &amp;&amp;) = delete</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/implicit_value_converting_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/implicit_value_converting_constructor/">
+            <code>basic_result(R &amp;&amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/implicit_error_converting_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/implicit_error_converting_constructor/">
+            <code>basic_result(S &amp;&amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/implicit_error_condition_converting_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/implicit_error_condition_converting_constructor/">
+            <code>basic_result(ErrorCondEnum &amp;&amp;)</code>
+          </a>
+        </div>
+    </li>
+        </ul>
     </li>
       <li data-nav-id="/outcome/reference/types/in_place_type_t/" class="dd-item">
         <div>
@@ -702,6 +788,7 @@
    Traits</option> 
       <option value="/outcome/reference/traits/has_error_code/"  selected>-- `has_error_code&lt;T&gt;`</option>
       <option value="/outcome/reference/traits/has_exception_ptr/" >-- `has_exception_ptr&lt;T&gt;`</option>
+      <option value="/outcome/reference/traits/is_basic_result/" >-- `is_basic_result&lt;T&gt;`</option>
       <option value="/outcome/reference/traits/is_error_type/" >-- `is_error_type&lt;E&gt;`</option>
       <option value="/outcome/reference/traits/is_error_type_enum/" >-- `is_error_type_enum&lt;E, Enum&gt;`</option>
       <option value="/outcome/reference/traits/type_can_be_used_in_basic_result/" >-- `type_can_be_used_in_basic_result&lt;R&gt;`</option>
@@ -753,18 +840,18 @@
     
     
     
-    <p>True if an ADL discovered free function overload <code>make_error_code(T)</code> exists and returns an error type.</p>
+    <p>True if an error code can be constructed from a <code>T</code> e.g. if there exists an ADL discovered free function <code>make_error_code(T)</code> and it returns an error code.</p>
 
 <p><em>Overridable</em>: By template specialisation into the <code>trait</code> namespace.</p>
 
-<p><em>Default</em>: To metaprogramming which performs ADL discovery. Note that the STL defines multiple overloads of an ADL discovered free function 
-<a href="https://en.cppreference.com/mwiki/index.php?title=Special%3ASearch&search=make_error_code" class="api-reference" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> std::make_error_code(T)</a> for its error enumerations, as does Boost.System for the Boost error enumerations.</p>
+<p><em>Default</em>: True if <code>T</code> is implicitly constructible to an error code, else to metaprogramming which performs the ADL discovery and testing of the result type of <code>make_error_code(T)</code>. Note that the STL defines multiple overloads of an ADL discovered free function 
+<a href="https://en.cppreference.com/mwiki/index.php?title=Special%3ASearch&search=make_error_code" class="api-reference" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> std::make_error_code(T)</a> for its error enumerations, as does Boost.System for the Boost error enumerations. Thus this trait will pick up those free functions for those error types.</p>
 
 <p><em>Namespace</em>: <code>OUTCOME_V2_NAMESPACE::trait</code></p>
 
 <p><em>Header</em>: Declared by <code>&lt;outcome/trait.hpp&gt;</code>, defined by <code>&lt;outcome/std_result.hpp&gt;</code>.</p>
 
-<p><em>Alias</em>: <code>has_error_code_v&lt;T&gt;</code></p>
+<p><em>Variable alias</em>: <code>has_error_code_v&lt;T&gt;</code></p>
 
 
     
@@ -787,7 +874,7 @@
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 13/12/2018
+        <i class='fa fa-calendar'></i> Last update on 14/12/2018
     </div>
     
 

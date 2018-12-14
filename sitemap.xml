@@ -14,12 +14,12 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/problem/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/value-or-error/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
@@ -39,12 +39,12 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/hooks/keeping_state/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/c-api/limitations/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
@@ -54,22 +54,22 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/payload/copy_file/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/httplib/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/constructors/two-phase-init/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
@@ -79,17 +79,17 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/tidylib/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/constructors/file_handle/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/hooks/adl_bridging/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
@@ -109,22 +109,22 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/c-api/example/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/result/inspecting/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/filelib/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/payload/copy_file2/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
@@ -144,22 +144,22 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/app/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/payload/copy_file3/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/c-api/example2/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/payload/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
@@ -174,22 +174,22 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/hooks/hook_result/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/outcome/inspecting/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/app-map-httplib1/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/constructors/static-constructor/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
@@ -209,22 +209,22 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/app-map-httplib2/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/hooks/poke_exception/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/app-map-filelib/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/constructors/metaprogrammg1/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
@@ -234,7 +234,7 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/c-api/variations/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
@@ -249,27 +249,27 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/app-map-tidylib/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/constructors/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/hooks/hook_outcome/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/hooks/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/app-go/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
@@ -284,12 +284,12 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/constructors/metaprogrammg2/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/conclusion/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
@@ -299,7 +299,7 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/constructors/metaprogrammg3/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
@@ -314,7 +314,7 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/c-api/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
@@ -324,7 +324,7 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tutorial/interop/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
@@ -333,23 +333,78 @@
   </url>
   
   <url>
+    <loc>https://ned14.github.io/outcome/reference/types/basic_result/default/</loc>
+    <lastmod>2018-12-14T15:47:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ned14.github.io/outcome/reference/types/basic_result/move_constructor/</loc>
+    <lastmod>2018-12-14T15:47:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ned14.github.io/outcome/reference/types/basic_result/copy_constructor/</loc>
+    <lastmod>2018-12-14T15:47:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ned14.github.io/outcome/reference/types/basic_result/move_assignment/</loc>
+    <lastmod>2018-12-14T15:47:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ned14.github.io/outcome/reference/types/basic_result/copy_assignment/</loc>
+    <lastmod>2018-12-14T15:47:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ned14.github.io/outcome/reference/types/basic_result/destructor/</loc>
+    <lastmod>2018-12-14T15:47:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ned14.github.io/outcome/reference/types/basic_result/disabling_catchall/</loc>
+    <lastmod>2018-12-14T15:47:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ned14.github.io/outcome/reference/types/basic_result/disabling_implicit_constructor/</loc>
+    <lastmod>2018-12-14T15:47:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ned14.github.io/outcome/reference/types/basic_result/implicit_value_converting_constructor/</loc>
+    <lastmod>2018-12-14T15:47:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ned14.github.io/outcome/reference/types/basic_result/implicit_error_converting_constructor/</loc>
+    <lastmod>2018-12-14T15:47:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ned14.github.io/outcome/reference/types/basic_result/implicit_error_condition_converting_constructor/</loc>
+    <lastmod>2018-12-14T15:47:22+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ned14.github.io/outcome/_header/</loc>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/credits/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/adl-bridging/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/backtrace/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -365,37 +420,37 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/constructors/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/default-actions/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/dual-api/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/error/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/exception/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/has_error_code/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -406,13 +461,13 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/hooks/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/make_error_code/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -424,7 +479,7 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/nodiscard/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -436,7 +491,7 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/payload/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -454,7 +509,7 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -466,13 +521,13 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/value/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/tags/value-or-error/</loc>
-    <lastmod>2018-06-22T18:45:03+01:00</lastmod>
+    <lastmod>2018-06-22T21:18:48+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -538,12 +593,12 @@
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/types/basic_result/</loc>
-    <lastmod>2018-12-13T21:10:19+00:00</lastmod>
+    <lastmod>2018-12-14T15:47:22+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://ned14.github.io/outcome/reference/traits/has_error_code/</loc>
-    <lastmod>2018-12-13T17:36:11+00:00</lastmod>
+    <lastmod>2018-12-14T15:47:22+00:00</lastmod>
   </url>
   
   <url>
@@ -554,6 +609,11 @@
   <url>
     <loc>https://ned14.github.io/outcome/reference/types/in_place_type_t/</loc>
     <lastmod>2018-12-13T21:10:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ned14.github.io/outcome/reference/traits/is_basic_result/</loc>
+    <lastmod>2018-12-14T15:47:22+00:00</lastmod>
   </url>
   
   <url>

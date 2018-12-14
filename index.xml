@@ -427,6 +427,125 @@ template&amp;lt;class... Args&amp;gt; inline outcome::result&amp;lt;file_handle&
     </item>
     
     <item>
+      <title>`basic_result() = delete`</title>
+      <link>https://ned14.github.io/outcome/reference/types/basic_result/default/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/types/basic_result/default/</guid>
+      <description>The default constructor for basic result is always disabled.</description>
+    </item>
+    
+    <item>
+      <title>`basic_result(basic_result &amp;&amp;)`</title>
+      <link>https://ned14.github.io/outcome/reference/types/basic_result/move_constructor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/types/basic_result/move_constructor/</guid>
+      <description>Move constructor.
+Requires: that value_type and error_type both implement a move constructor.
+Complexity: Same as for value_type&amp;rsquo;s and error_type&amp;rsquo;s move constructors. Constexpr, triviality and noexcept of underlying operations is propagated.</description>
+    </item>
+    
+    <item>
+      <title>`basic_result(const basic_result &amp;)`</title>
+      <link>https://ned14.github.io/outcome/reference/types/basic_result/copy_constructor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/types/basic_result/copy_constructor/</guid>
+      <description>Copy constructor.
+Requires: that value_type and error_type both implement a copy constructor.
+Complexity: Same as for value_type&amp;rsquo;s and error_type&amp;rsquo;s copy constructors. Constexpr, triviality and noexcept of underlying operations is propagated.</description>
+    </item>
+    
+    <item>
+      <title>`basic_result &amp;operator=(basic_result &amp;&amp;)`</title>
+      <link>https://ned14.github.io/outcome/reference/types/basic_result/move_assignment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/types/basic_result/move_assignment/</guid>
+      <description>Move assignment.
+Requires: that value_type and error_type both implement move assignment.
+Complexity: If the value_type for both is present, uses value_type&amp;rsquo;s move assignment operator, else either destructs or move constructs value_type as appropriate. error_type&amp;rsquo;s move assignment operator is always used. Constexpr, triviality and noexcept of underlying operations is propagated.</description>
+    </item>
+    
+    <item>
+      <title>`basic_result &amp;operator=(const basic_result &amp;)`</title>
+      <link>https://ned14.github.io/outcome/reference/types/basic_result/copy_assignment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/types/basic_result/copy_assignment/</guid>
+      <description>Copy assignment.
+Requires: that value_type and error_type both implement copy assignment.
+Complexity: If the value_type for both is present, uses value_type&amp;rsquo;s copy assignment operator, else either destructs or copy constructs value_type as appropriate. error_type&amp;rsquo;s copy assignment operator is always used. Constexpr, triviality and noexcept of underlying operations is propagated.</description>
+    </item>
+    
+    <item>
+      <title>`~basic_result()`</title>
+      <link>https://ned14.github.io/outcome/reference/types/basic_result/destructor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/types/basic_result/destructor/</guid>
+      <description>Destructor.
+Requires: Always available.
+Complexity: Same as for value_type&amp;rsquo;s and error_type&amp;rsquo;s destructors. Constexpr, triviality and noexcept of underlying operations is propagated.</description>
+    </item>
+    
+    <item>
+      <title>`basic_result(Args...) = delete`</title>
+      <link>https://ned14.github.io/outcome/reference/types/basic_result/disabling_catchall/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/types/basic_result/disabling_catchall/</guid>
+      <description>Disabling catchall constructor used to give useful diagnostic error when trying to use non-inplace constructors when predicate::constructors_enabled is false.
+Requires: predicate::constructors_enabled is false.
+Complexity: N/A.</description>
+    </item>
+    
+    <item>
+      <title>`basic_result(X &amp;&amp;) = delete`</title>
+      <link>https://ned14.github.io/outcome/reference/types/basic_result/disabling_implicit_constructor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/types/basic_result/disabling_implicit_constructor/</guid>
+      <description>Disabling implicit constructor used to give useful diagnostic error when trying to use implicit constructors when predicate::implicit_constructors_enabled is false.
+Requires: predicate::implicit_constructors_enabled is false.
+Complexity: N/A.</description>
+    </item>
+    
+    <item>
+      <title>`basic_result(R &amp;&amp;)`</title>
+      <link>https://ned14.github.io/outcome/reference/types/basic_result/implicit_value_converting_constructor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/types/basic_result/implicit_value_converting_constructor/</guid>
+      <description>Implicit value_type constructor. Calls API NOT FOUND IN DOCS hook_result_construction(basic_result&amp;lt;T, E, NoValuePolicy&amp;gt; *, T &amp;amp;&amp;amp;) with this and R.
+Requires: predicate::enable_value_converting_constructor&amp;lt;R&amp;gt; is true.
+Complexity: Same as for value_type&amp;rsquo;s copy or move constructor. Constexpr, triviality and noexcept of underlying operations is propagated.</description>
+    </item>
+    
+    <item>
+      <title>`basic_result(S &amp;&amp;)`</title>
+      <link>https://ned14.github.io/outcome/reference/types/basic_result/implicit_error_converting_constructor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/types/basic_result/implicit_error_converting_constructor/</guid>
+      <description>Implicit error_type constructor. Calls API NOT FOUND IN DOCS hook_result_construction(basic_result&amp;lt;T, E, NoValuePolicy&amp;gt; *, T &amp;amp;&amp;amp;) with this and S.
+Requires: predicate::enable_error_converting_constructor&amp;lt;R&amp;gt; is true.
+Complexity: Same as for error_type&amp;rsquo;s copy or move constructor. Constexpr, triviality and noexcept of underlying operations is propagated.</description>
+    </item>
+    
+    <item>
+      <title>`basic_result(ErrorCondEnum &amp;&amp;)`</title>
+      <link>https://ned14.github.io/outcome/reference/types/basic_result/implicit_error_condition_converting_constructor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/types/basic_result/implicit_error_condition_converting_constructor/</guid>
+      <description>Implicit error_type from ErrorCondEnum constructor. Calls API NOT FOUND IN DOCS hook_result_construction(basic_result&amp;lt;T, E, NoValuePolicy&amp;gt; *, T &amp;amp;&amp;amp;) with this and ErrorCondEnum.
+Requires: predicate::enable_error_condition_converting_constructor&amp;lt;R&amp;gt; is true.
+Complexity: Same as for error_type&amp;rsquo;s copy or move constructor from the result of make_error_code(ErrorCondEnum). Constexpr, triviality and noexcept of underlying operations is propagated.</description>
+    </item>
+    
+    <item>
       <title></title>
       <link>https://ned14.github.io/outcome/_header/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -441,7 +560,9 @@ template&amp;lt;class... Args&amp;gt; inline outcome::result&amp;lt;file_handle&
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/credits/</guid>
-      <description>github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @ned14 942 commits   @akrzemi1 37 commits   @menuet 2 commits   @norbertwenzel 1 commits   @vinipsmaker 1 commits   @andoks 1 commits   @catskul 1 commits   @johnthagen 1 commits   @jenkins-nedprod 1 commits   This pretty, modern C++ documentation  Hugo - static website generator of this documentation.</description>
+      <description>github contributors HAHAHUGOSHORTCODE-0xc0002f1400-1-HBHB
+This pretty, modern C++ documentation  Hugo - static website generator of this documentation. hugo-theme-docdock - the Hugo theme used by this documentation. Standardese - the API reference generator  Special thanks for Outcome v2 For a second time, Charley Bay stepped up as review manager. Given how much work it was for the v1 review, I can only say thank you.
+Andrzej Krzemienski went far beyond the call of duty in the development of Outcome v2.</description>
     </item>
     
     <item>
@@ -615,12 +736,9 @@ This concept matches optional-like types such as  std::optional&amp;lt;T&amp;gt;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/reference/traits/has_error_code/</guid>
-      <description>True if an ADL discovered free function overload make_error_code(T) exists and returns an error type.
+      <description>True if an error code can be constructed from a T e.g. if there exists an ADL discovered free function make_error_code(T) and it returns an error code.
 Overridable: By template specialisation into the trait namespace.
-Default: To metaprogramming which performs ADL discovery. Note that the STL defines multiple overloads of an ADL discovered free function  std::make_error_code(T) for its error enumerations, as does Boost.System for the Boost error enumerations.
-Namespace: OUTCOME_V2_NAMESPACE::trait
-Header: Declared by &amp;lt;outcome/trait.hpp&amp;gt;, defined by &amp;lt;outcome/std_result.hpp&amp;gt;.
-Alias: has_error_code_v&amp;lt;T&amp;gt;</description>
+Default: True if T is implicitly constructible to an error code, else to metaprogramming which performs the ADL discovery and testing of the result type of make_error_code(T). Note that the STL defines multiple overloads of an ADL discovered free function  std::make_error_code(T) for its error enumerations, as does Boost.</description>
     </item>
     
     <item>
@@ -646,6 +764,19 @@ Requires: Nothing.
 Namespace: OUTCOME_V2_NAMESPACE
 Header: &amp;lt;outcome/config.hpp&amp;gt;
 Inclusions: &amp;lt;utility&amp;gt; if C++ 17 or later only, for  std::in_place_type_t&amp;lt;T&amp;gt;.</description>
+    </item>
+    
+    <item>
+      <title>`is_basic_result&lt;T&gt;`</title>
+      <link>https://ned14.github.io/outcome/reference/traits/is_basic_result/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/traits/is_basic_result/</guid>
+      <description>An integral constant type true for basic_result&amp;lt;T, E, NoValuePolicy&amp;gt; types.
+Overridable: Not overridable.
+Namespace: OUTCOME_V2_NAMESPACE
+Header: &amp;lt;outcome/basic_result.hpp&amp;gt;
+Variable alias: is_basic_result_v&amp;lt;T&amp;gt;</description>
     </item>
     
     <item>

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-13T21:12:53 UTC">
+<meta name="revised" content="2018-12-14T15:53:09 UTC">
 <title>Constrained template macros :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -571,6 +571,13 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/outcome/reference/traits/is_basic_result/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/traits/is_basic_result/">
+            <code>is_basic_result&lt;T&gt;</code>
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/outcome/reference/traits/is_error_type/" class="dd-item">
         <div>
           <a href="/outcome/reference/traits/is_error_type/">
@@ -606,11 +613,90 @@
       <a href="/outcome/reference/types/">Types</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/outcome/reference/types/basic_result/" class="dd-item
+    <li data-nav-id="/outcome/reference/types/basic_result/" class="dd-item haschildren
         ">
       <div>
-      <a href="/outcome/reference/types/basic_result/"><code>basic_result&lt;T, E, NoValuePolicy&gt;</code></a>
+      <a href="/outcome/reference/types/basic_result/"><code>basic_result&lt;T, E, NoValuePolicy&gt;</code></a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
+        <ul>
+      <li data-nav-id="/outcome/reference/types/basic_result/default/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/default/">
+            <code>basic_result() = delete</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/move_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/move_constructor/">
+            <code>basic_result(basic_result &amp;&amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/copy_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/copy_constructor/">
+            <code>basic_result(const basic_result &amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/move_assignment/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/move_assignment/">
+            <code>basic_result &amp;operator=(basic_result &amp;&amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/copy_assignment/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/copy_assignment/">
+            <code>basic_result &amp;operator=(const basic_result &amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/destructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/destructor/">
+            <code>~basic_result()</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/disabling_catchall/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/disabling_catchall/">
+            <code>basic_result(Args...) = delete</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/disabling_implicit_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/disabling_implicit_constructor/">
+            <code>basic_result(X &amp;&amp;) = delete</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/implicit_value_converting_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/implicit_value_converting_constructor/">
+            <code>basic_result(R &amp;&amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/implicit_error_converting_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/implicit_error_converting_constructor/">
+            <code>basic_result(S &amp;&amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/implicit_error_condition_converting_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/implicit_error_condition_converting_constructor/">
+            <code>basic_result(ErrorCondEnum &amp;&amp;)</code>
+          </a>
+        </div>
+    </li>
+        </ul>
     </li>
       <li data-nav-id="/outcome/reference/types/in_place_type_t/" class="dd-item">
         <div>

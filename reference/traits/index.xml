@@ -16,12 +16,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/reference/traits/has_error_code/</guid>
-      <description>True if an ADL discovered free function overload make_error_code(T) exists and returns an error type.
+      <description>True if an error code can be constructed from a T e.g. if there exists an ADL discovered free function make_error_code(T) and it returns an error code.
 Overridable: By template specialisation into the trait namespace.
-Default: To metaprogramming which performs ADL discovery. Note that the STL defines multiple overloads of an ADL discovered free function  std::make_error_code(T) for its error enumerations, as does Boost.System for the Boost error enumerations.
-Namespace: OUTCOME_V2_NAMESPACE::trait
-Header: Declared by &amp;lt;outcome/trait.hpp&amp;gt;, defined by &amp;lt;outcome/std_result.hpp&amp;gt;.
-Alias: has_error_code_v&amp;lt;T&amp;gt;</description>
+Default: True if T is implicitly constructible to an error code, else to metaprogramming which performs the ADL discovery and testing of the result type of make_error_code(T). Note that the STL defines multiple overloads of an ADL discovered free function  std::make_error_code(T) for its error enumerations, as does Boost.</description>
     </item>
     
     <item>
@@ -33,6 +30,19 @@ Alias: has_error_code_v&amp;lt;T&amp;gt;</description>
       <description>True if an exception ptr can be constructed from a T e.g. if there exists an ADL discovered free function make_exception_ptr(T) and it returns an exception ptr.
 Overridable: By template specialisation into the trait namespace.
 Default: True if T is implicitly constructible to an exception ptr, else to metaprogramming which performs the ADL discovery and testing of the result type of make_exception_ptr(T). Note that the STL defines an ADL discovered free function  std::make_exception_ptr(T).</description>
+    </item>
+    
+    <item>
+      <title>`is_basic_result&lt;T&gt;`</title>
+      <link>https://ned14.github.io/outcome/reference/traits/is_basic_result/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ned14.github.io/outcome/reference/traits/is_basic_result/</guid>
+      <description>An integral constant type true for basic_result&amp;lt;T, E, NoValuePolicy&amp;gt; types.
+Overridable: Not overridable.
+Namespace: OUTCOME_V2_NAMESPACE
+Header: &amp;lt;outcome/basic_result.hpp&amp;gt;
+Variable alias: is_basic_result_v&amp;lt;T&amp;gt;</description>
     </item>
     
     <item>
