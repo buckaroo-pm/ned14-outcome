@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-15T13:18:01 UTC">
+<meta name="revised" content="2018-12-15T17:53:38 UTC">
 <title>`basic_result&lt;T, E, NoValuePolicy&gt;` :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -550,6 +550,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/outcome/reference/converters/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/reference/converters/">Converters</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/outcome/reference/converters/try_operation_return_as/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/converters/try_operation_return_as/">
+            <code>try_operation_return_as(expr)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/converters/value_or_error/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/converters/value_or_error/">
+            <code>value_or_error&lt;T, U&gt;</code>
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/outcome/reference/traits/" class="dd-item haschildren
         ">
       <div>
@@ -697,6 +719,62 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/explicit_valueorerror_converting_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/explicit_valueorerror_converting_constructor/">
+            <code>explicit basic_result(ValueOrError&lt;T, E&gt; &amp;&amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/explicit_copy_converting_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/explicit_copy_converting_constructor/">
+            <code>explicit basic_result(const basic_result&lt;R, S, P&gt; &amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/explicit_move_converting_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/explicit_move_converting_constructor/">
+            <code>explicit basic_result(basic_result&lt;R, S, P&gt; &amp;&amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/explicit_inplace_value_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/explicit_inplace_value_constructor/">
+            <code>explicit basic_result(in_place_type_t&lt;value_type_if_enabled&gt;, Args ...)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/explicit_inplace_value_constructor_il/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/explicit_inplace_value_constructor_il/">
+            <code>explicit basic_result(in_place_type_t&lt;value_type_if_enabled&gt;, std::initializer_list&lt;U&gt;, Args ...)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/explicit_inplace_error_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/explicit_inplace_error_constructor/">
+            <code>explicit basic_result(in_place_type_t&lt;error_type_if_enabled&gt;, Args ...)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/explicit_inplace_error_constructor_il/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/explicit_inplace_error_constructor_il/">
+            <code>explicit basic_result(in_place_type_t&lt;error_type_if_enabled&gt;, std::initializer_list&lt;U&gt;, Args ...)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/implicit_inplace_value_error_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/implicit_inplace_value_error_constructor/">
+            <code>basic_result(A1 &amp;&amp;, A2 &amp;&amp;, Args ...)</code>
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
       <li data-nav-id="/outcome/reference/types/in_place_type_t/" class="dd-item">
@@ -784,6 +862,9 @@
     <option value="/outcome/reference/concepts/" >
   - 
    Concepts</option>
+    <option value="/outcome/reference/converters/" >
+  - 
+   Converters</option>
     <option value="/outcome/reference/traits/" >
   - 
    Traits</option>
@@ -807,6 +888,14 @@
       <option value="/outcome/reference/types/basic_result/implicit_value_converting_constructor/" >--- `basic_result(R &amp;&amp;)`</option>
       <option value="/outcome/reference/types/basic_result/implicit_error_converting_constructor/" >--- `basic_result(S &amp;&amp;)`</option>
       <option value="/outcome/reference/types/basic_result/implicit_error_condition_converting_constructor/" >--- `basic_result(ErrorCondEnum &amp;&amp;)`</option>
+      <option value="/outcome/reference/types/basic_result/explicit_valueorerror_converting_constructor/" >--- `explicit basic_result(ValueOrError&lt;T, E&gt; &amp;&amp;)`</option>
+      <option value="/outcome/reference/types/basic_result/explicit_copy_converting_constructor/" >--- `explicit basic_result(const basic_result&lt;R, S, P&gt; &amp;)`</option>
+      <option value="/outcome/reference/types/basic_result/explicit_move_converting_constructor/" >--- `explicit basic_result(basic_result&lt;R, S, P&gt; &amp;&amp;)`</option>
+      <option value="/outcome/reference/types/basic_result/explicit_inplace_value_constructor/" >--- `explicit basic_result(in_place_type_t&lt;value_type_if_enabled&gt;, Args ...)`</option>
+      <option value="/outcome/reference/types/basic_result/explicit_inplace_value_constructor_il/" >--- `explicit basic_result(in_place_type_t&lt;value_type_if_enabled&gt;, std::initializer_list&lt;U&gt;, Args ...)`</option>
+      <option value="/outcome/reference/types/basic_result/explicit_inplace_error_constructor/" >--- `explicit basic_result(in_place_type_t&lt;error_type_if_enabled&gt;, Args ...)`</option>
+      <option value="/outcome/reference/types/basic_result/explicit_inplace_error_constructor_il/" >--- `explicit basic_result(in_place_type_t&lt;error_type_if_enabled&gt;, std::initializer_list&lt;U&gt;, Args ...)`</option>
+      <option value="/outcome/reference/types/basic_result/implicit_inplace_value_error_constructor/" >--- `basic_result(A1 &amp;&amp;, A2 &amp;&amp;, Args ...)`</option>
   
       <option value="/outcome/reference/types/in_place_type_t/" >-- `in_place_type_t&lt;T&gt;`</option>
   
@@ -859,8 +948,7 @@
 <p><em>Requires</em>: Concept requirements if C++ 20, else static asserted:</p>
 
 <ul>
-<li>That trait 
-<a href="/outcome/reference/traits/type_can_be_used_in_basic_result/" class="api-reference"> type_can_be_used_in_basic_result&lt;R&gt;</a> is true for both <code>T</code> and <code>E</code>.</li>
+<li>That trait <a href="/outcome/reference/traits/type_can_be_used_in_basic_result/" class="api-reference">type_can_be_used_in_basic_result&lt;R&gt;</a> is true for both <code>T</code> and <code>E</code>.</li>
 <li>That either <code>E</code> is <code>void</code> or <code>DefaultConstructible</code>.</li>
 </ul>
 
@@ -900,8 +988,7 @@
 
 <p>The first major design difference is that basic result models its constructor design on 
 <a href="https://en.cppreference.com/w/cpp/utility/variant" class="api-reference" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> std::variant&lt;...&gt;</a>, rather than modelling 
-<a href="https://en.cppreference.com/w/cpp/utility/optional" class="api-reference" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> std::optional&lt;T&gt;</a>&rsquo;s constructor design like <code>std::expected&lt;T, E&gt;</code> does. This means that basic result will implicitly construct either a <code>T</code> or an <code>E</code> if doing so is unambiguous, same as <code>variant</code> does. Where implicit construction is ambiguous, the implicit constructors disable and a <code>T</code> or <code>E</code> can be specified via 
-<a href="/outcome/reference/types/in_place_type_t/" class="api-reference"> in_place_type_t&lt;T&gt;</a>, or via 
+<a href="https://en.cppreference.com/w/cpp/utility/optional" class="api-reference" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> std::optional&lt;T&gt;</a>&rsquo;s constructor design like <code>std::expected&lt;T, E&gt;</code> does. This means that basic result will implicitly construct either a <code>T</code> or an <code>E</code> if doing so is unambiguous, same as <code>variant</code> does. Where implicit construction is ambiguous, the implicit constructors disable and a <code>T</code> or <code>E</code> can be specified via <a href="/outcome/reference/types/in_place_type_t/" class="api-reference">in_place_type_t&lt;T&gt;</a>, or via 
     
     <b>API NOT FOUND IN DOCS <code>success_type&lt;T&gt;</code></b> or 
     
@@ -928,10 +1015,8 @@
 
 <ol>
 <li><code>predicate::constructors_enabled</code> is true.</li>
-<li>Trait 
-<a href="/outcome/reference/traits/is_error_type/" class="api-reference"> is_error_type&lt;E&gt;</a> is not true for both decayed <code>value_type</code> and decayed <code>error_type</code> at the same time.</li>
-<li><code>value_type</code> is not implicitly constructible from <code>error_type</code> and <code>error_type</code> is not implicitly constructible from <code>value_type</code>.<br>OR<br>trait 
-<a href="/outcome/reference/traits/is_error_type/" class="api-reference"> is_error_type&lt;E&gt;</a> is true for decayed <code>error_type</code> and <code>error_type</code> is not implicitly constructible from <code>value_type</code> and <code>value_type</code> is an integral type.</li>
+<li>Trait <a href="/outcome/reference/traits/is_error_type/" class="api-reference">is_error_type&lt;E&gt;</a> is not true for both decayed <code>value_type</code> and decayed <code>error_type</code> at the same time.</li>
+<li><code>value_type</code> is not implicitly constructible from <code>error_type</code> and <code>error_type</code> is not implicitly constructible from <code>value_type</code>.<br>OR<br>trait <a href="/outcome/reference/traits/is_error_type/" class="api-reference">is_error_type&lt;E&gt;</a> is true for decayed <code>error_type</code> and <code>error_type</code> is not implicitly constructible from <code>value_type</code> and <code>value_type</code> is an integral type.</li>
 </ol></li>
 
 <li><p><code>predicate::enable_value_converting_constructor&lt;R&gt;</code> is constexpr boolean true if:</p>
@@ -940,8 +1025,7 @@
 <li><code>predicate::constructors_enabled</code> is true.</li>
 <li>Decayed <code>R</code> is not this <code>basic_result</code> type.</li>
 <li>Decayed <code>R</code> is not an <code>in_place_type_t</code>.</li>
-<li>Trait 
-<a href="/outcome/reference/traits/is_error_type_enum/" class="api-reference"> is_error_type_enum&lt;E, Enum&gt;</a> is false for <code>error_type</code> and decayed <code>R</code>.</li>
+<li>Trait <a href="/outcome/reference/traits/is_error_type_enum/" class="api-reference">is_error_type_enum&lt;E, Enum&gt;</a> is false for <code>error_type</code> and decayed <code>R</code>.</li>
 <li><code>value_type</code> is implicitly constructible from <code>R</code> and <code>error_type</code> is not implicitly constructible from <code>R</code>.<br>OR<br><code>value_type</code> is the exact same type as decayed <code>R</code> and <code>value_type</code> is implicitly constructible from <code>R</code>.</li>
 </ol></li>
 
@@ -951,8 +1035,7 @@
 <li><code>predicate::constructors_enabled</code> is true.</li>
 <li>Decayed <code>R</code> is not this <code>basic_result</code> type.</li>
 <li>Decayed <code>R</code> is not an <code>in_place_type_t</code>.</li>
-<li>Trait 
-<a href="/outcome/reference/traits/is_error_type_enum/" class="api-reference"> is_error_type_enum&lt;E, Enum&gt;</a> is false for <code>error_type</code> and decayed <code>R</code>.</li>
+<li>Trait <a href="/outcome/reference/traits/is_error_type_enum/" class="api-reference">is_error_type_enum&lt;E, Enum&gt;</a> is false for <code>error_type</code> and decayed <code>R</code>.</li>
 <li><code>value_type</code> is not implicitly constructible from <code>R</code> and <code>error_type</code> is implicitly constructible from <code>R</code>.<br>OR<br><code>error_type</code> is the exact same type as decayed <code>R</code> and <code>error_type</code> is implicitly constructible from <code>R</code>.</li>
 </ol></li>
 
@@ -962,8 +1045,7 @@
 <li><code>predicate::constructors_enabled</code> is true.</li>
 <li>Decayed <code>ErrorCondEnum</code> is not this <code>basic_result</code> type.</li>
 <li>Decayed <code>ErrorCondEnum</code> is not an <code>in_place_type_t</code>.</li>
-<li>Trait 
-<a href="/outcome/reference/traits/is_error_type_enum/" class="api-reference"> is_error_type_enum&lt;E, Enum&gt;</a> is true for <code>error_type</code> and decayed <code>ErrorCondEnum</code>.</li>
+<li>Trait <a href="/outcome/reference/traits/is_error_type_enum/" class="api-reference">is_error_type_enum&lt;E, Enum&gt;</a> is true for <code>error_type</code> and decayed <code>ErrorCondEnum</code>.</li>
 </ol></li>
 
 <li><p><code>predicate::enable_compatible_conversion&lt;R, S, P&gt;</code> is constexpr boolean true if:</p>
@@ -999,30 +1081,59 @@
 
 <h3 id="public-member-functions">Public member functions</h3>
 
+<h4 id="disabling-constructors">Disabling constructors</h4>
+
 <ol class="children children-li"><li>
-	<a href="/outcome/reference/types/basic_result/default/" ><code>basic_result() = delete</code></a>
-<p>The default constructor (disabled).</p><li>
-	<a href="/outcome/reference/types/basic_result/move_constructor/" ><code>basic_result(basic_result &amp;&amp;)</code></a>
-<p>Move constructor. Constexpr, triviality and noexcept propagating.</p><li>
-	<a href="/outcome/reference/types/basic_result/copy_constructor/" ><code>basic_result(const basic_result &amp;)</code></a>
-<p>Copy constructor. Constexpr, triviality and noexcept propagating.</p><li>
-	<a href="/outcome/reference/types/basic_result/move_assignment/" ><code>basic_result &amp;operator=(basic_result &amp;&amp;)</code></a>
-<p>Move assignment. Constexpr, triviality and noexcept propagating.</p><li>
-	<a href="/outcome/reference/types/basic_result/copy_assignment/" ><code>basic_result &amp;operator=(const basic_result &amp;)</code></a>
-<p>Copy assignment. Constexpr, triviality and noexcept propagating.</p><li>
-	<a href="/outcome/reference/types/basic_result/destructor/" ><code>~basic_result()</code></a>
-<p>Destructor. Constexpr, triviality and noexcept propagating.</p><li>
 	<a href="/outcome/reference/types/basic_result/disabling_catchall/" ><code>basic_result(Args...) = delete</code></a>
 <p>Disabling catchall constructor used to give useful diagnostic error when trying to use non-inplace constructors when <code>predicate::constructors_enabled</code> is false.</p><li>
 	<a href="/outcome/reference/types/basic_result/disabling_implicit_constructor/" ><code>basic_result(X &amp;&amp;) = delete</code></a>
-<p>Disabling implicit constructor used to give useful diagnostic error when trying to use implicit constructors when <code>predicate::implicit_constructors_enabled</code> is false.</p><li>
-	<a href="/outcome/reference/types/basic_result/implicit_value_converting_constructor/" ><code>basic_result(R &amp;&amp;)</code></a>
-<p>Implicit <code>value_type</code> constructor. Available if <code>predicate::enable_value_converting_constructor&lt;R&gt;</code> is true. Constexpr, triviality and noexcept propagating.</p><li>
-	<a href="/outcome/reference/types/basic_result/implicit_error_converting_constructor/" ><code>basic_result(S &amp;&amp;)</code></a>
-<p>Implicit <code>error_type</code> constructor. Available if <code>predicate::enable_error_converting_constructor&lt;S&gt;</code> is true. Constexpr, triviality and noexcept propagating.</p><li>
-	<a href="/outcome/reference/types/basic_result/implicit_error_condition_converting_constructor/" ><code>basic_result(ErrorCondEnum &amp;&amp;)</code></a>
-<p>Implicit <code>error_type</code> from <code>ErrorCondEnum</code> constructor. Available if <code>predicate::enable_error_condition_converting_constructor&lt;ErrorCondEnum&gt;</code> is true. Constexpr, triviality and noexcept propagating.</p></li></ol>
+<p>Disabling implicit constructor used to give useful diagnostic error when trying to use implicit constructors when <code>predicate::implicit_constructors_enabled</code> is false.</p></li></ol>
 
+<h4 id="regular-member-functions">Regular member functions</h4>
+
+<ol class="children children-li"><li>
+    <a href="/outcome/reference/types/basic_result/default/" ><code>basic_result() = delete</code></a>
+<p>The default constructor (disabled).</p><li>
+    <a href="/outcome/reference/types/basic_result/move_constructor/" ><code>basic_result(basic_result &amp;&amp;)</code></a>
+<p>Move constructor. Constexpr, triviality and noexcept propagating.</p><li>
+    <a href="/outcome/reference/types/basic_result/copy_constructor/" ><code>basic_result(const basic_result &amp;)</code></a>
+<p>Copy constructor. Constexpr, triviality and noexcept propagating.</p><li>
+    <a href="/outcome/reference/types/basic_result/move_assignment/" ><code>basic_result &amp;operator=(basic_result &amp;&amp;)</code></a>
+<p>Move assignment. Constexpr, triviality and noexcept propagating.</p><li>
+    <a href="/outcome/reference/types/basic_result/copy_assignment/" ><code>basic_result &amp;operator=(const basic_result &amp;)</code></a>
+<p>Copy assignment. Constexpr, triviality and noexcept propagating.</p><li>
+    <a href="/outcome/reference/types/basic_result/destructor/" ><code>~basic_result()</code></a>
+<p>Destructor. Constexpr, triviality and noexcept propagating.</p></li></ol>
+
+<h4 id="converting-constructors">Converting constructors</h4>
+
+<ol class="children children-li"><li>
+    <a href="/outcome/reference/types/basic_result/implicit_value_converting_constructor/" ><code>basic_result(R &amp;&amp;)</code></a>
+<p>Implicit <code>value_type</code> constructor. Available if <code>predicate::enable_value_converting_constructor&lt;R&gt;</code> is true. Constexpr, triviality and noexcept propagating.</p><li>
+    <a href="/outcome/reference/types/basic_result/implicit_error_converting_constructor/" ><code>basic_result(S &amp;&amp;)</code></a>
+<p>Implicit <code>error_type</code> constructor. Available if <code>predicate::enable_error_converting_constructor&lt;S&gt;</code> is true. Constexpr, triviality and noexcept propagating.</p><li>
+    <a href="/outcome/reference/types/basic_result/implicit_error_condition_converting_constructor/" ><code>basic_result(ErrorCondEnum &amp;&amp;)</code></a>
+<p>Implicit <code>error_type</code> from <code>ErrorCondEnum</code> constructor. Available if <code>predicate::enable_error_condition_converting_constructor&lt;ErrorCondEnum&gt;</code> is true. Constexpr, triviality and noexcept propagating.</p><li>
+    <a href="/outcome/reference/types/basic_result/explicit_valueorerror_converting_constructor/" ><code>explicit basic_result(ValueOrError&lt;T, E&gt; &amp;&amp;)</code></a>
+<p>Explicit converting constructor from <code>ValueOrError&lt;T, E&gt;</code> concept matching types. Available if <code>convert::value_or_error&lt;&gt;</code> permits it. Constexpr, triviality and noexcept propagating.</p><li>
+    <a href="/outcome/reference/types/basic_result/explicit_copy_converting_constructor/" ><code>explicit basic_result(const basic_result&lt;R, S, P&gt; &amp;)</code></a>
+<p>Explicit converting copy constructor from compatible <code>basic_result</code>. Available if <code>predicate::enable_compatible_conversion&lt;R, S, P&gt;</code> is true. Constexpr, triviality and noexcept propagating.</p><li>
+    <a href="/outcome/reference/types/basic_result/explicit_move_converting_constructor/" ><code>explicit basic_result(basic_result&lt;R, S, P&gt; &amp;&amp;)</code></a>
+<p>Explicit converting move constructor from compatible <code>basic_result</code>. Available if <code>predicate::enable_compatible_conversion&lt;R, S, P&gt;</code> is true. Constexpr, triviality and noexcept propagating.</p></li></ol>
+
+<h4 id="inplace-constructors">Inplace constructors</h4>
+
+<ol class="children children-li"><li>
+    <a href="/outcome/reference/types/basic_result/explicit_inplace_value_constructor/" ><code>explicit basic_result(in_place_type_t&lt;value_type_if_enabled&gt;, Args ...)</code></a>
+<p>Explicit inplace value constructor. Available if <code>predicate::enable_inplace_value_constructor&lt;Args ...&gt;</code> is true. Constexpr, triviality and noexcept propagating.</p><li>
+    <a href="/outcome/reference/types/basic_result/explicit_inplace_value_constructor_il/" ><code>explicit basic_result(in_place_type_t&lt;value_type_if_enabled&gt;, std::initializer_list&lt;U&gt;, Args ...)</code></a>
+<p>Explicit inplace value constructor. Available if <code>predicate::enable_inplace_value_constructor&lt;std::initializer_list&lt;U&gt;, Args ...&gt;</code> is true. Constexpr, triviality and noexcept propagating.</p><li>
+    <a href="/outcome/reference/types/basic_result/explicit_inplace_error_constructor/" ><code>explicit basic_result(in_place_type_t&lt;error_type_if_enabled&gt;, Args ...)</code></a>
+<p>Explicit inplace error constructor. Available if <code>predicate::enable_inplace_error_constructor&lt;Args ...&gt;</code> is true. Constexpr, triviality and noexcept propagating.</p><li>
+    <a href="/outcome/reference/types/basic_result/explicit_inplace_error_constructor_il/" ><code>explicit basic_result(in_place_type_t&lt;error_type_if_enabled&gt;, std::initializer_list&lt;U&gt;, Args ...)</code></a>
+<p>Explicit inplace error constructor. Available if <code>predicate::enable_inplace_error_constructor&lt;std::initializer_list&lt;U&gt;, Args ...&gt;</code> is true. Constexpr, triviality and noexcept propagating.</p><li>
+    <a href="/outcome/reference/types/basic_result/implicit_inplace_value_error_constructor/" ><code>basic_result(A1 &amp;&amp;, A2 &amp;&amp;, Args ...)</code></a>
+<p>Implicit inplace value or error constructor. Available if <code>predicate::enable_inplace_value_error_constructor&lt;A1, A2, Args ...&gt;</code> is true. Constexpr, triviality and noexcept propagating.</p></li></ol>
 
 
 

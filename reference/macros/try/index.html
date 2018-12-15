@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-15T13:18:01 UTC">
+<meta name="revised" content="2018-12-15T17:53:38 UTC">
 <title>`OUTCOME_TRY(var, expr)` :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -551,6 +551,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/outcome/reference/converters/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/outcome/reference/converters/">Converters</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/outcome/reference/converters/try_operation_return_as/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/converters/try_operation_return_as/">
+            <code>try_operation_return_as(expr)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/converters/value_or_error/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/converters/value_or_error/">
+            <code>value_or_error&lt;T, U&gt;</code>
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/outcome/reference/traits/" class="dd-item haschildren
         ">
       <div>
@@ -696,6 +718,62 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/explicit_valueorerror_converting_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/explicit_valueorerror_converting_constructor/">
+            <code>explicit basic_result(ValueOrError&lt;T, E&gt; &amp;&amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/explicit_copy_converting_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/explicit_copy_converting_constructor/">
+            <code>explicit basic_result(const basic_result&lt;R, S, P&gt; &amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/explicit_move_converting_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/explicit_move_converting_constructor/">
+            <code>explicit basic_result(basic_result&lt;R, S, P&gt; &amp;&amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/explicit_inplace_value_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/explicit_inplace_value_constructor/">
+            <code>explicit basic_result(in_place_type_t&lt;value_type_if_enabled&gt;, Args ...)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/explicit_inplace_value_constructor_il/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/explicit_inplace_value_constructor_il/">
+            <code>explicit basic_result(in_place_type_t&lt;value_type_if_enabled&gt;, std::initializer_list&lt;U&gt;, Args ...)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/explicit_inplace_error_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/explicit_inplace_error_constructor/">
+            <code>explicit basic_result(in_place_type_t&lt;error_type_if_enabled&gt;, Args ...)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/explicit_inplace_error_constructor_il/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/explicit_inplace_error_constructor_il/">
+            <code>explicit basic_result(in_place_type_t&lt;error_type_if_enabled&gt;, std::initializer_list&lt;U&gt;, Args ...)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/implicit_inplace_value_error_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/implicit_inplace_value_error_constructor/">
+            <code>basic_result(A1 &amp;&amp;, A2 &amp;&amp;, Args ...)</code>
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
       <li data-nav-id="/outcome/reference/types/in_place_type_t/" class="dd-item">
@@ -795,6 +873,9 @@
     <option value="/outcome/reference/concepts/" >
   - 
    Concepts</option>
+    <option value="/outcome/reference/converters/" >
+  - 
+   Converters</option>
     <option value="/outcome/reference/traits/" >
   - 
    Traits</option>
@@ -845,13 +926,11 @@
     
     
     
-    <p>Evaluate an expression which results in a type matching the 
-<a href="/outcome/reference/concepts/valueorerror/" class="api-reference"> ValueOrError&lt;T, E&gt;</a> concept, assigning <code>T</code> to a variable called <code>var</code> if successful, immediately returning <code>E</code> from the calling function if unsuccessful.</p>
+    <p>Evaluate an expression which results in a type matching the <a href="/outcome/reference/concepts/valueorerror/" class="api-reference">ValueOrError&lt;T, E&gt;</a> concept, assigning <code>T</code> to a variable called <code>var</code> if successful, immediately returning <code>E</code> from the calling function if unsuccessful.</p>
 
 <p><em>Overridable</em>: Not overridable.</p>
 
-<p><em>Definition</em>: See 
-<a href="/outcome/reference/macros/tryv/" class="api-reference"> OUTCOME_TRYV(expr)</a> for most of the mechanics.</p>
+<p><em>Definition</em>: See <a href="/outcome/reference/macros/tryv/" class="api-reference">OUTCOME_TRYV(expr)</a> for most of the mechanics.</p>
 
 <p>If successful, an <code>auto &amp;&amp;var</code> is initialised to the expression result&rsquo;s <code>.assume_value()</code> if available, else to its <code>.value()</code>. This binds a reference possibly to the <code>T</code> stored inside the bound result of the expression, but possibly also to a temporary emitted from the value observer function.</p>
 
