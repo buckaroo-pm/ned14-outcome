@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-14T15:53:10 UTC">
+<meta name="revised" content="2018-12-15T13:18:01 UTC">
 <title>`basic_result&lt;T, E, NoValuePolicy&gt;` :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -893,7 +893,7 @@
 
 <p>This very light weight inclusion dependencies makes basic result suitable for use in global header files of very large C++ codebases.</p>
 
-<h3 id="design-rationale">Design rationale:</h3>
+<h3 id="design-rationale">Design rationale</h3>
 
 <p>The basic result type is the main workhorse type of the Outcome library, providing a simple sum type with optional values representing success or disappointment. Unlike 
 <a href="https://wg21.link/P0323" class="api-reference" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> P0323 std::expected&lt;T, E&gt;</a>, Outcome&rsquo;s result type is designed specifically for convenience when implementing failure handling, and it has a number of API differences to facilitate that.</p>
@@ -909,7 +909,7 @@
 
 <p>The second major design difference is that union storage is NOT used, as it is assumed that <code>sizeof(E)</code> will be small for failure handling. This very considerably reduces load on the compiler, and substantially improves compile times in very large C++ codebases.</p>
 
-<h3 id="public-member-type-aliases">Public member type aliases:</h3>
+<h3 id="public-member-type-aliases">Public member type aliases</h3>
 
 <ul>
 <li><code>value_type</code> is <code>T</code>.</li>
@@ -919,7 +919,7 @@
 <li><code>rebind&lt;A, B = E, C = NoValuePolicy&gt;</code> is <code>basic_result&lt;A, B, C&gt;</code>.</li>
 </ul>
 
-<h3 id="protected-member-predicate-booleans">Protected member predicate booleans:</h3>
+<h3 id="protected-member-predicate-booleans">Protected member predicate booleans</h3>
 
 <ul>
 <li><p><code>predicate::constructors_enabled</code> is constexpr boolean true if decayed <code>value_type</code> and decayed <code>error_type</code> are not the same type.</p></li>
@@ -997,7 +997,7 @@
 </ol></li>
 </ul>
 
-<h3 id="public-member-functions">Public member functions:</h3>
+<h3 id="public-member-functions">Public member functions</h3>
 
 <ol class="children children-li"><li>
 	<a href="/outcome/reference/types/basic_result/default/" ><code>basic_result() = delete</code></a>
@@ -1050,7 +1050,7 @@
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 14/12/2018
+        <i class='fa fa-calendar'></i> Last update on 15/12/2018
     </div>
     
 
