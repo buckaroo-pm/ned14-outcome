@@ -5,7 +5,7 @@
     <link>https://ned14.github.io/outcome/tags/namespace/</link>
     <description>Recent content in Namespace on Outcome documentation</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 28 Oct 2018 00:29:27 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 12 Nov 2018 11:55:07 +0100</lastBuildDate>
     
 	<atom:link href="https://ned14.github.io/outcome/tags/namespace/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +13,7 @@
     <item>
       <title>result&lt;&gt;</title>
       <link>https://ned14.github.io/outcome/tutorial/result/</link>
-      <pubDate>Sun, 28 Oct 2018 00:29:27 +0200</pubDate>
+      <pubDate>Mon, 12 Nov 2018 11:55:07 +0100</pubDate>
       
       <guid>https://ned14.github.io/outcome/tutorial/result/</guid>
       <description>Outcome 2.0 namespace It is recommended that you refer to entities from this Outcome 2.0 via the following namespace alias:
