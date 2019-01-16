@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-01-14T23:39:19 UTC">
+<meta name="revised" content="2019-01-16T00:11:53 UTC">
 <title>Error codes :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -897,8 +897,6 @@
     
     
 
-<h2 id="error-codes">Error codes</h2>
-
 <p>Error codes are reasonable error handling technique, also working in C.
 In this case the information is also stored as an <code>int</code>, but returned by value,
 which makes it possible to make functions pure (side-effect-free and referentially
@@ -936,7 +934,7 @@ code value. This is quite impossible and does not scale well.</p>
 <p>Because errors are communicated through returned values, we cannot use function&rsquo;s
 return type to return computed values. Computed values are written to function
 <em>output</em> parameters, which requires objects to be created before we have values
-to put into them. This requires many objects in unintended state to exist. writing
+to put into them. This requires many objects in unintended state to exist. Writing
 to output parameters often requires an indirection and can incur some run-time cost.</p>
 
 
@@ -960,7 +958,7 @@ to output parameters often requires an indirection and can incur some run-time c
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 27/10/2018
+        <i class='fa fa-calendar'></i> Last update on 16/01/2019
     </div>
     
 

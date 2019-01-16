@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-01-14T23:39:19 UTC">
+<meta name="revised" content="2019-01-16T00:11:53 UTC">
 <title>errno :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -897,8 +897,6 @@
     
     
 
-<h2 id="errno"><code>errno</code></h2>
-
 <p>The idiom of returning, upon failure, a special value and storing an error code
 (an <code>int</code>) inside a global (or thread-local) object <code>errno</code> is inherited from C,
 and used in its Standard Library:</p>
@@ -920,7 +918,7 @@ and used in its Standard Library:</p>
 </span><span class="c1"></span>  <span class="k">return</span> <span class="n">i</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>One advantage (to some and a disadvantage to others) of this technique is that it
+<p>One advantage (to some, and a disadvantage to others) of this technique is that it
 uses familiar control statements (<code>if</code> and <code>return</code>) to indicate all execution
 paths that handle failures. When we read this code we know when and under what
 conditions it can exit without producing the expected result.</p>
@@ -930,7 +928,7 @@ conditions it can exit without producing the expected result.</p>
 <p>Because on failure, as well as success, we write into a global (or thread-local)
 object, our functions are not <em>pure</em>: they have <em>side effects</em>. This means many
 useful compiler optimizations (like common subexpression elimination) cannot be
-applied. This chows that it is not only C++ that chooses suboptimal solutions
+applied. This shows that it is not only C++ that chooses suboptimal solutions
 for reporting failures.</p>
 
 <p>Whatever type we return, we always need a special value to spare, which is
@@ -967,7 +965,7 @@ do so, the original error code is gone.</p>
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 27/10/2018
+        <i class='fa fa-calendar'></i> Last update on 16/01/2019
     </div>
     
 

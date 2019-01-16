@@ -45,7 +45,7 @@ struct abort_policy : outcome::policy::base { template &amp;lt;classImpl&amp;gt;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/motivation/exceptions/</guid>
-      <description>Exceptions Exceptions are the default mechanism in C++ for reporting, propagating and processing the information about function failures. Their main advantage is the ability to describe the &amp;ldquo;success dependency&amp;rdquo; between functions: if you want to say that calling function g() depends on the successful execution of function f(), you just put g() below f() and that&amp;rsquo;s it:
+      <description>Exceptions are the default mechanism in C++ for reporting, propagating and processing the information about function failures. Their main advantage is the ability to describe the &amp;ldquo;success dependency&amp;rdquo; between functions: if you want to say that calling function g() depends on the successful execution of function f(), you just put g() below f() and that&amp;rsquo;s it:
 int a() { f(); g(); // don&amp;#39;t call g() and further if f() fails  return h(); // don&amp;#39;t call h() if g() fails }  In the C++ Standard terms this means that f() is sequenced before g().</description>
     </item>
     
@@ -188,8 +188,8 @@ namespace filesystem2 { // Error code + paths related to a failure. Also causes 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/motivation/errno/</guid>
-      <description>errno The idiom of returning, upon failure, a special value and storing an error code (an int) inside a global (or thread-local) object errno is inherited from C, and used in its Standard Library:
-int readValue(const char * filename) { FILE* f = fopen(filename, &amp;#34;r&amp;#34;); if (f == NULL) return 0; // special value indicating failure  // keep errno value set by fopen()  int i; int r = fscanf(f, &amp;#34;%d&amp;#34;, &amp;amp;i); if (r == 0 || r == EOF) { // special values: i not read  errno = ENODATA; // choose error value to return  return 0; fclose(f); errno = 0; // clear error info (success)  return i; }  One advantage (to some and a disadvantage to others) of this technique is that it uses familiar control statements (if and return) to indicate all execution paths that handle failures.</description>
+      <description>The idiom of returning, upon failure, a special value and storing an error code (an int) inside a global (or thread-local) object errno is inherited from C, and used in its Standard Library:
+int readValue(const char * filename) { FILE* f = fopen(filename, &amp;#34;r&amp;#34;); if (f == NULL) return 0; // special value indicating failure  // keep errno value set by fopen()  int i; int r = fscanf(f, &amp;#34;%d&amp;#34;, &amp;amp;i); if (r == 0 || r == EOF) { // special values: i not read  errno = ENODATA; // choose error value to return  return 0; fclose(f); errno = 0; // clear error info (success)  return i; }  One advantage (to some, and a disadvantage to others) of this technique is that it uses familiar control statements (if and return) to indicate all execution paths that handle failures.</description>
     </item>
     
     <item>
@@ -228,7 +228,7 @@ Seeing as we are replacing the throwing overload of copy_file() in the Filesyste
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/motivation/error_codes/</guid>
-      <description>Error codes Error codes are reasonable error handling technique, also working in C. In this case the information is also stored as an int, but returned by value, which makes it possible to make functions pure (side-effect-free and referentially transparent).
+      <description>Error codes are reasonable error handling technique, also working in C. In this case the information is also stored as an int, but returned by value, which makes it possible to make functions pure (side-effect-free and referentially transparent).
 int readInt(const char * filename, int&amp;amp; val) { FILE* fd; int r = openFile(filename, /*out*/ fd); if (r != 0) return r; // return whatever error openFile() returned  r = readInt(fd, /*out*/ val); if (r !</description>
     </item>
     
@@ -340,7 +340,7 @@ struct cxx_error_code { int code; void *category; }; &amp;hellip; which is decla
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/motivation/std_error_code/</guid>
-      <description>std::error_code Type std::error_code has been designed to be sufficiently small and trivial to be cheaply passed around, and at the same time be able to store sufficient information to represent any error situation from any library/sub-system in the world without a clash. Its representation is basically:
+      <description>Type std::error_code has been designed to be sufficiently small and trivial to be cheaply passed around, and at the same time be able to store sufficient information to represent any error situation from any library/sub-system in the world without a clash. Its representation is basically:
 classerror_code { error_category* domain; // domain from which the error originates  int value; // numeric value of error within the domain };  Here, domain indicates the library from which the error originates.</description>
     </item>
     
@@ -648,9 +648,7 @@ Complexity: Same as for the value_type or error_type constructor which accepts A
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ned14.github.io/outcome/credits/</guid>
-      <description>github contributors HAHAHUGOSHORTCODE-0xc0003f5400-1-HBHB
-This pretty, modern C++ documentation  Hugo - static website generator of this documentation. hugo-theme-docdock - the Hugo theme used by this documentation. Standardese - the API reference generator  Special thanks for Outcome v2 For a second time, Charley Bay stepped up as review manager. Given how much work it was for the v1 review, I can only say thank you.
-Andrzej Krzemienski went far beyond the call of duty in the development of Outcome v2.</description>
+      <description>github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @ned14 960 commits   @akrzemi1 38 commits   @menuet 2 commits   @norbertwenzel 1 commits   @vinipsmaker 1 commits   @andoks 1 commits   @catskul 1 commits   @johnthagen 1 commits   @jenkins-nedprod 1 commits   This pretty, modern C++ documentation  Hugo - static website generator of this documentation.</description>
     </item>
     
     <item>

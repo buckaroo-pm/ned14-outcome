@@ -5,7 +5,7 @@
     <link>https://ned14.github.io/outcome/tags/outcome/</link>
     <description>Recent content in Outcome on Outcome documentation</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 28 Oct 2018 00:29:27 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 16 Jan 2019 01:05:39 +0100</lastBuildDate>
     
 	<atom:link href="https://ned14.github.io/outcome/tags/outcome/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,10 +22,10 @@
     <item>
       <title>outcome&lt;&gt;</title>
       <link>https://ned14.github.io/outcome/tutorial/outcome/</link>
-      <pubDate>Sun, 28 Oct 2018 00:29:27 +0200</pubDate>
+      <pubDate>Wed, 16 Jan 2019 01:05:39 +0100</pubDate>
       
       <guid>https://ned14.github.io/outcome/tutorial/outcome/</guid>
-      <description>outcome&amp;lt;&amp;gt; Type API NOT FOUND IN DOCS outcome/#standardese-outcome_v2_xxx__outcome-R-S-P-NoValuePolicy- represets either a successfully computed value of type T or a reason for failure. Failure can be represented by EC or EP or both. Although usually it will either be an EC or an EP. EC defaults to std::error_code and EP defaults to std::exception_ptr. The distinction is made into two types, EC and EP:
+      <description>Type API NOT FOUND IN DOCS outcome/#standardese-outcome_v2_xxx__outcome-R-S-P-NoValuePolicy- represets either a successfully computed value of type T or a reason for failure. Failure can be represented by EC or EP or both. Although usually it will either be an EC or an EP. EC defaults to std::error_code and EP defaults to std::exception_ptr. The distinction is made into two types, EC and EP:
  EC represents a failue from lower-layer function which was retured through API NOT FOUND IN DOCS result/#standardese-outcome_v2_xxx__result-R-S-NoValuePolicy-.</description>
     </item>
     
