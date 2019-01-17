@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-01-17T01:08:07 UTC">
+<meta name="revised" content="2019-01-17T21:31:48 UTC">
 <title>Constructors :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -772,6 +772,41 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/implicit_success_copy_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/implicit_success_copy_constructor/">
+            <code>basic_result(const success_type&lt;T&gt; &amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/implicit_success_move_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/implicit_success_move_constructor/">
+            <code>basic_result(success_type&lt;T&gt; &amp;&amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/implicit_failure_copy_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/implicit_failure_copy_constructor/">
+            <code>basic_result(const failure_type&lt;T&gt; &amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/implicit_failure_move_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/implicit_failure_move_constructor/">
+            <code>basic_result(failure_type&lt;T&gt; &amp;&amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/swap/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/swap/">
+            <code>void swap(basic_result &amp;)</code>
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
       <li data-nav-id="/outcome/reference/types/in_place_type_t/" class="dd-item">
@@ -926,7 +961,8 @@
     <section class="post-excerpt">
         <p>Implicit inplace value or error constructor. Delegates to an appropriate explicit inplace constructor depending on input.
 Requires: predicate::enable_inplace_value_error_constructor` is true.
-Complexity: Same as for the value_type or error_type constructor which accepts A1, A2, Args .... Constexpr, triviality and noexcept of underlying operations is propagated. <a class="read-more" href="/outcome/reference/types/basic_result/implicit_inplace_value_error_constructor/">&raquo;</a></p>
+Complexity: Same as for the value_type or error_type constructor which accepts A1, A2, Args .... Constexpr, triviality and noexcept of underlying operations is propagated.
+Guarantees: If an exception is thrown during the operation, the state of the Args is left indeterminate. <a class="read-more" href="/outcome/reference/types/basic_result/implicit_inplace_value_error_constructor/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -964,7 +1000,8 @@ Complexity: N/A. <a class="read-more" href="/outcome/reference/types/basic_resul
     <section class="post-excerpt">
         <p>Implicit error_type from ErrorCondEnum constructor. Calls API NOT FOUND IN DOCS hook_result_construction(basic_result&lt;T, E, NoValuePolicy&gt; *, U &amp;&amp;) with this and ErrorCondEnum.
 Requires: predicate::enable_error_condition_converting_constructor&lt;R&gt; is true.
-Complexity: Same as for error_type&rsquo;s copy or move constructor from the result of make_error_code(ErrorCondEnum). Constexpr, triviality and noexcept of underlying operations is propagated. <a class="read-more" href="/outcome/reference/types/basic_result/implicit_error_condition_converting_constructor/">&raquo;</a></p>
+Complexity: Same as for error_type&rsquo;s copy or move constructor from the result of make_error_code(ErrorCondEnum). Constexpr, triviality and noexcept of underlying operations is propagated.
+Guarantees: If an exception is thrown during the operation, the state of the input is left indeterminate. <a class="read-more" href="/outcome/reference/types/basic_result/implicit_error_condition_converting_constructor/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1040,7 +1077,8 @@ Complexity: N/A. <a class="read-more" href="/outcome/reference/types/basic_resul
     <section class="post-excerpt">
         <p>Move constructor.
 Requires: that value_type and error_type both implement a move constructor.
-Complexity: Same as for value_type&rsquo;s and error_type&rsquo;s move constructors. Constexpr, triviality and noexcept of underlying operations is propagated. <a class="read-more" href="/outcome/reference/types/basic_result/move_constructor/">&raquo;</a></p>
+Complexity: Same as for value_type&rsquo;s and error_type&rsquo;s move constructors. Constexpr, triviality and noexcept of underlying operations is propagated.
+Guarantees: If an exception is thrown during the operation, the state of both operands on entry is restored, if at least one of the underlying operations is marked noexcept. <a class="read-more" href="/outcome/reference/types/basic_result/move_constructor/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1059,7 +1097,8 @@ Complexity: Same as for value_type&rsquo;s and error_type&rsquo;s move construct
     <section class="post-excerpt">
         <p>Copy constructor.
 Requires: that value_type and error_type both implement a copy constructor.
-Complexity: Same as for value_type&rsquo;s and error_type&rsquo;s copy constructors. Constexpr, triviality and noexcept of underlying operations is propagated. <a class="read-more" href="/outcome/reference/types/basic_result/copy_constructor/">&raquo;</a></p>
+Complexity: Same as for value_type&rsquo;s and error_type&rsquo;s copy constructors. Constexpr, triviality and noexcept of underlying operations is propagated.
+Guarantees: If an exception is thrown during the operation, the state of both operands on entry is restored, if at least one of the underlying operations is marked noexcept. <a class="read-more" href="/outcome/reference/types/basic_result/copy_constructor/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1073,12 +1112,12 @@ Complexity: Same as for value_type&rsquo;s and error_type&rsquo;s copy construct
 
    <article class="post reference">
     <header class="post-header">
-        <h2 class="post-title"><a href="/outcome/reference/types/basic_result/explicit_valueorerror_converting_constructor/">`explicit basic_result(ValueOrError&lt;T, E&gt; &amp;&amp;)`</a></h2>
+        <h2 class="post-title"><a href="/outcome/reference/types/basic_result/implicit_failure_copy_constructor/">`basic_result(const failure_type&lt;T&gt; &amp;)`</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Explicit converting constructor from ValueOrError&lt;T, E&gt; concept matching types. Delegates to the basic_result move constructor.
-Requires: convert::value_or_error&lt;T, U&gt; has an available call operator, and if the input is a basic_result or basic_outcome, then convert::value_or_error&lt;&gt; has enabled those inputs for that convert::value_or_error&lt;&gt; specialisation.
-Complexity: Same as for the copy or move constructor from the input&rsquo;s .value() or .error() respectively. Constexpr, triviality and noexcept of underlying operations is propagated. <a class="read-more" href="/outcome/reference/types/basic_result/explicit_valueorerror_converting_constructor/">&raquo;</a></p>
+        <p>Implicit error-from-failure-type-sugar copy constructor used to disambiguate the construction of the error type. Note that if T = void, error_type will be default constructed. Calls API NOT FOUND IN DOCS hook_result_copy_construction(basic_result&lt;T, E, NoValuePolicy&gt; *, U &amp;&amp;) with this and const failure_type&lt;T&gt; &amp;.
+Requires: predicate::enable_compatible_conversion&lt;void, T, void&gt; is true, or T is void.
+Complexity: Same as for the error_type constructor which accepts T, or the error_type default constructor if T is void. <a class="read-more" href="/outcome/reference/types/basic_result/implicit_failure_copy_constructor/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1123,7 +1162,7 @@ Complexity: Same as for the copy or move constructor from the input&rsquo;s .val
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 15/12/2018
+        <i class='fa fa-calendar'></i> Last update on 17/01/2019
     </div>
     
 

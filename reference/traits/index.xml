@@ -84,7 +84,7 @@ Header: &amp;lt;outcome/trait.hpp&amp;gt;</description>
       <description>A constexpr boolean true for types permissible in basic_result&amp;lt;T, E, NoValuePolicy&amp;gt;.
 Overridable: Not overridable.
 Definition: True for a type which:
- Is not a reference. Is not an in_place_type_t&amp;lt;T&amp;gt;. Is not a API NOT FOUND IN DOCS success_type&amp;lt;T&amp;gt;. Is not a API NOT FOUND IN DOCS failure_type&amp;lt;E, P&amp;gt;. Is not an array. Is either void, or else is an Object and is Destructible.  Namespace: OUTCOME_V2_NAMESPACE::trait
+ Is not a reference. Is not an in_place_type_t&amp;lt;T&amp;gt;. Is not a success_type&amp;lt;T&amp;gt;. Is not a API NOT FOUND IN DOCS failure_type&amp;lt;E, P&amp;gt;. Is not an array. Is either void, or else is an Object and is Destructible.  Namespace: OUTCOME_V2_NAMESPACE::trait
 Header: &amp;lt;outcome/trait.hpp&amp;gt;</description>
     </item>
     

@@ -5,7 +5,7 @@
     <link>https://ned14.github.io/outcome/tags/payload/</link>
     <description>Recent content in Payload on Outcome documentation</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 12 Nov 2018 10:00:22 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 15 Nov 2018 00:51:58 +0100</lastBuildDate>
     
 	<atom:link href="https://ned14.github.io/outcome/tags/payload/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +13,7 @@
     <item>
       <title>Custom payloads</title>
       <link>https://ned14.github.io/outcome/tutorial/payload/</link>
-      <pubDate>Mon, 12 Nov 2018 10:00:22 +0100</pubDate>
+      <pubDate>Thu, 15 Nov 2018 00:51:58 +0100</pubDate>
       
       <guid>https://ned14.github.io/outcome/tutorial/payload/</guid>
       <description>So far in this tutorial, type EC in result&amp;lt;T, EC&amp;gt; has always been a std::error_code (though it can be of any type you wish instead). EC needs in fact to merely satisfy API NOT FOUND IN DOCS success_failure/#standardese-outcome_v2_xxx__trait__has_error_code-T- for EC to be treated as if an std::error_code.

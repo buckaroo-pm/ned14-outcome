@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-01-17T01:08:07 UTC">
+<meta name="revised" content="2019-01-17T21:31:48 UTC">
 <title>Assignment :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -772,6 +772,41 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/implicit_success_copy_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/implicit_success_copy_constructor/">
+            <code>basic_result(const success_type&lt;T&gt; &amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/implicit_success_move_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/implicit_success_move_constructor/">
+            <code>basic_result(success_type&lt;T&gt; &amp;&amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/implicit_failure_copy_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/implicit_failure_copy_constructor/">
+            <code>basic_result(const failure_type&lt;T&gt; &amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/implicit_failure_move_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/implicit_failure_move_constructor/">
+            <code>basic_result(failure_type&lt;T&gt; &amp;&amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/swap/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/swap/">
+            <code>void swap(basic_result &amp;)</code>
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
       <li data-nav-id="/outcome/reference/types/in_place_type_t/" class="dd-item">
@@ -907,7 +942,8 @@
     <section class="post-excerpt">
         <p>Move assignment.
 Requires: that value_type and error_type both implement move assignment.
-Complexity: If the value_type for both is present, uses value_type&rsquo;s move assignment operator, else either destructs or move constructs value_type as appropriate. error_type&rsquo;s move assignment operator is always used. Constexpr, triviality and noexcept of underlying operations is propagated. <a class="read-more" href="/outcome/reference/types/basic_result/move_assignment/">&raquo;</a></p>
+Complexity: If the value_type for both is present, uses value_type&rsquo;s move assignment operator, else either destructs or move constructs value_type as appropriate. error_type&rsquo;s move assignment operator is always used. Constexpr, triviality and noexcept of underlying operations is propagated.
+Guarantees: If an exception is thrown during the operation, the state of both operands on entry is restored, if at least one of the underlying operations is marked noexcept. <a class="read-more" href="/outcome/reference/types/basic_result/move_assignment/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -926,7 +962,8 @@ Complexity: If the value_type for both is present, uses value_type&rsquo;s move 
     <section class="post-excerpt">
         <p>Copy assignment.
 Requires: that value_type and error_type both implement copy assignment.
-Complexity: If the value_type for both is present, uses value_type&rsquo;s copy assignment operator, else either destructs or copy constructs value_type as appropriate. error_type&rsquo;s copy assignment operator is always used. Constexpr, triviality and noexcept of underlying operations is propagated. <a class="read-more" href="/outcome/reference/types/basic_result/copy_assignment/">&raquo;</a></p>
+Complexity: If the value_type for both is present, uses value_type&rsquo;s copy assignment operator, else either destructs or copy constructs value_type as appropriate. error_type&rsquo;s copy assignment operator is always used. Constexpr, triviality and noexcept of underlying operations is propagated.
+Guarantees: If an exception is thrown during the operation, the state of both operands on entry is restored, if at least one of the underlying operations is marked noexcept. <a class="read-more" href="/outcome/reference/types/basic_result/copy_assignment/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -969,7 +1006,7 @@ Complexity: If the value_type for both is present, uses value_type&rsquo;s copy 
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 15/12/2018
+        <i class='fa fa-calendar'></i> Last update on 17/01/2019
     </div>
     
 

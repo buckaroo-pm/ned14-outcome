@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-01-17T01:08:05 UTC">
+<meta name="revised" content="2019-01-17T21:31:46 UTC">
 <title>The HTTP library :: Outcome documentation</title>
 <link rel="shortcut icon" href="/outcome/images/favicon.png" type="image/x-icon" />
 <link href="/outcome/css/font-awesome.min.css" rel="stylesheet">
@@ -774,6 +774,41 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/implicit_success_copy_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/implicit_success_copy_constructor/">
+            <code>basic_result(const success_type&lt;T&gt; &amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/implicit_success_move_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/implicit_success_move_constructor/">
+            <code>basic_result(success_type&lt;T&gt; &amp;&amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/implicit_failure_copy_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/implicit_failure_copy_constructor/">
+            <code>basic_result(const failure_type&lt;T&gt; &amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/implicit_failure_move_constructor/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/implicit_failure_move_constructor/">
+            <code>basic_result(failure_type&lt;T&gt; &amp;&amp;)</code>
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/outcome/reference/types/basic_result/swap/" class="dd-item">
+        <div>
+          <a href="/outcome/reference/types/basic_result/swap/">
+            <code>void swap(basic_result &amp;)</code>
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
       <li data-nav-id="/outcome/reference/types/in_place_type_t/" class="dd-item">
@@ -853,17 +888,43 @@
    Motivation</option>
     <option value="/outcome/tutorial/" >
    Tutorial</option> 
-      <option value="/outcome/reference/macros/template/" >- Constrained template macros</option>
-      <option value="/outcome/reference/macros/version/" >- Version macros</option>
-      <option value="/outcome/reference/macros/disable_execinfo/" >- `OUTCOME_DISABLE_EXECINFO`</option>
-      <option value="/outcome/reference/macros/nodiscard/" >- `OUTCOME_NODISCARD`</option>
-      <option value="/outcome/reference/macros/requires/" >- `OUTCOME_REQUIRES(...)`</option>
-      <option value="/outcome/reference/macros/symbol_visible/" >- `OUTCOME_SYMBOL_VISIBLE`</option>
-      <option value="/outcome/reference/macros/thread_local/" >- `OUTCOME_THREAD_LOCAL`</option>
-      <option value="/outcome/reference/macros/throw_exception/" >- `OUTCOME_THROW_EXCEPTION(expr)`</option>
-      <option value="/outcome/reference/macros/try/" >- `OUTCOME_TRY(var, expr)`</option>
-      <option value="/outcome/reference/macros/tryv/" >- `OUTCOME_TRYV(expr)/OUTCOME_TRY(expr)`</option>
-      <option value="/outcome/reference/macros/tryx/" >- `OUTCOME_TRYX(expr)`</option>
+    <option value="/outcome/tutorial/result/" >
+  - 
+   result&lt;&gt;</option>
+    <option value="/outcome/tutorial/outcome/" >
+  - 
+   outcome&lt;&gt;</option>
+    <option value="/outcome/tutorial/no-value/" >
+  - 
+   No-value policies</option>
+    <option value="/outcome/tutorial/payload/" >
+  - 
+   Custom payloads</option>
+    <option value="/outcome/tutorial/constructors/" >
+  - 
+   Result returning constructors</option>
+    <option value="/outcome/tutorial/hooks/" >
+  - 
+   Hooking events</option>
+    <option value="/outcome/tutorial/c-api/" >
+  - 
+   Using result&lt;T&gt; from C code</option>
+    <option value="/outcome/tutorial/interop/" >
+  - 
+   Interoperation</option> 
+      <option value="/outcome/tutorial/interop/problem/" >-- Incommensurate E types</option>
+      <option value="/outcome/tutorial/interop/value-or-error/" >-- ValueOrError Concept</option>
+      <option value="/outcome/tutorial/interop/httplib/"  selected>-- The HTTP library</option>
+      <option value="/outcome/tutorial/interop/tidylib/" >-- The HTMLTidy library</option>
+      <option value="/outcome/tutorial/interop/filelib/" >-- The File I/O library</option>
+      <option value="/outcome/tutorial/interop/app/" >-- The Application</option>
+      <option value="/outcome/tutorial/interop/app-map-httplib1/" >-- Mapping the HTTP library into the Application 1/2</option>
+      <option value="/outcome/tutorial/interop/app-map-httplib2/" >-- Mapping the HTTP library into the Application 2/2</option>
+      <option value="/outcome/tutorial/interop/app-map-filelib/" >-- Mapping the File I/O library into the Application</option>
+      <option value="/outcome/tutorial/interop/app-map-tidylib/" >-- Mapping the HTMLTidy library into the Application</option>
+      <option value="/outcome/tutorial/interop/app-go/" >-- In use</option>
+      <option value="/outcome/tutorial/interop/conclusion/" >-- Conclusion</option>
+  
   
     <option value="/outcome/reference/" >
    API reference</option>
@@ -970,7 +1031,7 @@ a URL, and either returns the contents or the failure reason why not.</p>
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 12/11/2018
+        <i class='fa fa-calendar'></i> Last update on 15/11/2018
     </div>
     
 
